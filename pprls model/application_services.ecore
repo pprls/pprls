@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="services" nsURI="http://pprls.org/application/services/1.0"
+    nsPrefix="org.pprls.application">
+  <eClassifiers xsi:type="ecore:EClass" name="FileService">
+    <eOperations name="upload" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eParameters name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+      <eParameters name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </eOperations>
+    <eOperations name="remove" lowerBound="1">
+      <eParameters name="filepath" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </eOperations>
+  </eClassifiers>
+</ecore:EPackage>

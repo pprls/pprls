@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    copyrightText="Αδειοδοτείται υπό τους όρους της EUPL" modelDirectory="/pprls/src/main/java"
+    modelPluginID="" modelName="Paperless" rootExtendsInterface="" rootExtendsClass=""
+    rootImplementsInterface="" suppressEMFTypes="true" importerID="org.eclipse.emf.importer.ecore"
+    bundleManifest="false" minimalReflectiveMethods="false" complianceLevel="5.0"
+    copyrightFields="false" publicConstructors="true" language="" packedEnums="true"
+    importOrganizing="true">
+  <foreignModel>application_services.ecore</foreignModel>
+  <genPackages prefix="Services" basePackage="org.pprls.application.services" disposableProviderFactory="true"
+      adapterFactory="false" literalsInterface="false" ecorePackage="application_services.ecore#/">
+    <genClasses ecoreClass="application_services.ecore#//FileService">
+      <genOperations ecoreOperation="application_services.ecore#//FileService/upload">
+        <genParameters ecoreParameter="application_services.ecore#//FileService/upload/from"/>
+        <genParameters ecoreParameter="application_services.ecore#//FileService/upload/to"/>
+      </genOperations>
+      <genOperations ecoreOperation="application_services.ecore#//FileService/remove">
+        <genParameters ecoreParameter="application_services.ecore#//FileService/remove/filepath"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

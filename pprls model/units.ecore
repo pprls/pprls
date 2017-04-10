@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="units" nsURI="http://org.pprls/units/1.0" nsPrefix="org.pprls">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="body" value="import java.util.Iterator;"/>
+    <details key="documentation" value="This number is like registryNumber, but it is always assigned even for documents that do not require a registryNumber (e.g. mails).&#xD;&#xA;It is used internally by the app, to be able to group together documents together that refer to the same thing"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Μονάδα">
+    <eOperations name="getΌλουςΥπαλληλους">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="BasicEList&lt;Υπάλληλος> rest = new BasicEList&lt;Υπάλληλος>(getΥπηρετούν ());&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;EList&lt;Μονάδα> μονάδες = getΈχει_υπομονάδες ();&#xD;&#xA;&#x9;&#x9;Iterator&lt;Μονάδα> iter = μονάδες.iterator ();&#xD;&#xA;&#x9;&#x9;Μονάδα τρέχουσα = null;&#xD;&#xA;&#x9;&#x9;while(iter.hasNext ()){&#xD;&#xA;&#x9;&#x9;&#x9;τρέχουσα = (Μονάδα)iter.next ();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;if(τρέχουσα.getΤύπος ().equalsIgnoreCase ( &quot;ΠΜ&quot; ))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;continue;&#xD;&#xA;&#x9;&#x9;&#x9;rest.addAll (new BasicEList&lt;Υπάλληλος>(τρέχουσα.getΌλουςΥπαλληλους(null)));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return rest;"/>
+      </eAnnotations>
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Υπάλληλος"/>
+      </eGenericType>
+      <eParameters name="μονάδα" eType="#//Μονάδα"/>
+    </eOperations>
+    <eOperations name="getΌλεςΜονάδες">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#x9;BasicEList&lt;Μονάδα> rest = new BasicEList&lt;Μονάδα>(getΈχει_υπομονάδες ());&#xA;                &#xA;        BasicEList&lt;Μονάδα> μονάδες = new BasicEList&lt;Μονάδα>(getΈχει_υπομονάδες ());&#xA;        Iterator&lt;Μονάδα> iter = μονάδες.iterator ();&#xA;        while(iter.hasNext ()){&#xA;                     Μονάδα τρέχουσα = (Μονάδα)iter.next ();&#xA;                     &#xA;                     if(τρέχουσα.getΤύπος ().equalsIgnoreCase ( &quot;ΠΜ&quot; ))&#xA;                                    continue;&#xA;                     rest.addAll (new BasicEList&lt;Μονάδα>(τρέχουσα.getΌλεςΜονάδες()));&#xA;        }&#xA;                &#xA;        return rest;"/>
+      </eAnnotations>
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Μονάδα"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getΥπηρετούν">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="EList&lt;Υπάλληλος>employees = new EList&lt;Υπάλληλος>();&#xD;&#xA;&#x9;&#x9;EList&lt;Σύμβαση> currentContracts = getCurrentContracts();&#xD;&#xA;&#x9;&#x9;Iterator&lt;Σύμβαση> iterator = currentContracts.iterator();&#xD;&#xA;&#x9;&#x9;while (iterator.hasNext()) {&#xD;&#xA;&#x9;&#x9;  employees.add(iterator.next().getΥπάλληλος());&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return employees;"/>
+      </eAnnotations>
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="#//Υπάλληλος"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="isInServiceLongerThan" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="In current Contract context compares which unit has the oldest contract."/>
+      </eAnnotations>
+      <eParameters name="unit" eType="#//Μονάδα"/>
+    </eOperations>
+    <eOperations name="getNamesForAllUnits" lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="κωδικός" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value="@NaturalId"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="όνομα" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="τύπος" eType="#//UnitType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="έδρα" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="διεύθυνση" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Έχει_υπομονάδες" upperBound="-1"
+        eType="#//Μονάδα" containment="true" eOpposite="#//Μονάδα/ανήκει_σε">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value=" @OneToMany(fetch =EAGER)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ανήκει_σε" eType="#//Μονάδα"
+        eOpposite="#//Μονάδα/Έχει_υπομονάδες"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contracts" upperBound="-1"
+        eType="#//Σύμβαση" eOpposite="#//Σύμβαση/έχειΤοποθετηθεί"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentContracts" upperBound="-1"
+        eType="#//Σύμβαση" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="employees" upperBound="-1"
+        eType="#//Υπάλληλος" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allEmployees" ordered="false"
+        upperBound="-1" eType="#//Υπάλληλος" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RegionalDirectorates" ordered="false"
+        upperBound="-1" eType="#//Μονάδα" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RegionalUnits" ordered="false"
+        upperBound="-1" eType="#//Μονάδα" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LocalOffices" ordered="false"
+        upperBound="-1" eType="#//Μονάδα" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" ordered="false" upperBound="-1"
+        resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directorate" lowerBound="1"
+        eType="#//Μονάδα" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="manager" eType="#//Υπάλληλος"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Returns the manager of the unit. If the unit does not have a manager returns the manager of the unit where this unit belongs"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" lowerBound="1" eType="#//UnitRole"
+        defaultValueLiteral="GENERIC"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Υπάλληλος">
+    <eOperations name="getΕπώνυμομεαρχικό" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="if(null != getΕπώνυμο()  &amp;&amp; null != getΌνομα() )&#xA;&#x9;return getΕπώνυμο()+&quot; &quot;+getΌνομα().substring(0,1)+&quot;.&quot;;&#xA;else&#xA;&#x9;return super.toString();"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isRegistrar" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Returns true if employee has one of the DIRECTORATE_REGISTRAR, CENTRAL_REGISTRAR,REGIONAL_DIRECTORATE_REGISTRAR or CEO_OFFICE_REGISTRAR roles"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isCentralRegistrar" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="getBestGuessForUnit" eType="#//Μονάδα">
+      <eParameters name="unitId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+      <eParameters name="directorateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    </eOperations>
+    <eOperations name="isHeadedBy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="employee" lowerBound="1" eType="#//Υπάλληλος"/>
+    </eOperations>
+    <eOperations name="getBestGuessForUnit" eType="#//Μονάδα"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="μητρώο" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value="@NaturalId"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="audits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="όνομα" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="πατρόνυμο" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="μητρώνυμο" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ημΓέννησης" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="αμα" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="αμκα" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ειδικότητα" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="τηλέφωνοΕργασίας" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="τηλέφωνοΟικίας" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="τηλέφωνοΚινητό" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="διεύθυνσηΟικίας" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="αφμ" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="όνομαχρήστηΟΠΣ" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="έγγαμος" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="teneo.jpa">
+        <details key="value" value="@Type(type = &quot;org.hibernate.type.NumericBooleanType&quot;)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="τέκνα" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="όνομαχρήστηPaperless" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="συνθηματικό" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="έχειΣύμβαση" upperBound="-1"
+        eType="#//Σύμβαση" containment="true" eOpposite="#//Σύμβαση/employee"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" upperBound="-1" eType="#//Role">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value="@OneToMany(fetch =EAGER,cascade=CascadeType.ALL)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manager" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derived attribute. Returns true if the employee has a managerial role"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestContract" eType="#//Σύμβαση"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentlyHired" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeContracts" upperBound="-1"
+        eType="#//Σύμβαση" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="units" eType="#//Σύμβαση"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeUnits" upperBound="-1"
+        eType="#//Μονάδα" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Σύμβαση">
+    <eOperations name="isCurrent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="Date date = new Date();&#xD;&#xA;return (ημΑπόλυσης.after(date));"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="σχέσηΕργασίας" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ωράριο" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ημΠρόσληψης" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ημΑναγγελίας" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ημΑπόλυσης" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="θέση" eType="#//Θέση"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="προϋπηρεσία" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="μικτέςΑποδοχές" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="έχειΤοποθετηθεί" lowerBound="1"
+        eType="#//Μονάδα" eOpposite="#//Μονάδα/contracts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="employee" lowerBound="1"
+        eType="#//Υπάλληλος" eOpposite="#//Υπάλληλος/έχειΣύμβαση"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Θέση">
+    <eLiterals name="Διευθυντής"/>
+    <eLiterals name="Τμηματάρχης" value="1" literal="Προϊστάμενος τμήματος"/>
+    <eLiterals name="Υπάλληλος" value="2"/>
+    <eLiterals name="ΑναπληρωτήςΔιευθυντής" value="3" literal="Αναπληρωτής διευθυντής"/>
+    <eLiterals name="ΑναπληρωτήςΤμηματάρχης" value="4" literal="Αναπληρωτής προϊστάμενος τμήματος"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Role">
+    <eLiterals name="SUPERUSER" literal="Υπερχρήστης">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This will give a user the ability to use the Employees adminitration screens."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DIRECTORATE_REGISTRAR" value="1" literal="Πρωτόκολλο Δ/νσης ΚΥ"/>
+    <eLiterals name="REGIONAL_DIRECTORATE_REGISTRAR" value="2" literal="Πρωτόκολλο Π.Δ."/>
+    <eLiterals name="GENERAL_DIRECTOR" value="3" literal="Γενικός Διευθυντής"/>
+    <eLiterals name="EMPLOYEE" value="4" literal="Υπάλληλος"/>
+    <eLiterals name="DIRECTOR" value="5" literal="Διευθυντής"/>
+    <eLiterals name="MANAGER" value="6" literal="Προϊστάμενος"/>
+    <eLiterals name="TEMP" value="7" literal="Εποχικός"/>
+    <eLiterals name="COMPLAINT_MANAGER" value="8" literal="Προϊστάμενος τεχνικών ελέγχων">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is intended for users that have extra privilleges in handling complaings (aka Καταγγελίες)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="VICE_PRESIDENT" value="9" literal="Αντιπρόεδρος"/>
+    <eLiterals name="HELPDESK" value="10" literal="Τηλεφωνικό κέντρο"/>
+    <eLiterals name="CENTRAL_REGISTRAR" value="11" literal="Κεντρικό Πρωτόκολλο"/>
+    <eLiterals name="CEO" value="12" literal="Πρόεδρος"/>
+    <eLiterals name="CEO_OFFICE_REGISTRAR" value="13" literal="Γραφείο Προέδρου"/>
+    <eLiterals name="DEFINITIVE_DELETE_USER" value="14" literal="Οριστική διαγραφή χρηστών"/>
+    <eLiterals name="REGISTER_INCOMING" value="15" literal="Εισαγωγή εισερχομένου">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This will activate the register incoming button for the user."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="REGISTER_OUTGOING" value="16" literal="Εισαγωγή εξερχομένου">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This will activate the register outgoing button for the user."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RELOAD" value="17" literal="Επαναφόρτωση">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This will make visible the reload button on the menu"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="INTERNET_ACCESS" value="18" literal="Πρόσβαση από το διαδίκτυο">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This allow the user to login from the internet"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CALENDAR" value="19" literal="Ημερολόγιο">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This allow the user to use the calendar and submit leaves"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CALENDAR_ADMIN" value="20" literal="Διαχείριση ημερολογίου">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This allow the user to login from the internet"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="REPORT_REGISTRARS_ACTIVITY" value="21" literal="Αναφορά καταχώρησης">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This allow the user to got a report in which we will see activity of the registrars"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnitType">
+    <eLiterals name="CENTRAL_AGENCY" literal="ΚΥ"/>
+    <eLiterals name="CENTRAL_DIRECTORATE" value="1" literal="ΚΔ"/>
+    <eLiterals name="REGIONAL_DIRECTORATE" value="2" literal="ΠΔ"/>
+    <eLiterals name="REGIONAL_UNIT" value="3" literal="ΠΜ"/>
+    <eLiterals name="LOCAL_UNIT" value="4" literal="ΝΜ"/>
+    <eLiterals name="DEPARTMENT" value="5" literal="ΤΜ"/>
+    <eLiterals name="INACTIVE" value="6"/>
+    <eLiterals name="COMMITTEE" value="7" literal="ΕΠ"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnitRole">
+    <eLiterals name="GENERIC" literal="GENERIC"/>
+    <eLiterals name="CENTRAL_REGISTRAR" value="1" literal="Κεντρικό Πρωτόκολλο"/>
+    <eLiterals name="COMPLAINT_HANDLING" value="2" literal="Διεύθυνση Τεχνικών Ελέγχων"/>
+    <eLiterals name="INTERNAL_AUDIT" value="3" literal="Εσωτερικός Έλεγχος"/>
+    <eLiterals name="ADMINISTRATION_DIRECTORATE" value="4" literal="Διεύθυνση Διοικητικής και Οικονομικής Υποστήριξης"/>
+  </eClassifiers>
+</ecore:EPackage>
