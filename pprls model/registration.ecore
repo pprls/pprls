@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="registration" nsURI="http://org.pprls/registration/1.0" nsPrefix="org.pprls.registration">
-  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="body" value="import java.util.Iterator;"/>
-    <details key="documentation" value="This number is like registryNumber, but it is always assigned even for documents that do not require a registryNumber (e.g. mails).&#xD;&#xA;It is used internally by the app, to be able to group together documents together that refer to the same thing"/>
-  </eAnnotations>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="registration" nsURI="http://org.pprls/domain/registration/1.0"
+    nsPrefix="org.pprls.registration">
   <eClassifiers xsi:type="ecore:EEnum" name="FileType">
     <eLiterals name="PDF"/>
     <eLiterals name="DOC" value="1"/>
@@ -59,14 +56,6 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
         eType="#//DispatcherUnit" containment="true" resolveProxies="false" eOpposite="#//DispatcherUnit/belongsTo"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DispatcherAlias">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referTo" eType="#//Dispatcher"
-        eOpposite="#//Dispatcher/referedBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="belongsTo" lowerBound="1"
-        resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DispatcherUnit" eSuperTypes="#//Dispatcher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="belongsTo" lowerBound="1"
@@ -128,7 +117,7 @@
       <eAnnotations source="teneo.jpa"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfRepeats" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//int" defaultValueLiteral="0"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int" defaultValueLiteral="0"
         derived="true">
       <eAnnotations source="teneo.jpa">
         <details key="appinfo" value=" @Formula(&quot;(select count(*) from Outgoing o where o.outgoing_reissued_e_id=e_id)&quot;)"/>
@@ -144,9 +133,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dispatcher" abstract="true" interface="true">
     <eOperations name="getName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//int"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referedBy" upperBound="-1"
-        eType="#//DispatcherAlias" containment="true" resolveProxies="false" eOpposite="#//DispatcherAlias/referTo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Incoming" eSuperTypes="#//RegistryRecord">
     <eOperations name="createSender" lowerBound="1" eType="#//Sender">
@@ -582,7 +569,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegistryNumber">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="#//Year"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
   </eClassifiers>
@@ -620,7 +607,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="IncomingBuilder">
       <eOperations name="build" lowerBound="1" eType="#//Incoming"/>
       <eOperations name="buildAgrexAgrim" lowerBound="1" eType="#//Incoming">
-        <eParameters name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BigDecimal"/>
+        <eParameters name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
         <eParameters name="product" eType="#//AgrixProduct"/>
       </eOperations>
     </eClassifiers>
