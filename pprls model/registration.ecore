@@ -128,7 +128,7 @@
       <eAnnotations source="teneo.jpa"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfRepeats" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//int" defaultValueLiteral="0"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int" defaultValueLiteral="0"
         derived="true">
       <eAnnotations source="teneo.jpa">
         <details key="appinfo" value=" @Formula(&quot;(select count(*) from Outgoing o where o.outgoing_reissued_e_id=e_id)&quot;)"/>
@@ -582,7 +582,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegistryNumber">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="#//Year"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
   </eClassifiers>
