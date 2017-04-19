@@ -54,11 +54,11 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
-        eType="#//DispatcherUnit" containment="true" resolveProxies="false" eOpposite="#//DispatcherUnit/belongsTo"/>
+        eType="#//DispatcherUnit" containment="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DispatcherUnit" eSuperTypes="#//Dispatcher">
     <eStructuralFeatures xsi:type="ecore:EReference" name="belongsTo" lowerBound="1"
-        eType="#//DispatcherOrganization" resolveProxies="false" eOpposite="#//DispatcherOrganization/hasUnits">
+        eType="#//DispatcherOrganization" resolveProxies="false">
       <eAnnotations source="teneo.jpa">
         <details key="appinfo" value="@Fetch(HbFetchType.SELECT)"/>
       </eAnnotations>
@@ -81,7 +81,8 @@
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalUnitId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"
         defaultValueLiteral="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="postageinfo" eType="#//PostageInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postageinfo" eType="#//PostageInfo"
+        resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientType" eType="#//RecipientType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentType">
@@ -111,8 +112,10 @@
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="reissue" eType="#//Outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reissued" eType="#//Outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedIncoming" eType="#//Incoming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reissued" eType="#//Outgoing"
+        resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedIncoming" eType="#//Incoming"
+        resolveProxies="false">
       <eAnnotations source="teneo.jpa"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfRepeats" ordered="false"
@@ -123,7 +126,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="editor" lowerBound="1"
-        upperBound="-1" eType="#//EmployeeDescriptor"/>
+        upperBound="-1" eType="#//EmployeeDescriptor" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralProtocolNumber">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="#//Year"/>
@@ -157,8 +160,9 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
-        upperBound="-1" eType="#//Sender"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agrexagrim" eType="#//AgrexAgrim"/>
+        upperBound="-1" eType="#//Sender" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agrexagrim" eType="#//AgrexAgrim"
+        resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentStatus">
     <eLiterals name="ACCEPTED" value="2" literal="Αποδεκτό"/>
@@ -175,13 +179,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="incoming_thread_e_id" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short" defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="status" lowerBound="1"
-        eType="#//Status"/>
+        eType="#//Status" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="internalNumber" lowerBound="1"
-        eType="#//InternalNumber"/>
+        eType="#//InternalNumber" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgrexAgrim">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Decimal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="product" eType="#//AgrixProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="product" eType="#//AgrixProduct"
+        resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MeasurementUnits">
     <eLiterals name="KG" literal="kg"/>
@@ -371,9 +376,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//DocumentIdType"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentstatus" lowerBound="1"
-        eType="#//Status"/>
+        eType="#//Status" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialstatus" lowerBound="1"
-        eType="#//Status">
+        eType="#//Status" resolveProxies="false">
       <eAnnotations source="teneo.jpa">
         <details key="appinfo" value="&#xD;&#xA;@Embedded&#xD;&#xA;@AttributeOverrides({&#xD;&#xA;@AttributeOverride(name=&quot;unitId&quot;, column=@Column(name=&quot;initialUnitId&quot;)),   &#xD;&#xA;@AttributeOverride(name=&quot;directorateId&quot;,column=@Column(name=&quot;initialDirectorateId&quot;)),   &#xD;&#xA;@AttributeOverride(name=&quot;internalNumber&quot;, column=@Column(name=&quot;initialInternalNumber&quot;)),   &#xD;&#xA;@AttributeOverride(name=&quot;editorId&quot;, column=@Column(name=&quot;initialEditorId&quot;)),   &#xD;&#xA;@AttributeOverride(name=&quot;handlerId&quot;, column=@Column(name=&quot;initialHandlerId&quot;)) &#xD;&#xA;})"/>
       </eAnnotations>
@@ -393,7 +398,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="threadType" lowerBound="1"
         eType="#//ThreadType" defaultValueLiteral="RECIPIENT"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="internalNumber" lowerBound="1"
-        eType="#//InternalNumber"/>
+        eType="#//InternalNumber" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ThreadType">
     <eLiterals name="RECIPIENT"/>
@@ -419,7 +424,7 @@
       <details key="appinfo" value="@Embeddable"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="handler" lowerBound="1"
-        eType="#//EmployeeDescriptor" containment="true">
+        eType="#//EmployeeDescriptor" containment="true" resolveProxies="false">
       <eAnnotations source="teneo.jpa">
         <details key="appInfo" value="@Embedded&#xD;&#xA;@AttributeOverrides({&#xD;&#xA;@AttributeOverride(name=&quot;path&quot;, column=@Column(name=&quot;registeringUnitPath&quot;))&#xD;&#xA;})"/>
       </eAnnotations>
@@ -428,7 +433,7 @@
         eType="#//DocumentStatus" defaultValueLiteral="Σε αναμονή"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//EmployeeDescriptor"
-        containment="true"/>
+        containment="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="log" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmployeeDescriptor">
@@ -480,7 +485,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="registryNumber" lowerBound="1"
-        eType="#//SenderRegistryNumber" unsettable="true"/>
+        eType="#//SenderRegistryNumber" unsettable="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PostageInfo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="postageTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
@@ -557,11 +562,11 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="document" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//Document" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="registrynumber" lowerBound="1"
-        eType="#//RegistryNumber"/>
+        eType="#//RegistryNumber" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recipients" lowerBound="1"
-        upperBound="-1" eType="#//Recipient">
+        upperBound="-1" eType="#//Recipient" resolveProxies="false">
       <eAnnotations source="teneo.jpa">
         <details key="appinfo" value=" @OneToMany(fetch =EAGER)"/>
       </eAnnotations>

@@ -4,10 +4,6 @@
 package org.pprls.registration.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.pprls.registration.PostageInfo;
 import org.pprls.registration.PostalMethod;
 import org.pprls.registration.Recipient;
@@ -268,21 +264,6 @@ public class RecipientImpl implements Recipient {
 	 * @generated
 	 */
 	public PostageInfo getPostageinfo() {
-		if (postageinfo != null && ((EObject)postageinfo).eIsProxy()) {
-			InternalEObject oldPostageinfo = (InternalEObject)postageinfo;
-			postageinfo = (PostageInfo)eResolveProxy(oldPostageinfo);
-			if (postageinfo != oldPostageinfo) {
-			}
-		}
-		return postageinfo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PostageInfo basicGetPostageinfo() {
 		return postageinfo;
 	}
 

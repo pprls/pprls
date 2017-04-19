@@ -248,7 +248,7 @@ public class RegistrationPackageImpl extends EPackageImpl {
 	public static final int DISPATCHER_UNIT__UID = DISPATCHER__UID;
 
 	/**
-	 * The feature id for the '<em><b>Belongs To</b></em>' container reference.
+	 * The feature id for the '<em><b>Belongs To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2275,10 +2275,10 @@ public class RegistrationPackageImpl extends EPackageImpl {
 	}
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.pprls.registration.DispatcherUnit#getBelongsTo <em>Belongs To</em>}'.
+	 * Returns the meta object for the reference '{@link org.pprls.registration.DispatcherUnit#getBelongsTo <em>Belongs To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Belongs To</em>'.
+	 * @return the meta object for the reference '<em>Belongs To</em>'.
 	 * @see org.pprls.registration.DispatcherUnit#getBelongsTo()
 	 * @see #getDispatcherUnit()
 	 * @generated
@@ -4145,10 +4145,10 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEAttribute(getDispatcherOrganization_Label(), theXMLTypePackage.getString(), "label", "", 0, 1, DispatcherOrganization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDispatcherOrganization_LatinName(), theXMLTypePackage.getString(), "latinName", null, 0, 1, DispatcherOrganization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDispatcherOrganization_Active(), theXMLTypePackage.getBoolean(), "active", null, 0, 1, DispatcherOrganization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDispatcherOrganization_HasUnits(), this.getDispatcherUnit(), this.getDispatcherUnit_BelongsTo(), "hasUnits", null, 0, -1, DispatcherOrganization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDispatcherOrganization_HasUnits(), this.getDispatcherUnit(), null, "hasUnits", null, 0, -1, DispatcherOrganization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dispatcherUnitEClass, DispatcherUnit.class, "DispatcherUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDispatcherUnit_BelongsTo(), this.getDispatcherOrganization(), this.getDispatcherOrganization_HasUnits(), "belongsTo", null, 1, 1, DispatcherUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDispatcherUnit_BelongsTo(), this.getDispatcherOrganization(), null, "belongsTo", null, 1, 1, DispatcherUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDispatcherUnit_Label(), theXMLTypePackage.getString(), "label", null, 0, 1, DispatcherUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(recipientEClass, Recipient.class, "Recipient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4157,7 +4157,7 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEAttribute(getRecipient_Address(), theXMLTypePackage.getString(), "address", "", 0, 1, Recipient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecipient_Comments(), theXMLTypePackage.getString(), "comments", "", 0, 1, Recipient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecipient_InternalUnitId(), theXMLTypePackage.getShort(), "internalUnitId", "-1", 0, 1, Recipient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRecipient_Postageinfo(), this.getPostageInfo(), null, "postageinfo", null, 0, 1, Recipient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRecipient_Postageinfo(), this.getPostageInfo(), null, "postageinfo", null, 0, 1, Recipient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecipient_RecipientType(), this.getRecipientType(), "recipientType", null, 0, 1, Recipient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(recipientEClass, this.getPostageInfo(), "createPostageInfo", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -4166,10 +4166,10 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		addEParameter(op, theXMLTypePackage.getString(), "voucherNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(outgoingEClass, Outgoing.class, "Outgoing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOutgoing_Reissued(), this.getOutgoing(), null, "reissued", null, 0, 1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOutgoing_RelatedIncoming(), this.getIncoming(), null, "relatedIncoming", null, 0, 1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutgoing_Reissued(), this.getOutgoing(), null, "reissued", null, 0, 1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutgoing_RelatedIncoming(), this.getIncoming(), null, "relatedIncoming", null, 0, 1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOutgoing_NumberOfRepeats(), theXMLTypePackage.getInt(), "numberOfRepeats", "0", 0, 1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getOutgoing_Editor(), this.getEmployeeDescriptor(), null, "editor", null, 1, -1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutgoing_Editor(), this.getEmployeeDescriptor(), null, "editor", null, 1, -1, Outgoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(outgoingEClass, this.getEmployeeDescriptor(), "getBasicEditor", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -4196,8 +4196,8 @@ public class RegistrationPackageImpl extends EPackageImpl {
 
 		initEClass(incomingEClass, Incoming.class, "Incoming", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncoming_RelatedToOutgoing(), theXMLTypePackage.getBoolean(), "relatedToOutgoing", "false", 1, 1, Incoming.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncoming_Sender(), this.getSender(), null, "sender", null, 1, -1, Incoming.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncoming_Agrexagrim(), this.getAgrexAgrim(), null, "agrexagrim", null, 0, 1, Incoming.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncoming_Sender(), this.getSender(), null, "sender", null, 1, -1, Incoming.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncoming_Agrexagrim(), this.getAgrexAgrim(), null, "agrexagrim", null, 0, 1, Incoming.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(incomingEClass, this.getSender(), "createSender", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXMLTypePackage.getString(), "afm", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -4216,12 +4216,12 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEClass(incomingStatusHistoryEClass, IncomingStatusHistory.class, "IncomingStatusHistory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncomingStatusHistory_LogMessage(), theXMLTypePackage.getString(), "logMessage", null, 0, 1, IncomingStatusHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIncomingStatusHistory_Incoming_thread_e_id(), theXMLTypePackage.getShort(), "incoming_thread_e_id", "0", 1, 1, IncomingStatusHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncomingStatusHistory_Status(), this.getStatus(), null, "status", null, 1, 1, IncomingStatusHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncomingStatusHistory_InternalNumber(), this.getInternalNumber(), null, "internalNumber", null, 1, 1, IncomingStatusHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncomingStatusHistory_Status(), this.getStatus(), null, "status", null, 1, 1, IncomingStatusHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncomingStatusHistory_InternalNumber(), this.getInternalNumber(), null, "internalNumber", null, 1, 1, IncomingStatusHistory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agrexAgrimEClass, AgrexAgrim.class, "AgrexAgrim", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgrexAgrim_Quantity(), theXMLTypePackage.getDecimal(), "quantity", null, 0, 1, AgrexAgrim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAgrexAgrim_Product(), this.getAgrixProduct(), null, "product", null, 0, 1, AgrexAgrim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAgrexAgrim_Product(), this.getAgrixProduct(), null, "product", null, 0, 1, AgrexAgrim.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agrixProductEClass, AgrixProduct.class, "AgrixProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAgrixProduct_Product(), this.getAgrixProductTypes(), "product", null, 0, 1, AgrixProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4240,8 +4240,8 @@ public class RegistrationPackageImpl extends EPackageImpl {
 
 		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocument_Id(), this.getDocumentIdType(), "id", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocument_Currentstatus(), this.getStatus(), null, "currentstatus", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocument_Initialstatus(), this.getStatus(), null, "initialstatus", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocument_Currentstatus(), this.getStatus(), null, "currentstatus", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocument_Initialstatus(), this.getStatus(), null, "initialstatus", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_LastDoneDate(), theXMLTypePackage.getDate(), "lastDoneDate", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_LastAcceptDate(), theXMLTypePackage.getDate(), "lastAcceptDate", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_PhysicalLocation(), theXMLTypePackage.getString(), "physicalLocation", "", 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4249,7 +4249,7 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEAttribute(getDocument_Comments(), theXMLTypePackage.getString(), "comments", "", 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_AcceptingUnits(), theXMLTypePackage.getShort(), "acceptingUnits", null, 1, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_ThreadType(), this.getThreadType(), "threadType", "RECIPIENT", 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocument_InternalNumber(), this.getInternalNumber(), null, "internalNumber", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDocument_InternalNumber(), this.getInternalNumber(), null, "internalNumber", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(documentEClass, this.getInternalNumber(), "getCurrentInternalNunber", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -4329,7 +4329,7 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEAttribute(getSender_Address(), theXMLTypePackage.getString(), "address", "", 1, 1, Sender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSender_Name(), theXMLTypePackage.getString(), "name", "", 1, 1, Sender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSender_Phones(), theXMLTypePackage.getString(), "phones", "", 1, -1, Sender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSender_RegistryNumber(), this.getSenderRegistryNumber(), null, "registryNumber", null, 1, 1, Sender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSender_RegistryNumber(), this.getSenderRegistryNumber(), null, "registryNumber", null, 1, 1, Sender.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(senderEClass, theXMLTypePackage.getBoolean(), "hasRegistryNumber", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -4360,9 +4360,9 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEAttribute(getRegistryRecord_Classification(), this.getClassification(), "classification", "\u0395\u03c3\u03c9\u03c4\u03b5\u03c1\u03b9\u03ba\u03cc", 0, 1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegistryRecord_Ada(), theXMLTypePackage.getString(), "ada", "", 0, 1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegistryRecord_Document(), this.getDocument(), null, "document", null, 1, -1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRegistryRecord_Tag(), this.getTag(), null, "tag", null, 0, 1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRegistryRecord_Registrynumber(), this.getRegistryNumber(), null, "registrynumber", null, 1, 1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRegistryRecord_Recipients(), this.getRecipient(), null, "recipients", null, 1, -1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegistryRecord_Tag(), this.getTag(), null, "tag", null, 0, 1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegistryRecord_Registrynumber(), this.getRegistryNumber(), null, "registrynumber", null, 1, 1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegistryRecord_Recipients(), this.getRecipient(), null, "recipients", null, 1, -1, RegistryRecord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(registryRecordEClass, theXMLTypePackage.getBoolean(), "requiresProtocolNumber", 1, 1, IS_UNIQUE, IS_ORDERED);
 

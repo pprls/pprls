@@ -8,10 +8,6 @@ import java.util.List;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 import org.pprls.registration.AgrexAgrim;
@@ -121,21 +117,6 @@ public class IncomingImpl extends RegistryRecordImpl implements Incoming {
 	 * @generated
 	 */
 	public AgrexAgrim getAgrexagrim() {
-		if (agrexagrim != null && ((EObject)agrexagrim).eIsProxy()) {
-			InternalEObject oldAgrexagrim = (InternalEObject)agrexagrim;
-			agrexagrim = (AgrexAgrim)eResolveProxy(oldAgrexagrim);
-			if (agrexagrim != oldAgrexagrim) {
-			}
-		}
-		return agrexagrim;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgrexAgrim basicGetAgrexagrim() {
 		return agrexagrim;
 	}
 

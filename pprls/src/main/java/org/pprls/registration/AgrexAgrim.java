@@ -57,7 +57,7 @@ public interface AgrexAgrim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product</em>' reference.
 	 * @see #setProduct(AgrixProduct)
-	 * @model
+	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	AgrixProduct getProduct();

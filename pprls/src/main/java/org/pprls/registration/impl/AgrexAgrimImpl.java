@@ -4,10 +4,6 @@
 package org.pprls.registration.impl;
 
 import java.math.BigDecimal;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.pprls.registration.AgrexAgrim;
 import org.pprls.registration.AgrixProduct;
 
@@ -89,21 +85,6 @@ public class AgrexAgrimImpl implements AgrexAgrim {
 	 * @generated
 	 */
 	public AgrixProduct getProduct() {
-		if (product != null && ((EObject)product).eIsProxy()) {
-			InternalEObject oldProduct = (InternalEObject)product;
-			product = (AgrixProduct)eResolveProxy(oldProduct);
-			if (product != oldProduct) {
-			}
-		}
-		return product;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AgrixProduct basicGetProduct() {
 		return product;
 	}
 

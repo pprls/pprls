@@ -3,13 +3,6 @@
  */
 package org.pprls.registration.impl;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.pprls.registration.DispatcherOrganization;
 import org.pprls.registration.DispatcherUnit;
 
@@ -48,6 +41,16 @@ public class DispatcherUnitImpl implements DispatcherUnit {
 	 * @ordered
 	 */
 	protected int uid = UID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBelongsTo() <em>Belongs To</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBelongsTo()
+	 * @generated
+	 * @ordered
+	 */
+	protected DispatcherOrganization belongsTo;
 
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
@@ -102,18 +105,7 @@ public class DispatcherUnitImpl implements DispatcherUnit {
 	 * @generated
 	 */
 	public DispatcherOrganization getBelongsTo() {
-		if (eContainerFeatureID() != RegistrationPackageImpl.DISPATCHER_UNIT__BELONGS_TO) return null;
-		return (DispatcherOrganization)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBelongsTo(DispatcherOrganization newBelongsTo, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newBelongsTo, RegistrationPackageImpl.DISPATCHER_UNIT__BELONGS_TO, msgs);
-		return msgs;
+		return belongsTo;
 	}
 
 	/**
@@ -122,17 +114,7 @@ public class DispatcherUnitImpl implements DispatcherUnit {
 	 * @generated
 	 */
 	public void setBelongsTo(DispatcherOrganization newBelongsTo) {
-		if (newBelongsTo != eInternalContainer() || (eContainerFeatureID() != RegistrationPackageImpl.DISPATCHER_UNIT__BELONGS_TO && newBelongsTo != null)) {
-			if (EcoreUtil.isAncestor(this, (EObject)newBelongsTo))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newBelongsTo != null)
-				msgs = ((InternalEObject)newBelongsTo).eInverseAdd(this, RegistrationPackageImpl.DISPATCHER_ORGANIZATION__HAS_UNITS, DispatcherOrganization.class, msgs);
-			msgs = basicSetBelongsTo(newBelongsTo, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
+		belongsTo = newBelongsTo;
 	}
 
 	/**
@@ -163,51 +145,6 @@ public class DispatcherUnitImpl implements DispatcherUnit {
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RegistrationPackageImpl.DISPATCHER_UNIT__BELONGS_TO:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetBelongsTo((DispatcherOrganization)otherEnd, msgs);
-		}
-		return eDynamicInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RegistrationPackageImpl.DISPATCHER_UNIT__BELONGS_TO:
-				return basicSetBelongsTo(null, msgs);
-		}
-		return eDynamicInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case RegistrationPackageImpl.DISPATCHER_UNIT__BELONGS_TO:
-				return eInternalContainer().eInverseRemove(this, RegistrationPackageImpl.DISPATCHER_ORGANIZATION__HAS_UNITS, DispatcherOrganization.class, msgs);
-		}
-		return eDynamicBasicRemoveFromContainer(msgs);
-	}
-
 
 	/**
 	 * <!-- begin-user-doc -->

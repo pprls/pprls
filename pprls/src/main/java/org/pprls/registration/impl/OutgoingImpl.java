@@ -6,10 +6,6 @@ package org.pprls.registration.impl;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 import org.pprls.registration.DocumentStatus;
@@ -99,21 +95,6 @@ public class OutgoingImpl extends RegistryRecordImpl implements Outgoing {
 	 * @generated
 	 */
 	public Outgoing getReissued() {
-		if (reissued != null && ((EObject)reissued).eIsProxy()) {
-			InternalEObject oldReissued = (InternalEObject)reissued;
-			reissued = (Outgoing)eResolveProxy(oldReissued);
-			if (reissued != oldReissued) {
-			}
-		}
-		return reissued;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Outgoing basicGetReissued() {
 		return reissued;
 	}
 
@@ -132,21 +113,6 @@ public class OutgoingImpl extends RegistryRecordImpl implements Outgoing {
 	 * @generated
 	 */
 	public Incoming getRelatedIncoming() {
-		if (relatedIncoming != null && ((EObject)relatedIncoming).eIsProxy()) {
-			InternalEObject oldRelatedIncoming = (InternalEObject)relatedIncoming;
-			relatedIncoming = (Incoming)eResolveProxy(oldRelatedIncoming);
-			if (relatedIncoming != oldRelatedIncoming) {
-			}
-		}
-		return relatedIncoming;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Incoming basicGetRelatedIncoming() {
 		return relatedIncoming;
 	}
 

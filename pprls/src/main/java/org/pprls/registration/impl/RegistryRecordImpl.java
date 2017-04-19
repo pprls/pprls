@@ -7,10 +7,6 @@ import java.util.List;
 import java.util.UUID;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 import org.pprls.registration.Action;
@@ -404,21 +400,6 @@ public class RegistryRecordImpl implements RegistryRecord {
 	 * @generated
 	 */
 	public Tag getTag() {
-		if (tag != null && ((EObject)tag).eIsProxy()) {
-			InternalEObject oldTag = (InternalEObject)tag;
-			tag = (Tag)eResolveProxy(oldTag);
-			if (tag != oldTag) {
-			}
-		}
-		return tag;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Tag basicGetTag() {
 		return tag;
 	}
 
@@ -437,21 +418,6 @@ public class RegistryRecordImpl implements RegistryRecord {
 	 * @generated
 	 */
 	public RegistryNumber getRegistrynumber() {
-		if (registrynumber != null && ((EObject)registrynumber).eIsProxy()) {
-			InternalEObject oldRegistrynumber = (InternalEObject)registrynumber;
-			registrynumber = (RegistryNumber)eResolveProxy(oldRegistrynumber);
-			if (registrynumber != oldRegistrynumber) {
-			}
-		}
-		return registrynumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RegistryNumber basicGetRegistrynumber() {
 		return registrynumber;
 	}
 

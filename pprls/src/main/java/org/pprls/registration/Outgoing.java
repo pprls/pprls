@@ -34,7 +34,7 @@ public interface Outgoing extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reissued</em>' reference.
 	 * @see #setReissued(Outgoing)
-	 * @model
+	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	Outgoing getReissued();
@@ -59,7 +59,7 @@ public interface Outgoing extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Related Incoming</em>' reference.
 	 * @see #setRelatedIncoming(Incoming)
-	 * @model
+	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	Incoming getRelatedIncoming();
@@ -111,7 +111,7 @@ public interface Outgoing extends RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Editor</em>' reference list.
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	List<EmployeeDescriptor> getEditor();

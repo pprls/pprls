@@ -84,7 +84,7 @@ public interface IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Status</em>' reference.
 	 * @see #setStatus(Status)
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	Status getStatus();
@@ -109,7 +109,7 @@ public interface IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Internal Number</em>' reference.
 	 * @see #setInternalNumber(InternalNumber)
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	InternalNumber getInternalNumber();

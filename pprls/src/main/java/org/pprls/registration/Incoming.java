@@ -63,7 +63,7 @@ public interface Incoming extends RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sender</em>' reference list.
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	List<Sender> getSender();
@@ -78,7 +78,7 @@ public interface Incoming extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agrexagrim</em>' reference.
 	 * @see #setAgrexagrim(AgrexAgrim)
-	 * @model
+	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	AgrexAgrim getAgrexagrim();

@@ -9,10 +9,6 @@ import java.util.UUID;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 import org.pprls.registration.Action;
@@ -261,21 +257,6 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 */
 	public Status getCurrentstatus() {
-		if (currentstatus != null && ((EObject)currentstatus).eIsProxy()) {
-			InternalEObject oldCurrentstatus = (InternalEObject)currentstatus;
-			currentstatus = (Status)eResolveProxy(oldCurrentstatus);
-			if (currentstatus != oldCurrentstatus) {
-			}
-		}
-		return currentstatus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Status basicGetCurrentstatus() {
 		return currentstatus;
 	}
 
@@ -294,21 +275,6 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 */
 	public Status getInitialstatus() {
-		if (initialstatus != null && ((EObject)initialstatus).eIsProxy()) {
-			InternalEObject oldInitialstatus = (InternalEObject)initialstatus;
-			initialstatus = (Status)eResolveProxy(oldInitialstatus);
-			if (initialstatus != oldInitialstatus) {
-			}
-		}
-		return initialstatus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Status basicGetInitialstatus() {
 		return initialstatus;
 	}
 
@@ -447,21 +413,6 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 */
 	public InternalNumber getInternalNumber() {
-		if (internalNumber != null && ((EObject)internalNumber).eIsProxy()) {
-			InternalEObject oldInternalNumber = (InternalEObject)internalNumber;
-			internalNumber = (InternalNumber)eResolveProxy(oldInternalNumber);
-			if (internalNumber != oldInternalNumber) {
-			}
-		}
-		return internalNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InternalNumber basicGetInternalNumber() {
 		return internalNumber;
 	}
 

@@ -22,28 +22,26 @@ package org.pprls.registration;
  */
 public interface DispatcherUnit extends Dispatcher {
 	/**
-	 * Returns the value of the '<em><b>Belongs To</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.pprls.registration.DispatcherOrganization#getHasUnits <em>Has Units</em>}'.
+	 * Returns the value of the '<em><b>Belongs To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Belongs To</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Belongs To</em>' container reference.
+	 * @return the value of the '<em>Belongs To</em>' reference.
 	 * @see #setBelongsTo(DispatcherOrganization)
-	 * @see org.pprls.registration.DispatcherOrganization#getHasUnits
-	 * @model opposite="hasUnits" resolveProxies="false" required="true" transient="false"
+	 * @model resolveProxies="false" required="true"
 	 *        annotation="teneo.jpa appinfo='@Fetch(HbFetchType.SELECT)'"
 	 * @generated
 	 */
 	DispatcherOrganization getBelongsTo();
 
 	/**
-	 * Sets the value of the '{@link org.pprls.registration.DispatcherUnit#getBelongsTo <em>Belongs To</em>}' container reference.
+	 * Sets the value of the '{@link org.pprls.registration.DispatcherUnit#getBelongsTo <em>Belongs To</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Belongs To</em>' container reference.
+	 * @param value the new value of the '<em>Belongs To</em>' reference.
 	 * @see #getBelongsTo()
 	 * @generated
 	 */

@@ -167,7 +167,7 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Postageinfo</em>' reference.
 	 * @see #setPostageinfo(PostageInfo)
-	 * @model
+	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	PostageInfo getPostageinfo();

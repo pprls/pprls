@@ -4,16 +4,8 @@
 package org.pprls.registration.impl;
 
 import java.util.List;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.pprls.registration.DispatcherOrganization;
 import org.pprls.registration.DispatcherUnit;
 
@@ -228,36 +220,6 @@ public class DispatcherOrganizationImpl implements DispatcherOrganization {
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RegistrationPackageImpl.DISPATCHER_ORGANIZATION__HAS_UNITS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasUnits()).basicAdd(otherEnd, msgs);
-		}
-		return eDynamicInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RegistrationPackageImpl.DISPATCHER_ORGANIZATION__HAS_UNITS:
-				return ((InternalEList<?>)getHasUnits()).basicRemove(otherEnd, msgs);
-		}
-		return eDynamicInverseRemove(otherEnd, featureID, msgs);
-	}
-
 
 	/**
 	 * <!-- begin-user-doc -->

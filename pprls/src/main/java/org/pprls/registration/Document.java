@@ -69,7 +69,7 @@ public interface Document {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Currentstatus</em>' reference.
 	 * @see #setCurrentstatus(Status)
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	Status getCurrentstatus();
@@ -94,7 +94,7 @@ public interface Document {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initialstatus</em>' reference.
 	 * @see #setInitialstatus(Status)
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 *        annotation="teneo.jpa appinfo='\r\n@Embedded\r\n@AttributeOverrides({\r\n@AttributeOverride(name=\"unitId\", column=@Column(name=\"initialUnitId\")),   \r\n@AttributeOverride(name=\"directorateId\",column=@Column(name=\"initialDirectorateId\")),   \r\n@AttributeOverride(name=\"internalNumber\", column=@Column(name=\"initialInternalNumber\")),   \r\n@AttributeOverride(name=\"editorId\", column=@Column(name=\"initialEditorId\")),   \r\n@AttributeOverride(name=\"handlerId\", column=@Column(name=\"initialHandlerId\")) \r\n})'"
 	 * @generated
 	 */
@@ -295,7 +295,7 @@ public interface Document {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Internal Number</em>' reference.
 	 * @see #setInternalNumber(InternalNumber)
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	InternalNumber getInternalNumber();

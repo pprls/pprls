@@ -131,7 +131,7 @@ public interface Sender {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registry Number</em>' reference.
 	 * @see #setRegistryNumber(SenderRegistryNumber)
-	 * @model unsettable="true" required="true"
+	 * @model resolveProxies="false" unsettable="true" required="true"
 	 * @generated
 	 */
 	SenderRegistryNumber getRegistryNumber();

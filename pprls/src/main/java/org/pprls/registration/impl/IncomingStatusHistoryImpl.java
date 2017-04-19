@@ -3,9 +3,6 @@
  */
 package org.pprls.registration.impl;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.pprls.registration.IncomingStatusHistory;
 import org.pprls.registration.InternalNumber;
 import org.pprls.registration.Status;
@@ -138,21 +135,6 @@ public class IncomingStatusHistoryImpl implements IncomingStatusHistory {
 	 * @generated
 	 */
 	public Status getStatus() {
-		if (status != null && ((EObject)status).eIsProxy()) {
-			InternalEObject oldStatus = (InternalEObject)status;
-			status = (Status)eResolveProxy(oldStatus);
-			if (status != oldStatus) {
-			}
-		}
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Status basicGetStatus() {
 		return status;
 	}
 
@@ -171,21 +153,6 @@ public class IncomingStatusHistoryImpl implements IncomingStatusHistory {
 	 * @generated
 	 */
 	public InternalNumber getInternalNumber() {
-		if (internalNumber != null && ((EObject)internalNumber).eIsProxy()) {
-			InternalEObject oldInternalNumber = (InternalEObject)internalNumber;
-			internalNumber = (InternalNumber)eResolveProxy(oldInternalNumber);
-			if (internalNumber != oldInternalNumber) {
-			}
-		}
-		return internalNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InternalNumber basicGetInternalNumber() {
 		return internalNumber;
 	}
 

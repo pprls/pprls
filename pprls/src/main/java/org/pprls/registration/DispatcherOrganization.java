@@ -104,7 +104,6 @@ public interface DispatcherOrganization extends Dispatcher {
 	/**
 	 * Returns the value of the '<em><b>Has Units</b></em>' containment reference list.
 	 * The list contents are of type {@link org.pprls.registration.DispatcherUnit}.
-	 * It is bidirectional and its opposite is '{@link org.pprls.registration.DispatcherUnit#getBelongsTo <em>Belongs To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Has Units</em>' containment reference list isn't clear,
@@ -112,8 +111,7 @@ public interface DispatcherOrganization extends Dispatcher {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Units</em>' containment reference list.
-	 * @see org.pprls.registration.DispatcherUnit#getBelongsTo
-	 * @model opposite="belongsTo" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	List<DispatcherUnit> getHasUnits();

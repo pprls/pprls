@@ -259,7 +259,7 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tag</em>' reference.
 	 * @see #setTag(Tag)
-	 * @model
+	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	Tag getTag();
@@ -284,7 +284,7 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registrynumber</em>' reference.
 	 * @see #setRegistrynumber(RegistryNumber)
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	RegistryNumber getRegistrynumber();
@@ -309,7 +309,7 @@ public interface RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recipients</em>' reference list.
-	 * @model required="true"
+	 * @model resolveProxies="false" required="true"
 	 *        annotation="teneo.jpa appinfo=' @OneToMany(fetch =EAGER)'"
 	 * @generated
 	 */

@@ -8,10 +8,6 @@ import java.util.List;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 
 import org.pprls.registration.Sender;
@@ -196,21 +192,6 @@ public class SenderImpl implements Sender {
 	 * @generated
 	 */
 	public SenderRegistryNumber getRegistryNumber() {
-		if (registryNumber != null && ((EObject)registryNumber).eIsProxy()) {
-			InternalEObject oldRegistryNumber = (InternalEObject)registryNumber;
-			registryNumber = (SenderRegistryNumber)eResolveProxy(oldRegistryNumber);
-			if (registryNumber != oldRegistryNumber) {
-			}
-		}
-		return registryNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SenderRegistryNumber basicGetRegistryNumber() {
 		return registryNumber;
 	}
 
