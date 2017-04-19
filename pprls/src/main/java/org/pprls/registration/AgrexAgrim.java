@@ -18,7 +18,6 @@ import java.math.BigDecimal;
  *   <li>{@link org.pprls.registration.AgrexAgrim#getProduct <em>Product</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface AgrexAgrim {
@@ -32,7 +31,6 @@ public interface AgrexAgrim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(BigDecimal)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Decimal"
 	 * @generated
 	 */
 	BigDecimal getQuantity();
@@ -57,7 +55,6 @@ public interface AgrexAgrim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Product</em>' reference.
 	 * @see #setProduct(AgrixProduct)
-	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	AgrixProduct getProduct();

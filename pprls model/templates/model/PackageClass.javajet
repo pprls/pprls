@@ -920,19 +920,7 @@ int maxGenericTypeAssignment = 0;
         <%}%>
       <%}%>
     <%}%>
-    <%if (!genPackage.getGenEnums().isEmpty()) {%>
 
-		// Initialize enums and add enum literals
-      <%for (Iterator<GenEnum> e=genPackage.getGenEnums().iterator(); e.hasNext();) { GenEnum genEnum = e.next();%>
-		initEEnum(<%=genEnum.getClassifierInstanceName()%>, <%=genEnum.getImportedName()%>.class, "<%=genEnum.getName()%>");<%=genModel.getNonNLS()%>
-        <%for (GenEnumLiteral genEnumLiteral : genEnum.getGenEnumLiterals()) {%>
-		addEEnumLiteral(<%=genEnum.getClassifierInstanceName()%>, <%=genEnum.getImportedName().equals(genEnum.getClassifierID()) ? genEnum.getQualifiedName() : genEnum.getImportedName()%>.<%=genEnumLiteral.getEnumLiteralInstanceConstantName()%>);
-        <%}%>
-        <%if (e.hasNext()) {%>
-
-        <%}%>
-      <%}%>
-    <%}%>
     <%if (!genPackage.getGenDataTypes().isEmpty()) {%>
 
 		// Initialize data types

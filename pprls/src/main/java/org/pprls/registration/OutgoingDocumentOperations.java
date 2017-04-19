@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getOutgoingDocumentOperations()
- * @model
  * @generated
  */
-public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperations {
+public enum OutgoingDocumentOperations {
 	/**
 	 * The '<em><b>EDIT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -106,7 +105,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EDIT
-	 * @model literal="\u0395\u03c0\u03b5\u03be\u03b5\u03c1\u03b3\u03b1\u03c3\u03af\u03b1"
 	 * @generated
 	 * @ordered
 	 */
@@ -121,7 +119,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REVISE
-	 * @model literal="\u0391\u03bd\u03b1\u03b8\u03b5\u03ce\u03c1\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -136,7 +133,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CANCEL
-	 * @model literal="\u0391\u03ba\u03cd\u03c1\u03c9\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +147,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REVERT
-	 * @model literal="\u0391\u03bd\u03ac\u03ba\u03bb\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -166,7 +161,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REJECT
-	 * @model literal="\u0391\u03c0\u03cc\u03c1\u03c1\u03b9\u03c8\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +175,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CREATE
-	 * @model literal="\u0394\u03b7\u03bc\u03b9\u03bf\u03c5\u03c1\u03b3\u03af\u03b1"
 	 * @generated
 	 * @ordered
 	 */
@@ -196,7 +189,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #APPROVE
-	 * @model literal="\u0388\u03b3\u03ba\u03c1\u03b9\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +203,6 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ARCHIVE
-	 * @model literal="\u0391\u03c1\u03c7\u03b5\u03b9\u03bf\u03b8\u03ad\u03c4\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -373,13 +364,3 @@ public enum OutgoingDocumentOperations implements InternalOutgoingDocumentOperat
 	}
 	
 } //OutgoingDocumentOperations
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalOutgoingDocumentOperations extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

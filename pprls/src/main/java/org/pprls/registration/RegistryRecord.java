@@ -29,7 +29,6 @@ import java.util.UUID;
  *   <li>{@link org.pprls.registration.RegistryRecord#getRecipients <em>Recipients</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface RegistryRecord {
@@ -44,7 +43,6 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attached Files Description</em>' attribute.
 	 * @see #setAttachedFilesDescription(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getAttachedFilesDescription();
@@ -70,7 +68,6 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getComments();
@@ -96,7 +93,6 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subject</em>' attribute.
 	 * @see #setSubject(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getSubject();
@@ -121,8 +117,6 @@ public interface RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Filepaths</em>' attribute list.
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
-	 *        annotation="teneo.jpa appinfo=' @OneToMany(fetch =EAGER,cascade=CascadeType.ALL)'"
 	 * @generated
 	 */
 	List<String> getFilepaths();
@@ -139,7 +133,6 @@ public interface RegistryRecord {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.pprls.registration.DocumentType
 	 * @see #setType(DocumentType)
-	 * @model required="true"
 	 * @generated
 	 */
 	DocumentType getType();
@@ -165,7 +158,6 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(UUID)
-	 * @model id="true" dataType="org.pprls.registration.DocumentIdType" required="true"
 	 * @generated
 	 */
 	UUID getId();
@@ -193,7 +185,6 @@ public interface RegistryRecord {
 	 * @return the value of the '<em>Classification</em>' attribute.
 	 * @see org.pprls.registration.Classification
 	 * @see #setClassification(Classification)
-	 * @model default="\u0395\u03c3\u03c9\u03c4\u03b5\u03c1\u03b9\u03ba\u03cc"
 	 * @generated
 	 */
 	Classification getClassification();
@@ -219,7 +210,6 @@ public interface RegistryRecord {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ada</em>' attribute.
 	 * @see #setAda(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getAda();
@@ -244,7 +234,6 @@ public interface RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Document</em>' containment reference list.
-	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	List<Document> getDocument();
@@ -259,7 +248,6 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tag</em>' reference.
 	 * @see #setTag(Tag)
-	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	Tag getTag();
@@ -284,7 +272,6 @@ public interface RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registrynumber</em>' reference.
 	 * @see #setRegistrynumber(RegistryNumber)
-	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	RegistryNumber getRegistrynumber();
@@ -309,8 +296,6 @@ public interface RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Recipients</em>' reference list.
-	 * @model resolveProxies="false" required="true"
-	 *        annotation="teneo.jpa appinfo=' @OneToMany(fetch =EAGER)'"
 	 * @generated
 	 */
 	List<Recipient> getRecipients();
@@ -318,7 +303,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
 	 * @generated
 	 */
 	boolean requiresProtocolNumber();
@@ -326,7 +310,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" idDataType="org.pprls.registration.DocumentIdType"
 	 * @generated
 	 */
 	Document getThreadForId(UUID id);
@@ -334,7 +317,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model handlerRequired="true" ownerRequired="true" actionRequired="true" commentsDataType="org.eclipse.emf.ecore.xml.type.String" commentsRequired="true" numberRequired="true"
 	 * @generated
 	 */
 	Document startNewThread(EmployeeDescriptor handler, EmployeeDescriptor owner, Action action, String comments, InternalNumber number);
@@ -342,7 +324,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
 	 * @generated
 	 */
 	void cancelAllThreads();
@@ -350,7 +331,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
 	 * @generated
 	 */
 	void reserve(EmployeeDescriptor handler, EmployeeDescriptor owner, InternalNumber number);
@@ -358,7 +338,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 * @generated
 	 */
 	boolean canEdit();
@@ -366,7 +345,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model logDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	void cancel(EmployeeDescriptor handler, String log);
@@ -374,7 +352,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
 	 * @generated
 	 */
 	boolean isCancelled();
@@ -382,7 +359,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model logDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	void revert(EmployeeDescriptor handler, String log);
@@ -390,7 +366,6 @@ public interface RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true" filepathDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String mapToFilepath(String filepath);

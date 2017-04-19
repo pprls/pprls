@@ -20,7 +20,6 @@ import java.util.List;
  *   <li>{@link org.pprls.registration.DispatcherOrganization#getHasUnits <em>Has Units</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface DispatcherOrganization extends Dispatcher {
@@ -35,7 +34,6 @@ public interface DispatcherOrganization extends Dispatcher {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getLabel();
@@ -60,7 +58,6 @@ public interface DispatcherOrganization extends Dispatcher {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Latin Name</em>' attribute.
 	 * @see #setLatinName(String)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getLatinName();
@@ -85,8 +82,6 @@ public interface DispatcherOrganization extends Dispatcher {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Active</em>' attribute.
 	 * @see #setActive(boolean)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean"
-	 *        annotation="teneo.jpa value='@Type(type = \"org.hibernate.type.NumericBooleanType\")'"
 	 * @generated
 	 */
 	boolean isActive();
@@ -111,7 +106,6 @@ public interface DispatcherOrganization extends Dispatcher {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Units</em>' containment reference list.
-	 * @model containment="true"
 	 * @generated
 	 */
 	List<DispatcherUnit> getHasUnits();

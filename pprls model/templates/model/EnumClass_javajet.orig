@@ -41,7 +41,7 @@ package <%=genPackage.getInterfacePackageName()%>;
 <%}}%>
  * @generated
  */
-public <%if (isEnum) {%>enum<%} else {%>final class<%}%> <%=genEnum.getName()%>
+public <%if (isEnum) {%>enum<%} else {%>final class<%}%> <%=genEnum.getName()%> <%if (isEnum) {%>implements<%} else {%>extends<%}%> <%=genModel.isSuppressEMFMetaData() && !genModel.isSuppressInterfaces() ? "Internal" + genEnum.getName() : genModel.getImportedName(isEnum ? "org.eclipse.emf.common.util.Enumerator" : "org.eclipse.emf.common.util.AbstractEnumerator")%>
 {
 <%if (isEnum) {%>
   <%if (genEnum.getGenEnumLiterals().isEmpty()) {%>
@@ -286,7 +286,16 @@ public <%if (isEnum) {%>enum<%} else {%>final class<%}%> <%=genEnum.getName()%>
 <%if (genModel.isSuppressEMFMetaData()&& !genModel.isSuppressInterfaces() ) {%>
 
   <%if (isEnum) {%>
-
+/**
+ * A private implementation interface used to hide the inheritance from Enumerator.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+interface Internal<%=genEnum.getName()%> extends org.eclipse.emf.common.util.Enumerator
+{
+	// Empty 
+}
   <%} else {%>
 /**
  * A private implementation class to construct the instances.

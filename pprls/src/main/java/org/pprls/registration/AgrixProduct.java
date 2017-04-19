@@ -17,7 +17,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.AgrixProduct#getUnit <em>Unit</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface AgrixProduct {
@@ -33,7 +32,6 @@ public interface AgrixProduct {
 	 * @return the value of the '<em>Product</em>' attribute.
 	 * @see org.pprls.registration.AgrixProductTypes
 	 * @see #setProduct(AgrixProductTypes)
-	 * @model
 	 * @generated
 	 */
 	AgrixProductTypes getProduct();
@@ -61,7 +59,6 @@ public interface AgrixProduct {
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see org.pprls.registration.MeasurementUnits
 	 * @see #setUnit(MeasurementUnits)
-	 * @model
 	 * @generated
 	 */
 	MeasurementUnits getUnit();

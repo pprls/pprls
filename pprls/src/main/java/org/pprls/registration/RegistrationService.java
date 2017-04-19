@@ -10,14 +10,12 @@ package org.pprls.registration;
  * <!-- end-user-doc -->
  *
  *
- * @model
  * @generated
  */
 public interface RegistrationService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" yearRequired="true"
 	 * @generated
 	 */
 	RegistryNumber getNumberForYear(Year year);

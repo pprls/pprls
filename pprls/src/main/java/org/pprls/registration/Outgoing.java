@@ -20,7 +20,6 @@ import java.util.List;
  *   <li>{@link org.pprls.registration.Outgoing#getEditor <em>Editor</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface Outgoing extends RegistryRecord {
@@ -34,7 +33,6 @@ public interface Outgoing extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reissued</em>' reference.
 	 * @see #setReissued(Outgoing)
-	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	Outgoing getReissued();
@@ -59,7 +57,6 @@ public interface Outgoing extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Related Incoming</em>' reference.
 	 * @see #setRelatedIncoming(Incoming)
-	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	Incoming getRelatedIncoming();
@@ -85,8 +82,6 @@ public interface Outgoing extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number Of Repeats</em>' attribute.
 	 * @see #setNumberOfRepeats(int)
-	 * @model default="0" dataType="org.eclipse.emf.ecore.xml.type.Int" derived="true" ordered="false"
-	 *        annotation="teneo.jpa appinfo=' @Formula(\"(select count(*) from Outgoing o where o.outgoing_reissued_e_id=e_id)\")'"
 	 * @generated
 	 */
 	int getNumberOfRepeats();
@@ -111,7 +106,6 @@ public interface Outgoing extends RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Editor</em>' reference list.
-	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	List<EmployeeDescriptor> getEditor();
@@ -119,7 +113,6 @@ public interface Outgoing extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	EmployeeDescriptor getBasicEditor();
@@ -127,7 +120,6 @@ public interface Outgoing extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	EmployeeDescriptor getOwner();
@@ -135,7 +127,6 @@ public interface Outgoing extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	DocumentStatus getState();
@@ -143,7 +134,6 @@ public interface Outgoing extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
 	 * @generated
 	 */
 	boolean isSigned();
@@ -151,7 +141,6 @@ public interface Outgoing extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model logDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	void close(EmployeeDescriptor handler, String log);
@@ -159,7 +148,6 @@ public interface Outgoing extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
 	 * @generated
 	 */
 	Outgoing reissue();

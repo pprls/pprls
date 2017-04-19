@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getThreadType()
- * @model
  * @generated
  */
-public enum ThreadType implements InternalThreadType {
+public enum ThreadType {
 	/**
 	 * The '<em><b>RECIPIENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -56,7 +55,6 @@ public enum ThreadType implements InternalThreadType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RECIPIENT
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -71,7 +69,6 @@ public enum ThreadType implements InternalThreadType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CC
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -86,7 +83,6 @@ public enum ThreadType implements InternalThreadType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COLLABORATION
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -238,13 +234,3 @@ public enum ThreadType implements InternalThreadType {
 	}
 	
 } //ThreadType
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalThreadType extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getDocumentStatus()
- * @model
  * @generated
  */
-public enum DocumentStatus implements InternalDocumentStatus {
+public enum DocumentStatus {
 	/**
 	 * The '<em><b>ACCEPTED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -106,7 +105,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ACCEPTED
-	 * @model literal="\u0391\u03c0\u03bf\u03b4\u03b5\u03ba\u03c4\u03cc"
 	 * @generated
 	 * @ordered
 	 */
@@ -121,7 +119,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DONE
-	 * @model literal="\u039f\u03bb\u03bf\u03ba\u03bb\u03b7\u03c1\u03c9\u03bc\u03ad\u03bd\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -136,7 +133,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ARCHIVED
-	 * @model literal="\u0391\u03c1\u03c7\u03b5\u03b9\u03bf\u03b8\u03b5\u03c4\u03b7\u03bc\u03ad\u03bd\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +147,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REJECTED
-	 * @model literal="\u0391\u03c0\u03bf\u03c1\u03c1\u03b9\u03c6\u03b8\u03ad\u03bd"
 	 * @generated
 	 * @ordered
 	 */
@@ -166,7 +161,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CANCELLED
-	 * @model literal="\u0391\u03ba\u03c5\u03c1\u03c9\u03bc\u03ad\u03bd\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +175,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PENDING
-	 * @model literal="\u03a3\u03b5 \u03b1\u03bd\u03b1\u03bc\u03bf\u03bd\u03ae"
 	 * @generated
 	 * @ordered
 	 */
@@ -196,7 +189,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #UNDER_REVISION
-	 * @model literal="\u03a3\u03b5 \u03b1\u03bd\u03b1\u03b8\u03b5\u03ce\u03c1\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +203,6 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #START
-	 * @model literal="\u0388\u03bd\u03b1\u03c1\u03be\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -373,13 +364,3 @@ public enum DocumentStatus implements InternalDocumentStatus {
 	}
 	
 } //DocumentStatus
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalDocumentStatus extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

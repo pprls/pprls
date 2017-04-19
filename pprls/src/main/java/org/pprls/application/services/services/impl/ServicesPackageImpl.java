@@ -29,7 +29,6 @@ import org.pprls.registration.impl.RegistrationPackageImpl;
  * </ul>
  * <!-- end-user-doc -->
  * @see org.pprls.application.services.services.ServicesFactory
- * @model kind="package"
  * @generated
  */
 public class ServicesPackageImpl extends EPackageImpl {
@@ -247,6 +246,7 @@ public class ServicesPackageImpl extends EPackageImpl {
 
 		op = addEOperation(fileServiceEClass, null, "remove", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theXMLTypePackage.getString(), "filepath", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 
 		// Create resource
 		createResource(eNS_URI);

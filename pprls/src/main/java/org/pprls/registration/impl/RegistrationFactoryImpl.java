@@ -3,6 +3,7 @@
  */
 package org.pprls.registration.impl;
 
+import java.util.Date;
 import java.util.UUID;
 
 import org.eclipse.emf.ecore.EClass;
@@ -132,6 +133,8 @@ public class RegistrationFactoryImpl extends EFactoryImpl implements Registratio
 				return createRecipientTypeFromString(eDataType, initialValue);
 			case RegistrationPackageImpl.DOCUMENT_ID_TYPE:
 				return createDocumentIdTypeFromString(eDataType, initialValue);
+			case RegistrationPackageImpl.DATE:
+				return createDateFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -173,6 +176,8 @@ public class RegistrationFactoryImpl extends EFactoryImpl implements Registratio
 				return convertRecipientTypeToString(eDataType, instanceValue);
 			case RegistrationPackageImpl.DOCUMENT_ID_TYPE:
 				return convertDocumentIdTypeToString(eDataType, instanceValue);
+			case RegistrationPackageImpl.DATE:
+				return convertDateToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -683,6 +688,24 @@ public class RegistrationFactoryImpl extends EFactoryImpl implements Registratio
 	 * @generated
 	 */
 	public String convertDocumentIdTypeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date createDateFromString(EDataType eDataType, String initialValue) {
+		return (Date)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDateToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

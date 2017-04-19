@@ -21,7 +21,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link org.pprls.registration.Status#getLog <em>Log</em>}</li>
  * </ul>
  *
- * @model annotation="teneo.jpa appinfo='@Embeddable'"
  * @generated
  */
 public interface Status {
@@ -35,8 +34,6 @@ public interface Status {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Handler</em>' containment reference.
 	 * @see #setHandler(EmployeeDescriptor)
-	 * @model containment="true" required="true"
-	 *        annotation="teneo.jpa appInfo='@Embedded\r\n@AttributeOverrides({\r\n@AttributeOverride(name=\"path\", column=@Column(name=\"registeringUnitPath\"))\r\n})'"
 	 * @generated
 	 */
 	EmployeeDescriptor getHandler();
@@ -64,7 +61,6 @@ public interface Status {
 	 * @return the value of the '<em>Status</em>' attribute.
 	 * @see org.pprls.registration.DocumentStatus
 	 * @see #setStatus(DocumentStatus)
-	 * @model default="\u03a3\u03b5 \u03b1\u03bd\u03b1\u03bc\u03bf\u03bd\u03ae" required="true"
 	 * @generated
 	 */
 	DocumentStatus getStatus();
@@ -90,7 +86,6 @@ public interface Status {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date</em>' attribute.
 	 * @see #setDate(XMLGregorianCalendar)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Date" required="true"
 	 * @generated
 	 */
 	XMLGregorianCalendar getDate();
@@ -115,7 +110,6 @@ public interface Status {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owner</em>' containment reference.
 	 * @see #setOwner(EmployeeDescriptor)
-	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EmployeeDescriptor getOwner();
@@ -140,7 +134,6 @@ public interface Status {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Log</em>' attribute.
 	 * @see #setLog(String)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getLog();

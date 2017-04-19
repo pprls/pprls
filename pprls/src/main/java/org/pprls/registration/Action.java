@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getAction()
- * @model
  * @generated
  */
-public enum Action implements InternalAction {
+public enum Action {
 	/**
 	 * The '<em><b>Act</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -66,7 +65,6 @@ public enum Action implements InternalAction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ACT
-	 * @model name="Act" literal="\u0395\u03bd\u03ad\u03c1\u03b3\u03b5\u03b9\u03b1"
 	 * @generated
 	 * @ordered
 	 */
@@ -81,7 +79,6 @@ public enum Action implements InternalAction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FILE
-	 * @model name="File" literal="\u0391\u03c1\u03c7\u03b5\u03af\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +93,6 @@ public enum Action implements InternalAction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NONE
-	 * @model name="None" literal=""
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +107,6 @@ public enum Action implements InternalAction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COLLABORATE
-	 * @model name="Collaborate" literal="\u03a3\u03c5\u03bd\u03ad\u03c1\u03b3\u03b5\u03b9\u03b1"
 	 * @generated
 	 * @ordered
 	 */
@@ -265,13 +260,3 @@ public enum Action implements InternalAction {
 	}
 	
 } //Action
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalAction extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

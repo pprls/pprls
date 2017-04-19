@@ -17,7 +17,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.StateTransition#getOperation <em>Operation</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface StateTransition {
@@ -34,7 +33,6 @@ public interface StateTransition {
 	 * @return the value of the '<em>State</em>' attribute.
 	 * @see org.pprls.registration.DocumentStatus
 	 * @see #setState(DocumentStatus)
-	 * @model default="\u03a3\u03b5 \u03b1\u03bd\u03b1\u03bc\u03bf\u03bd\u03ae" required="true"
 	 * @generated
 	 */
 	DocumentStatus getState();
@@ -62,7 +60,6 @@ public interface StateTransition {
 	 * @return the value of the '<em>Operation</em>' attribute.
 	 * @see org.pprls.registration.IncomingDocumentOperations
 	 * @see #setOperation(IncomingDocumentOperations)
-	 * @model required="true"
 	 * @generated
 	 */
 	IncomingDocumentOperations getOperation();

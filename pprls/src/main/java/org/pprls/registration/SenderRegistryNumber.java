@@ -3,7 +3,7 @@
  */
 package org.pprls.registration;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link org.pprls.registration.SenderRegistryNumber#getDate <em>Date</em>}</li>
  * </ul>
  *
- * @model abstract="true"
  * @generated
  */
 public interface SenderRegistryNumber {
@@ -32,7 +31,6 @@ public interface SenderRegistryNumber {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registry Number</em>' attribute.
 	 * @see #setRegistryNumber(String)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getRegistryNumber();
@@ -56,11 +54,10 @@ public interface SenderRegistryNumber {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date</em>' attribute.
-	 * @see #setDate(XMLGregorianCalendar)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Date"
+	 * @see #setDate(Date)
 	 * @generated
 	 */
-	XMLGregorianCalendar getDate();
+	Date getDate();
 
 	/**
 	 * Sets the value of the '{@link org.pprls.registration.SenderRegistryNumber#getDate <em>Date</em>}' attribute.
@@ -70,7 +67,7 @@ public interface SenderRegistryNumber {
 	 * @see #getDate()
 	 * @generated
 	 */
-	void setDate(XMLGregorianCalendar value);
+	void setDate(Date value);
 
 
 } // SenderRegistryNumber

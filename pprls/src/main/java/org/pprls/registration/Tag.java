@@ -16,7 +16,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.Tag#getName <em>Name</em>}</li>
  * </ul>
  *
- * @model extendedMetaData="name='Tag'"
  * @generated
  */
 public interface Tag {
@@ -31,7 +30,6 @@ public interface Tag {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getName();
@@ -49,7 +47,6 @@ public interface Tag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
 	 * @generated
 	 */
 	void newOperation1();

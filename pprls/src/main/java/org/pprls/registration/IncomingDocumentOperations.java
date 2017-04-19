@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getIncomingDocumentOperations()
- * @model
  * @generated
  */
-public enum IncomingDocumentOperations implements InternalIncomingDocumentOperations {
+public enum IncomingDocumentOperations {
 	/**
 	 * The '<em><b>ASSIGN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -96,7 +95,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ASSIGN
-	 * @model literal="\u0391\u03bd\u03ac\u03b8\u03b5\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +109,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CANCEL
-	 * @model literal="\u0391\u03ba\u03cd\u03c1\u03c9\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -126,7 +123,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REJECT
-	 * @model literal="\u0391\u03c0\u03cc\u03c1\u03c1\u03b9\u03c8\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -141,7 +137,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COMPLETE
-	 * @model literal="\u039f\u03bb\u03bf\u03ba\u03bb\u03ae\u03c1\u03c9\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -156,7 +151,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REVERT
-	 * @model literal="\u0391\u03bd\u03ac\u03ba\u03bb\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -171,7 +165,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ARCHIVE
-	 * @model literal="\u0391\u03c1\u03c7\u03b5\u03b9\u03bf\u03b8\u03ad\u03c4\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -186,7 +179,6 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ACCEPT
-	 * @model literal="\u0391\u03c0\u03bf\u03b4\u03bf\u03c7\u03ae"
 	 * @generated
 	 * @ordered
 	 */
@@ -346,13 +338,3 @@ public enum IncomingDocumentOperations implements InternalIncomingDocumentOperat
 	}
 	
 } //IncomingDocumentOperations
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalIncomingDocumentOperations extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getDocumentType()
- * @model
  * @generated
  */
-public enum DocumentType implements InternalDocumentType {
+public enum DocumentType {
 	/**
 	 * The '<em><b>NOTE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -66,7 +65,6 @@ public enum DocumentType implements InternalDocumentType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NOTE
-	 * @model literal="\u03a3\u03b7\u03bc\u03b5\u03af\u03c9\u03bc\u03b1"
 	 * @generated
 	 * @ordered
 	 */
@@ -81,7 +79,6 @@ public enum DocumentType implements InternalDocumentType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DOCUMENT
-	 * @model literal="\u0388\u03b3\u03b3\u03c1\u03b1\u03c6\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +93,6 @@ public enum DocumentType implements InternalDocumentType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EMAIL
-	 * @model literal="email"
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +107,6 @@ public enum DocumentType implements InternalDocumentType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SMS
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -265,13 +260,3 @@ public enum DocumentType implements InternalDocumentType {
 	}
 	
 } //DocumentType
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalDocumentType extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

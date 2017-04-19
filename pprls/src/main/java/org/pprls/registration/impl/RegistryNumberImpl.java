@@ -3,8 +3,7 @@
  */
 package org.pprls.registration.impl;
 
-import javax.xml.datatype.XMLGregorianCalendar;
-
+import java.util.Date;
 import org.pprls.registration.RegistryNumber;
 import org.pprls.registration.Year;
 
@@ -72,7 +71,7 @@ public class RegistryNumberImpl implements RegistryNumber {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final XMLGregorianCalendar DATE_EDEFAULT = null;
+	protected static final Date DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
@@ -82,7 +81,7 @@ public class RegistryNumberImpl implements RegistryNumber {
 	 * @generated
 	 * @ordered
 	 */
-	protected XMLGregorianCalendar date = DATE_EDEFAULT;
+	protected Date date = DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,7 +133,7 @@ public class RegistryNumberImpl implements RegistryNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public XMLGregorianCalendar getDate() {
+	public Date getDate() {
 		return date;
 	}
 
@@ -143,10 +142,9 @@ public class RegistryNumberImpl implements RegistryNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDate(XMLGregorianCalendar newDate) {
+	public void setDate(Date newDate) {
 		date = newDate;
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->

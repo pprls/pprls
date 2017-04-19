@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getYear()
- * @model
  * @generated
  */
-public enum Year implements InternalYear {
+public enum Year {
 	/**
 	 * The '<em><b>YEAR 2006</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -246,7 +245,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2006
-	 * @model literal="2006"
 	 * @generated
 	 * @ordered
 	 */
@@ -261,7 +259,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2007
-	 * @model literal="2007"
 	 * @generated
 	 * @ordered
 	 */
@@ -276,7 +273,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2008
-	 * @model literal="2008"
 	 * @generated
 	 * @ordered
 	 */
@@ -291,7 +287,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2009
-	 * @model literal="2009"
 	 * @generated
 	 * @ordered
 	 */
@@ -306,7 +301,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2010
-	 * @model literal="2010"
 	 * @generated
 	 * @ordered
 	 */
@@ -321,7 +315,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2011
-	 * @model literal="2011"
 	 * @generated
 	 * @ordered
 	 */
@@ -336,7 +329,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2012
-	 * @model literal="2012"
 	 * @generated
 	 * @ordered
 	 */
@@ -351,7 +343,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2013
-	 * @model literal="2013"
 	 * @generated
 	 * @ordered
 	 */
@@ -366,7 +357,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2014
-	 * @model literal="2014"
 	 * @generated
 	 * @ordered
 	 */
@@ -381,7 +371,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2015
-	 * @model literal="2015"
 	 * @generated
 	 * @ordered
 	 */
@@ -396,7 +385,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2016
-	 * @model literal="2016"
 	 * @generated
 	 * @ordered
 	 */
@@ -411,7 +399,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2017
-	 * @model literal="2017"
 	 * @generated
 	 * @ordered
 	 */
@@ -426,7 +413,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2018
-	 * @model literal="2018"
 	 * @generated
 	 * @ordered
 	 */
@@ -441,7 +427,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2019
-	 * @model literal="2019"
 	 * @generated
 	 * @ordered
 	 */
@@ -456,7 +441,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2020
-	 * @model literal="2020"
 	 * @generated
 	 * @ordered
 	 */
@@ -471,7 +455,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2021
-	 * @model literal="2021"
 	 * @generated
 	 * @ordered
 	 */
@@ -486,7 +469,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2022
-	 * @model literal="2022"
 	 * @generated
 	 * @ordered
 	 */
@@ -501,7 +483,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2023
-	 * @model literal="2023"
 	 * @generated
 	 * @ordered
 	 */
@@ -516,7 +497,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2024
-	 * @model literal="2024"
 	 * @generated
 	 * @ordered
 	 */
@@ -531,7 +511,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_2025
-	 * @model literal="2025"
 	 * @generated
 	 * @ordered
 	 */
@@ -546,7 +525,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ANY
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +539,6 @@ public enum Year implements InternalYear {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #YEAR_EPOCH
-	 * @model literal="1970"
 	 * @generated
 	 * @ordered
 	 */
@@ -750,13 +727,3 @@ public enum Year implements InternalYear {
 	}
 	
 } //Year
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalYear extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

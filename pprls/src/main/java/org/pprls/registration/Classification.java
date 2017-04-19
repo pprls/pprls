@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getClassification()
- * @model
  * @generated
  */
-public enum Classification implements InternalClassification {
+public enum Classification {
 	/**
 	 * The '<em><b>Public</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -66,7 +65,6 @@ public enum Classification implements InternalClassification {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PUBLIC
-	 * @model name="public" literal="\u0394\u03b7\u03bc\u03cc\u03c3\u03b9\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -81,7 +79,6 @@ public enum Classification implements InternalClassification {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTERNAL
-	 * @model name="internal" literal="\u0395\u03c3\u03c9\u03c4\u03b5\u03c1\u03b9\u03ba\u03cc"
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +93,6 @@ public enum Classification implements InternalClassification {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CONFIDENTIAL
-	 * @model name="confidential" literal="\u0395\u03bc\u03c0\u03b9\u03c3\u03c4\u03b5\u03c5\u03c4\u03b9\u03ba\u03cc"
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +107,6 @@ public enum Classification implements InternalClassification {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SECRET
-	 * @model name="secret" literal="\u0391\u03c0\u03cc\u03c1\u03c1\u03b7\u03c4\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -265,13 +260,3 @@ public enum Classification implements InternalClassification {
 	}
 	
 } //Classification
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalClassification extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

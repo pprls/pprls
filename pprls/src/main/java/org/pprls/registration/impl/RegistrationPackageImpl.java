@@ -3,6 +3,7 @@
  */
 package org.pprls.registration.impl;
 
+import java.util.Date;
 import java.util.UUID;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -19,35 +20,23 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 import org.pprls.application.services.services.impl.ServicesPackageImpl;
-
-import org.pprls.registration.Action;
 import org.pprls.registration.AgrexAgrim;
 import org.pprls.registration.AgrixProduct;
-import org.pprls.registration.AgrixProductTypes;
-import org.pprls.registration.Classification;
 import org.pprls.registration.Dispatcher;
 import org.pprls.registration.DispatcherOrganization;
 import org.pprls.registration.DispatcherUnit;
 import org.pprls.registration.Document;
-import org.pprls.registration.DocumentStatus;
-import org.pprls.registration.DocumentType;
 import org.pprls.registration.EmployeeDescriptor;
-import org.pprls.registration.FileType;
 import org.pprls.registration.GeneralProtocolNumber;
 import org.pprls.registration.Incoming;
 import org.pprls.registration.IncomingCommonSubject;
-import org.pprls.registration.IncomingDocumentOperations;
 import org.pprls.registration.IncomingStatusHistory;
 import org.pprls.registration.InternalNumber;
-import org.pprls.registration.MeasurementUnits;
 import org.pprls.registration.Outgoing;
 import org.pprls.registration.OutgoingCommonSubject;
-import org.pprls.registration.OutgoingDocumentOperations;
 import org.pprls.registration.PostageInfo;
-import org.pprls.registration.PostalMethod;
 import org.pprls.registration.Producer;
 import org.pprls.registration.Recipient;
-import org.pprls.registration.RecipientType;
 import org.pprls.registration.RegistrationFactory;
 import org.pprls.registration.RegistrationService;
 import org.pprls.registration.RegistryNumber;
@@ -57,8 +46,6 @@ import org.pprls.registration.SenderRegistryNumber;
 import org.pprls.registration.StateTransition;
 import org.pprls.registration.Status;
 import org.pprls.registration.Tag;
-import org.pprls.registration.ThreadType;
-import org.pprls.registration.Year;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,7 +59,6 @@ import org.pprls.registration.Year;
  * </ul>
  * <!-- end-user-doc -->
  * @see org.pprls.registration.RegistrationFactory
- * @model kind="package"
  * @generated
  */
 public class RegistrationPackageImpl extends EPackageImpl {
@@ -1831,6 +1817,16 @@ public class RegistrationPackageImpl extends EPackageImpl {
 	public static final int DOCUMENT_ID_TYPE = 38;
 
 	/**
+	 * The meta object id for the '<em>Date</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Date
+	 * @see org.pprls.registration.impl.RegistrationPackageImpl#getDate()
+	 * @generated
+	 */
+	public static final int DATE = 39;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2102,6 +2098,13 @@ public class RegistrationPackageImpl extends EPackageImpl {
 	 * @generated
 	 */
 	private EDataType documentIdTypeEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType dateEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -3896,11 +3899,22 @@ public class RegistrationPackageImpl extends EPackageImpl {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Document Id Type</em>'.
 	 * @see java.util.UUID
-	 * @model instanceClass="java.util.UUID"
 	 * @generated
 	 */
 	public EDataType getDocumentIdType() {
 		return documentIdTypeEDataType;
+	}
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Date <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Date</em>'.
+	 * @see java.util.Date
+	 * @generated
+	 */
+	public EDataType getDate() {
+		return dateEDataType;
 	}
 
 	/**
@@ -4097,6 +4111,7 @@ public class RegistrationPackageImpl extends EPackageImpl {
 
 		// Create data types
 		documentIdTypeEDataType = createEDataType(DOCUMENT_ID_TYPE);
+		dateEDataType = createEDataType(DATE);
 	}
 
 	/**
@@ -4242,8 +4257,8 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEAttribute(getDocument_Id(), this.getDocumentIdType(), "id", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocument_Currentstatus(), this.getStatus(), null, "currentstatus", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocument_Initialstatus(), this.getStatus(), null, "initialstatus", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocument_LastDoneDate(), theXMLTypePackage.getDate(), "lastDoneDate", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocument_LastAcceptDate(), theXMLTypePackage.getDate(), "lastAcceptDate", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_LastDoneDate(), this.getDate(), "lastDoneDate", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_LastAcceptDate(), this.getDate(), "lastAcceptDate", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_PhysicalLocation(), theXMLTypePackage.getString(), "physicalLocation", "", 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Action(), this.getAction(), "action", "", 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Comments(), theXMLTypePackage.getString(), "comments", "", 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4338,13 +4353,13 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		addEParameter(op, theXMLTypePackage.getDate(), "date", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(postageInfoEClass, PostageInfo.class, "PostageInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPostageInfo_PostageTime(), theXMLTypePackage.getDate(), "postageTime", null, 0, 1, PostageInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPostageInfo_PostageTime(), this.getDate(), "postageTime", null, 0, 1, PostageInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPostageInfo_PostageMethod(), this.getPostalMethod(), "postageMethod", "", 0, 1, PostageInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPostageInfo_VoucherNumber(), theXMLTypePackage.getString(), "voucherNumber", "", 1, 1, PostageInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(senderRegistryNumberEClass, SenderRegistryNumber.class, "SenderRegistryNumber", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSenderRegistryNumber_RegistryNumber(), theXMLTypePackage.getString(), "registryNumber", null, 1, 1, SenderRegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSenderRegistryNumber_Date(), theXMLTypePackage.getDate(), "date", null, 0, 1, SenderRegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSenderRegistryNumber_Date(), this.getDate(), "date", null, 0, 1, SenderRegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateTransitionEClass, StateTransition.class, "StateTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStateTransition_State(), this.getDocumentStatus(), "state", "\u03a3\u03b5 \u03b1\u03bd\u03b1\u03bc\u03bf\u03bd\u03ae", 1, 1, StateTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4401,213 +4416,17 @@ public class RegistrationPackageImpl extends EPackageImpl {
 		initEClass(registryNumberEClass, RegistryNumber.class, "RegistryNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRegistryNumber_RegistryNumber(), theXMLTypePackage.getShort(), "registryNumber", null, 0, 1, RegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegistryNumber_Year(), this.getYear(), "year", null, 0, 1, RegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegistryNumber_Date(), theXMLTypePackage.getDate(), "date", null, 1, 1, RegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegistryNumber_Date(), this.getDate(), "date", null, 1, 1, RegistryNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(registrationServiceEClass, RegistrationService.class, "RegistrationService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = addEOperation(registrationServiceEClass, this.getRegistryNumber(), "getNumberForYear", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getYear(), "year", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(fileTypeEEnum, FileType.class, "FileType");
-		addEEnumLiteral(fileTypeEEnum, FileType.PDF);
-		addEEnumLiteral(fileTypeEEnum, FileType.DOC);
-		addEEnumLiteral(fileTypeEEnum, FileType.DOCX);
-		addEEnumLiteral(fileTypeEEnum, FileType.ODT);
-		addEEnumLiteral(fileTypeEEnum, FileType.TXT);
-		addEEnumLiteral(fileTypeEEnum, FileType.RTF);
-		addEEnumLiteral(fileTypeEEnum, FileType.XLS);
-		addEEnumLiteral(fileTypeEEnum, FileType.XLSX);
-		addEEnumLiteral(fileTypeEEnum, FileType.ODS);
-
-		initEEnum(yearEEnum, Year.class, "Year");
-		addEEnumLiteral(yearEEnum, Year.YEAR_2006);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2007);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2008);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2009);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2010);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2011);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2012);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2013);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2014);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2015);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2016);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2017);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2018);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2019);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2020);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2021);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2022);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2023);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2024);
-		addEEnumLiteral(yearEEnum, Year.YEAR_2025);
-		addEEnumLiteral(yearEEnum, Year.ANY);
-		addEEnumLiteral(yearEEnum, Year.YEAR_EPOCH);
-
-		initEEnum(documentTypeEEnum, DocumentType.class, "DocumentType");
-		addEEnumLiteral(documentTypeEEnum, DocumentType.NOTE);
-		addEEnumLiteral(documentTypeEEnum, DocumentType.DOCUMENT);
-		addEEnumLiteral(documentTypeEEnum, DocumentType.EMAIL);
-		addEEnumLiteral(documentTypeEEnum, DocumentType.SMS);
-
-		initEEnum(postalMethodEEnum, PostalMethod.class, "PostalMethod");
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.OTHER);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.SNAIL_MAIL);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.FAX);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.EMAIL);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.HAND_DELIVERED);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.DIGITAL);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.REGISTERED_SNAIL_MAIL);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.COURIER);
-		addEEnumLiteral(postalMethodEEnum, PostalMethod.EMPOWERMENT);
-
-		initEEnum(documentStatusEEnum, DocumentStatus.class, "DocumentStatus");
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.ACCEPTED);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.DONE);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.ARCHIVED);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.REJECTED);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.CANCELLED);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.PENDING);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.UNDER_REVISION);
-		addEEnumLiteral(documentStatusEEnum, DocumentStatus.START);
-
-		initEEnum(measurementUnitsEEnum, MeasurementUnits.class, "MeasurementUnits");
-		addEEnumLiteral(measurementUnitsEEnum, MeasurementUnits.KG);
-		addEEnumLiteral(measurementUnitsEEnum, MeasurementUnits.LT);
-		addEEnumLiteral(measurementUnitsEEnum, MeasurementUnits.TN);
-		addEEnumLiteral(measurementUnitsEEnum, MeasurementUnits.PCS);
-
-		initEEnum(agrixProductTypesEEnum, AgrixProductTypes.class, "AgrixProductTypes");
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ALCOHOLE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ALEVRA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ANIMAL_FOOD);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ANIMAL_FOOD2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ANIMAL_FOOD_WHEAT);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ANIMAL_FOOD_REMAINS);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BARLEY);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BEEF);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BEEF_FROZEN);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BEEF_FROZEN2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BEEF_NO_BONES);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BEEF_FROZEN3);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.BEEF_FRESH);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CEREAL);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CHEESE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CHEESE_WHITE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CHEESE_HARD);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CHEESE2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.COTTON_PIE_REMAINS);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CHICKEN_FROZEN);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CORN);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CORN2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CORN_FOR_POP_CORN);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CORN_GLUTENE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.CORN_GLUTENE2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.DAIRY);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.ETHANOL);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.FLOUR);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.FETA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.FETA_CHEESE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC_FRESH);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC_POWDER);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC_DEHYDRATED);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC3);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC_DRY);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GARLIC_DRY2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GLYCOZE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GRAVIERA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.GLUTENE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.KEFALOGRAVIERA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.KEFALOTYRI);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.MEAT);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.MANOYRI);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.MUSHROOMS2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.MUSHROOMS);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.MYZHTHRA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.MYZHTRA_DRY);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.OLIVEOIL);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.PASTA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.POP_CORN);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.PITYRA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE_BASMATI);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE_JASMINE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE_WHITENED);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE_PARTS);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE_GRAINS_WHITENED);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RICE_MEDIUM_WHITENED);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.RYE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SOFT_FLOUR);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SOFT_FLOUR2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SOFT_FLOUR3);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SOYA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SORGOS);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SUGAR);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SUGARCANE_RAW);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SUGAR_WHITE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SUGAR_BROWN);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SYRUP_GLUCOZE);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SYRUP_SCENTED);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.WHEAT);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.WHEAT_FOR_BREAD);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.WHEAT_DURUM);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.WHEAT_SOFT);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.WHEAT_FLOUR);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.WHEAT_SEEDS);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.VLACHOTYRI);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.VIGLA);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.OAT);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.FROZEN_TURKEY);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.OLIVE_KERNEL_LIQUID);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.VEGETABLES_DRY);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.SPOROI_SITHRWN2);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.XORTONOMES);
-		addEEnumLiteral(agrixProductTypesEEnum, AgrixProductTypes.XORTONOMES2);
-
-		initEEnum(incomingDocumentOperationsEEnum, IncomingDocumentOperations.class, "IncomingDocumentOperations");
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.ASSIGN);
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.CANCEL);
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.REJECT);
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.COMPLETE);
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.REVERT);
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.ARCHIVE);
-		addEEnumLiteral(incomingDocumentOperationsEEnum, IncomingDocumentOperations.ACCEPT);
-
-		initEEnum(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.class, "OutgoingDocumentOperations");
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.EDIT);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.REVISE);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.CANCEL);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.REVERT);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.REJECT);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.CREATE);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.APPROVE);
-		addEEnumLiteral(outgoingDocumentOperationsEEnum, OutgoingDocumentOperations.ARCHIVE);
-
-		initEEnum(actionEEnum, Action.class, "Action");
-		addEEnumLiteral(actionEEnum, Action.ACT);
-		addEEnumLiteral(actionEEnum, Action.FILE);
-		addEEnumLiteral(actionEEnum, Action.NONE);
-		addEEnumLiteral(actionEEnum, Action.COLLABORATE);
-
-		initEEnum(threadTypeEEnum, ThreadType.class, "ThreadType");
-		addEEnumLiteral(threadTypeEEnum, ThreadType.RECIPIENT);
-		addEEnumLiteral(threadTypeEEnum, ThreadType.CC);
-		addEEnumLiteral(threadTypeEEnum, ThreadType.COLLABORATION);
-
-		initEEnum(classificationEEnum, Classification.class, "Classification");
-		addEEnumLiteral(classificationEEnum, Classification.PUBLIC);
-		addEEnumLiteral(classificationEEnum, Classification.INTERNAL);
-		addEEnumLiteral(classificationEEnum, Classification.CONFIDENTIAL);
-		addEEnumLiteral(classificationEEnum, Classification.SECRET);
-
-		initEEnum(recipientTypeEEnum, RecipientType.class, "RecipientType");
-		addEEnumLiteral(recipientTypeEEnum, RecipientType.RECIPIENT);
-		addEEnumLiteral(recipientTypeEEnum, RecipientType.CC);
-		addEEnumLiteral(recipientTypeEEnum, RecipientType.INTERNAL);
 
 		// Initialize data types
 		initEDataType(documentIdTypeEDataType, UUID.class, "DocumentIdType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(dateEDataType, Date.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

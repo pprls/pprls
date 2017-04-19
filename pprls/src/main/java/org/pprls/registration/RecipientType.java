@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getRecipientType()
- * @model
  * @generated
  */
-public enum RecipientType implements InternalRecipientType {
+public enum RecipientType {
 	/**
 	 * The '<em><b>RECIPIENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -56,7 +55,6 @@ public enum RecipientType implements InternalRecipientType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RECIPIENT
-	 * @model literal="\u03a0\u03b1\u03c1\u03b1\u03bb\u03ae\u03c0\u03c4\u03b7\u03c2"
 	 * @generated
 	 * @ordered
 	 */
@@ -71,7 +69,6 @@ public enum RecipientType implements InternalRecipientType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CC
-	 * @model literal="\u039a\u03bf\u03b9\u03bd\u03bf\u03c0\u03bf\u03af\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -86,7 +83,6 @@ public enum RecipientType implements InternalRecipientType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTERNAL
-	 * @model literal="\u0395\u03c3\u03c9\u03c4\u03b5\u03c1\u03b9\u03ba\u03ae \u0394\u03b9\u03b1\u03bd\u03bf\u03bc\u03ae"
 	 * @generated
 	 * @ordered
 	 */
@@ -238,13 +234,3 @@ public enum RecipientType implements InternalRecipientType {
 	}
 	
 } //RecipientType
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalRecipientType extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

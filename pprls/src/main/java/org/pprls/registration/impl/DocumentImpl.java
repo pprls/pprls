@@ -3,11 +3,9 @@
  */
 package org.pprls.registration.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 
@@ -92,7 +90,7 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final XMLGregorianCalendar LAST_DONE_DATE_EDEFAULT = null;
+	protected static final Date LAST_DONE_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getLastDoneDate() <em>Last Done Date</em>}' attribute.
@@ -102,7 +100,7 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 * @ordered
 	 */
-	protected XMLGregorianCalendar lastDoneDate = LAST_DONE_DATE_EDEFAULT;
+	protected Date lastDoneDate = LAST_DONE_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLastAcceptDate() <em>Last Accept Date</em>}' attribute.
@@ -112,7 +110,7 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final XMLGregorianCalendar LAST_ACCEPT_DATE_EDEFAULT = null;
+	protected static final Date LAST_ACCEPT_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getLastAcceptDate() <em>Last Accept Date</em>}' attribute.
@@ -122,7 +120,7 @@ public class DocumentImpl implements Document {
 	 * @generated
 	 * @ordered
 	 */
-	protected XMLGregorianCalendar lastAcceptDate = LAST_ACCEPT_DATE_EDEFAULT;
+	protected Date lastAcceptDate = LAST_ACCEPT_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPhysicalLocation() <em>Physical Location</em>}' attribute.
@@ -292,7 +290,7 @@ public class DocumentImpl implements Document {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public XMLGregorianCalendar getLastDoneDate() {
+	public Date getLastDoneDate() {
 		return lastDoneDate;
 	}
 
@@ -301,7 +299,7 @@ public class DocumentImpl implements Document {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLastDoneDate(XMLGregorianCalendar newLastDoneDate) {
+	public void setLastDoneDate(Date newLastDoneDate) {
 		lastDoneDate = newLastDoneDate;
 	}
 
@@ -310,7 +308,7 @@ public class DocumentImpl implements Document {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public XMLGregorianCalendar getLastAcceptDate() {
+	public Date getLastAcceptDate() {
 		return lastAcceptDate;
 	}
 
@@ -319,7 +317,7 @@ public class DocumentImpl implements Document {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLastAcceptDate(XMLGregorianCalendar newLastAcceptDate) {
+	public void setLastAcceptDate(Date newLastAcceptDate) {
 		lastAcceptDate = newLastAcceptDate;
 	}
 

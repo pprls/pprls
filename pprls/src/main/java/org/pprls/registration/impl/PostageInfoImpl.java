@@ -3,8 +3,7 @@
  */
 package org.pprls.registration.impl;
 
-import javax.xml.datatype.XMLGregorianCalendar;
-
+import java.util.Date;
 import org.pprls.registration.PostageInfo;
 import org.pprls.registration.PostalMethod;
 
@@ -32,7 +31,7 @@ public class PostageInfoImpl implements PostageInfo {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final XMLGregorianCalendar POSTAGE_TIME_EDEFAULT = null;
+	protected static final Date POSTAGE_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getPostageTime() <em>Postage Time</em>}' attribute.
@@ -42,7 +41,7 @@ public class PostageInfoImpl implements PostageInfo {
 	 * @generated
 	 * @ordered
 	 */
-	protected XMLGregorianCalendar postageTime = POSTAGE_TIME_EDEFAULT;
+	protected Date postageTime = POSTAGE_TIME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPostageMethod() <em>Postage Method</em>}' attribute.
@@ -98,7 +97,7 @@ public class PostageInfoImpl implements PostageInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public XMLGregorianCalendar getPostageTime() {
+	public Date getPostageTime() {
 		return postageTime;
 	}
 
@@ -107,7 +106,7 @@ public class PostageInfoImpl implements PostageInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPostageTime(XMLGregorianCalendar newPostageTime) {
+	public void setPostageTime(Date newPostageTime) {
 		postageTime = newPostageTime;
 	}
 

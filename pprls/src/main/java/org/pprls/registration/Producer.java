@@ -28,7 +28,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.Producer#getAddress <em>Address</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface Producer {
@@ -43,7 +42,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Firstname</em>' attribute.
 	 * @see #setFirstname(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getFirstname();
@@ -69,7 +67,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lastname</em>' attribute.
 	 * @see #setLastname(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getLastname();
@@ -95,8 +92,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Afm</em>' attribute.
 	 * @see #setAfm(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
-	 *        annotation="teneo.jpa appinfo='@NaturalId'"
 	 * @generated
 	 */
 	String getAfm();
@@ -122,7 +117,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fathername</em>' attribute.
 	 * @see #setFathername(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getFathername();
@@ -148,7 +142,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Idno</em>' attribute.
 	 * @see #setIdno(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getIdno();
@@ -174,7 +167,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Phone1</em>' attribute.
 	 * @see #setPhone1(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getPhone1();
@@ -200,7 +192,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Phone2</em>' attribute.
 	 * @see #setPhone2(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getPhone2();
@@ -226,7 +217,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mobilephone</em>' attribute.
 	 * @see #setMobilephone(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getMobilephone();
@@ -252,7 +242,6 @@ public interface Producer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getAddress();

@@ -3,7 +3,7 @@
  */
 package org.pprls.registration;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +19,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link org.pprls.registration.PostageInfo#getVoucherNumber <em>Voucher Number</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface PostageInfo {
@@ -32,11 +31,10 @@ public interface PostageInfo {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Postage Time</em>' attribute.
-	 * @see #setPostageTime(XMLGregorianCalendar)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Date"
+	 * @see #setPostageTime(Date)
 	 * @generated
 	 */
-	XMLGregorianCalendar getPostageTime();
+	Date getPostageTime();
 
 	/**
 	 * Sets the value of the '{@link org.pprls.registration.PostageInfo#getPostageTime <em>Postage Time</em>}' attribute.
@@ -46,7 +44,7 @@ public interface PostageInfo {
 	 * @see #getPostageTime()
 	 * @generated
 	 */
-	void setPostageTime(XMLGregorianCalendar value);
+	void setPostageTime(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Postage Method</b></em>' attribute.
@@ -61,7 +59,6 @@ public interface PostageInfo {
 	 * @return the value of the '<em>Postage Method</em>' attribute.
 	 * @see org.pprls.registration.PostalMethod
 	 * @see #setPostageMethod(PostalMethod)
-	 * @model default=""
 	 * @generated
 	 */
 	PostalMethod getPostageMethod();
@@ -88,7 +85,6 @@ public interface PostageInfo {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Voucher Number</em>' attribute.
 	 * @see #setVoucherNumber(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getVoucherNumber();

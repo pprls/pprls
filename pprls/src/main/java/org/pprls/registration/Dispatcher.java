@@ -16,7 +16,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.Dispatcher#getUid <em>Uid</em>}</li>
  * </ul>
  *
- * @model interface="true" abstract="true"
  * @generated
  */
 public interface Dispatcher {
@@ -30,7 +29,6 @@ public interface Dispatcher {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uid</em>' attribute.
 	 * @see #setUid(int)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getUid();
@@ -48,7 +46,6 @@ public interface Dispatcher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getName();

@@ -23,7 +23,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link org.pprls.registration.Recipient#getRecipientType <em>Recipient Type</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface Recipient {
@@ -38,7 +37,6 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vat Id</em>' attribute.
 	 * @see #setVatId(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getVatId();
@@ -64,7 +62,6 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getName();
@@ -90,7 +87,6 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getAddress();
@@ -116,7 +112,6 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comments</em>' attribute.
 	 * @see #setComments(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getComments();
@@ -142,7 +137,6 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Internal Unit Id</em>' attribute.
 	 * @see #setInternalUnitId(short)
-	 * @model default="-1" dataType="org.eclipse.emf.ecore.xml.type.Short"
 	 * @generated
 	 */
 	short getInternalUnitId();
@@ -167,7 +161,6 @@ public interface Recipient {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Postageinfo</em>' reference.
 	 * @see #setPostageinfo(PostageInfo)
-	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	PostageInfo getPostageinfo();
@@ -194,7 +187,6 @@ public interface Recipient {
 	 * @return the value of the '<em>Recipient Type</em>' attribute.
 	 * @see org.pprls.registration.RecipientType
 	 * @see #setRecipientType(RecipientType)
-	 * @model
 	 * @generated
 	 */
 	RecipientType getRecipientType();
@@ -213,7 +205,6 @@ public interface Recipient {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" postageDateDataType="org.eclipse.emf.ecore.xml.type.Date" voucherNumberDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	PostageInfo createPostageInfo(XMLGregorianCalendar postageDate, PostalMethod postalMethod, String voucherNumber);

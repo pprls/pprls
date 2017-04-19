@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getFileType()
- * @model
  * @generated
  */
-public enum FileType implements InternalFileType {
+public enum FileType {
 	/**
 	 * The '<em><b>PDF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -116,7 +115,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PDF
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -131,7 +129,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DOC
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -146,7 +143,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DOCX
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +157,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ODT
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -176,7 +171,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TXT
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +185,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RTF
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -206,7 +199,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #XLS
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +213,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #XLSX
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -236,7 +227,6 @@ public enum FileType implements InternalFileType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ODS
-	 * @model
 	 * @generated
 	 * @ordered
 	 */
@@ -400,13 +390,3 @@ public enum FileType implements InternalFileType {
 	}
 	
 } //FileType
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalFileType extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

@@ -21,7 +21,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link org.pprls.registration.Incoming#getAgrexagrim <em>Agrexagrim</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface Incoming extends RegistryRecord {
@@ -36,9 +35,6 @@ public interface Incoming extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Related To Outgoing</em>' attribute.
 	 * @see #setRelatedToOutgoing(boolean)
-	 * @model default="false" dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
-	 *        extendedMetaData="name='relatedToOutgoing'"
-	 *        annotation="teneo.jpa value='@Type(type = \"org.hibernate.type.NumericBooleanType\")'"
 	 * @generated
 	 */
 	boolean isRelatedToOutgoing();
@@ -63,7 +59,6 @@ public interface Incoming extends RegistryRecord {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sender</em>' reference list.
-	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	List<Sender> getSender();
@@ -78,7 +73,6 @@ public interface Incoming extends RegistryRecord {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Agrexagrim</em>' reference.
 	 * @see #setAgrexagrim(AgrexAgrim)
-	 * @model resolveProxies="false"
 	 * @generated
 	 */
 	AgrexAgrim getAgrexagrim();
@@ -96,7 +90,6 @@ public interface Incoming extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" afmDataType="org.eclipse.emf.ecore.xml.type.String" nameDataType="org.eclipse.emf.ecore.xml.type.String" addressDataType="org.eclipse.emf.ecore.xml.type.String" phonesDataType="org.eclipse.emf.ecore.xml.type.String" phonesMany="true" registryNumberDataType="org.eclipse.emf.ecore.xml.type.String" dateDataType="org.eclipse.emf.ecore.xml.type.Date"
 	 * @generated
 	 */
 	Sender createSender(String afm, String name, String address, List<String> phones, String registryNumber, XMLGregorianCalendar date);
@@ -104,7 +97,6 @@ public interface Incoming extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
 	 * @generated
 	 */
 	boolean hasSenderRegistryNumber();
@@ -112,7 +104,6 @@ public interface Incoming extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true"
 	 * @generated
 	 */
 	SenderRegistryNumber getSenderRegistryNumber();
@@ -120,7 +111,6 @@ public interface Incoming extends RegistryRecord {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true"
 	 * @generated
 	 */
 	Outgoing reply();

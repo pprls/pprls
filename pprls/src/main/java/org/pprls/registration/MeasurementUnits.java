@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getMeasurementUnits()
- * @model
  * @generated
  */
-public enum MeasurementUnits implements InternalMeasurementUnits {
+public enum MeasurementUnits {
 	/**
 	 * The '<em><b>KG</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -66,7 +65,6 @@ public enum MeasurementUnits implements InternalMeasurementUnits {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #KG
-	 * @model literal="kg"
 	 * @generated
 	 * @ordered
 	 */
@@ -81,7 +79,6 @@ public enum MeasurementUnits implements InternalMeasurementUnits {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LT
-	 * @model literal="lt"
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +93,6 @@ public enum MeasurementUnits implements InternalMeasurementUnits {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TN
-	 * @model literal="tn"
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +107,6 @@ public enum MeasurementUnits implements InternalMeasurementUnits {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PCS
-	 * @model literal="pcs"
 	 * @generated
 	 * @ordered
 	 */
@@ -265,13 +260,3 @@ public enum MeasurementUnits implements InternalMeasurementUnits {
 	}
 	
 } //MeasurementUnits
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalMeasurementUnits extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

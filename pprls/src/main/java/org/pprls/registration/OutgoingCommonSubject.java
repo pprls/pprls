@@ -17,7 +17,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.OutgoingCommonSubject#getDirectorateId <em>Directorate Id</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface OutgoingCommonSubject {
@@ -31,7 +30,6 @@ public interface OutgoingCommonSubject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subject</em>' attribute.
 	 * @see #setSubject(String)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getSubject();
@@ -56,7 +54,6 @@ public interface OutgoingCommonSubject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Directorate Id</em>' attribute.
 	 * @see #setDirectorateId(short)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Short"
 	 * @generated
 	 */
 	short getDirectorateId();

@@ -4,10 +4,11 @@
     editorDirectory="/pprls model/src" modelPluginID="" templateDirectory="pprls model/templates"
     dynamicTemplates="true" modelName="Paperless" rootExtendsInterface="" rootExtendsClass=""
     rootImplementsInterface="" suppressEMFTypes="true" suppressEMFMetaData="true"
-    featureMapWrapperClass="" booleanFlagsField="" booleanFlagsReservedBits="0" importerID="org.eclipse.emf.importer.ecore"
-    bundleManifest="false" minimalReflectiveMethods="false" suppressContainment="true"
-    suppressNotification="true" suppressUnsettable="true" complianceLevel="5.0" copyrightFields="false"
-    publicConstructors="true" language="" packedEnums="true" classNamePattern="" importOrganizing="true">
+    suppressEMFModelTags="true" featureMapWrapperClass="" booleanFlagsField="" booleanFlagsReservedBits="0"
+    importerID="org.eclipse.emf.importer.ecore" bundleManifest="false" minimalReflectiveMethods="false"
+    suppressContainment="true" suppressNotification="true" suppressUnsettable="true"
+    complianceLevel="5.0" copyrightFields="false" publicConstructors="true" language=""
+    packedEnums="true" classNamePattern="" importOrganizing="true">
   <foreignModel>application_services.ecore</foreignModel>
   <foreignModel>registration.ecore</foreignModel>
   <genPackages prefix="Services" basePackage="org.pprls.application.services" disposableProviderFactory="true"

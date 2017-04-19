@@ -17,7 +17,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.DispatcherUnit#getLabel <em>Label</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface DispatcherUnit extends Dispatcher {
@@ -31,8 +30,6 @@ public interface DispatcherUnit extends Dispatcher {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Belongs To</em>' reference.
 	 * @see #setBelongsTo(DispatcherOrganization)
-	 * @model resolveProxies="false" required="true"
-	 *        annotation="teneo.jpa appinfo='@Fetch(HbFetchType.SELECT)'"
 	 * @generated
 	 */
 	DispatcherOrganization getBelongsTo();
@@ -57,7 +54,6 @@ public interface DispatcherUnit extends Dispatcher {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getLabel();

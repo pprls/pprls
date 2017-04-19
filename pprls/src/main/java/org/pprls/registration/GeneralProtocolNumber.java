@@ -17,7 +17,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.GeneralProtocolNumber#getNumber <em>Number</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface GeneralProtocolNumber {
@@ -33,7 +32,6 @@ public interface GeneralProtocolNumber {
 	 * @return the value of the '<em>Year</em>' attribute.
 	 * @see org.pprls.registration.Year
 	 * @see #setYear(Year)
-	 * @model required="true"
 	 * @generated
 	 */
 	Year getYear();
@@ -59,7 +57,6 @@ public interface GeneralProtocolNumber {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number</em>' attribute.
 	 * @see #setNumber(short)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Short" required="true"
 	 * @generated
 	 */
 	short getNumber();

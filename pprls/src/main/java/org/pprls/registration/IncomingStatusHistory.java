@@ -19,7 +19,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.IncomingStatusHistory#getInternalNumber <em>Internal Number</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface IncomingStatusHistory {
@@ -33,7 +32,6 @@ public interface IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Log Message</em>' attribute.
 	 * @see #setLogMessage(String)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String getLogMessage();
@@ -59,7 +57,6 @@ public interface IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming thread eid</em>' attribute.
 	 * @see #setIncoming_thread_e_id(short)
-	 * @model default="0" dataType="org.eclipse.emf.ecore.xml.type.Short" required="true"
 	 * @generated
 	 */
 	short getIncoming_thread_e_id();
@@ -84,7 +81,6 @@ public interface IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Status</em>' reference.
 	 * @see #setStatus(Status)
-	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	Status getStatus();
@@ -109,7 +105,6 @@ public interface IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Internal Number</em>' reference.
 	 * @see #setInternalNumber(InternalNumber)
-	 * @model resolveProxies="false" required="true"
 	 * @generated
 	 */
 	InternalNumber getInternalNumber();

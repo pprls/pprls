@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getPostalMethod()
- * @model
  * @generated
  */
-public enum PostalMethod implements InternalPostalMethod {
+public enum PostalMethod {
 	/**
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -116,7 +115,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OTHER
-	 * @model name="Other" literal=""
 	 * @generated
 	 * @ordered
 	 */
@@ -131,7 +129,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SNAIL_MAIL
-	 * @model name="SnailMail" literal="\u0395\u039b\u03a4\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -146,7 +143,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FAX
-	 * @model name="Fax"
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +157,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EMAIL
-	 * @model name="Email"
 	 * @generated
 	 * @ordered
 	 */
@@ -176,7 +171,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #HAND_DELIVERED
-	 * @model name="HandDelivered" literal="\u0399\u03b4\u03b9\u03bf\u03c7\u03b5\u03af\u03c1\u03c9\u03c2"
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +185,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DIGITAL
-	 * @model name="Digital" literal="\u03a8\u03b7\u03c6\u03b9\u03b1\u03ba\u03ac"
 	 * @generated
 	 * @ordered
 	 */
@@ -206,7 +199,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REGISTERED_SNAIL_MAIL
-	 * @model name="RegisteredSnailMail" literal="\u03a3\u03c5\u03c3\u03c4\u03b7\u03bc\u03ad\u03bd\u03bf"
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +213,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COURIER
-	 * @model name="Courier"
 	 * @generated
 	 * @ordered
 	 */
@@ -236,7 +227,6 @@ public enum PostalMethod implements InternalPostalMethod {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EMPOWERMENT
-	 * @model name="Empowerment" literal="E\u03be\u03bf\u03c5\u03c3\u03b9\u03bf\u03b4\u03cc\u03c4\u03b7\u03c3\u03b7"
 	 * @generated
 	 * @ordered
 	 */
@@ -400,13 +390,3 @@ public enum PostalMethod implements InternalPostalMethod {
 	}
 	
 } //PostalMethod
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalPostalMethod extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

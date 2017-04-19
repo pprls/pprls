@@ -10,14 +10,12 @@ package org.pprls.application.services.services;
  * <!-- end-user-doc -->
  *
  *
- * @model
  * @generated
  */
 public interface FileService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" fromDataType="org.eclipse.emf.ecore.xml.type.String" toDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	String upload(String from, String to);
@@ -25,7 +23,6 @@ public interface FileService {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model filepathDataType="org.eclipse.emf.ecore.xml.type.String"
 	 * @generated
 	 */
 	void remove(String filepath);

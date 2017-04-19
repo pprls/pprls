@@ -18,7 +18,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.InternalNumber#getYear <em>Year</em>}</li>
  * </ul>
  *
- * @model annotation="teneo.jpa appInfo='@Embedded\r\n@AttributeOverrides({\r\n@AttributeOverride(name=\"number\", column=@Column(name=\"internalNumber\"))\r\n})'"
  * @generated
  */
 public interface InternalNumber {
@@ -32,7 +31,6 @@ public interface InternalNumber {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number</em>' attribute.
 	 * @see #setNumber(long)
-	 * @model unsettable="true" dataType="org.eclipse.emf.ecore.xml.type.Long" required="true"
 	 * @generated
 	 */
 	long getNumber();
@@ -58,7 +56,6 @@ public interface InternalNumber {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Directorate Id</em>' attribute.
 	 * @see #setDirectorateId(short)
-	 * @model default="-1" dataType="org.eclipse.emf.ecore.xml.type.Short" required="true"
 	 * @generated
 	 */
 	short getDirectorateId();
@@ -85,7 +82,6 @@ public interface InternalNumber {
 	 * @return the value of the '<em>Year</em>' attribute.
 	 * @see org.pprls.registration.Year
 	 * @see #setYear(Year)
-	 * @model required="true"
 	 * @generated
 	 */
 	Year getYear();
@@ -104,7 +100,6 @@ public interface InternalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
 	 * @generated
 	 */
 	boolean hasBeenSet();

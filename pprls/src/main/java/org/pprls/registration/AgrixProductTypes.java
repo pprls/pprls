@@ -13,10 +13,9 @@ import java.util.List;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see org.pprls.registration.impl.RegistrationPackageImpl#getAgrixProductTypes()
- * @model
  * @generated
  */
-public enum AgrixProductTypes implements InternalAgrixProductTypes {
+public enum AgrixProductTypes {
 	/**
 	 * The '<em><b>ALCOHOLE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -886,7 +885,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALCOHOLE
-	 * @model literal="\u0391\u039b\u039a\u039f\u039f\u039b\u0397 \u0393\u0395\u03a9\u03a1\u0393\u0399\u039a\u0397\u03a3 \u03a0\u03a1\u039f\u0395\u039b\u0395\u03a5\u03a3\u0397\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -901,7 +899,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALEVRA
-	 * @model literal="\u0391\u039b\u0395\u03a5\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -916,7 +913,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ANIMAL_FOOD
-	 * @model literal="\u0396\u03a9\u039f\u03a4\u03a1\u039f\u03a6\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -931,7 +927,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ANIMAL_FOOD2
-	 * @model literal="\u03a0\u0391\u03a1\u0391\u03a3\u039a\u0395\u03a5\u0391\u03a3\u039c\u0391\u03a4\u0391-\u0396\u03a9\u039f\u03a4\u03a1\u039f\u03a6\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -946,7 +941,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ANIMAL_FOOD_WHEAT
-	 * @model literal="\u0396\u03a9\u039f\u03a4\u03a1\u039f\u03a6\u0395\u03a3 -\u03a3\u03a0\u039f\u03a1\u039f\u0399 \u03a3\u0399\u03a4\u0397\u03a1\u03a9\u039d"
 	 * @generated
 	 * @ordered
 	 */
@@ -961,7 +955,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ANIMAL_FOOD_REMAINS
-	 * @model literal="\u03a5\u03a0\u039f\u039b\u0395\u0399\u039c\u039c\u0391\u03a4\u0391 \u0392\u0399\u039f\u039c. \u03a4\u03a1\u039f\u03a6\u0399\u039c\u03a9\u039d-\u0396\u03a9\u039f\u03a4\u03a1\u039f\u03a6\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -976,7 +969,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BARLEY
-	 * @model literal="\u039a\u03a1\u0399\u0398\u0391\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -991,7 +983,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BEEF
-	 * @model literal="\u0392\u039f\u0395\u0399\u039f \u039a\u03a1\u0395\u0391\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1006,7 +997,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BEEF_FROZEN
-	 * @model literal="\u0392\u039f\u0395\u0399\u039f \u039a\u03a1\u0395\u0391\u03a3 \u039a\u0391\u03a4/\u039d\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1021,7 +1011,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BEEF_FROZEN2
-	 * @model literal="\u0392\u039f\u0395\u0399\u039f\u039d \u039a\u0391\u03a4\u0395\u03a8\u03a5\u0393\u039c\u0395\u039d\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1036,7 +1025,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BEEF_NO_BONES
-	 * @model literal="\u039a\u03a1\u0395\u0391\u03a3 \u0392\u039f\u039f\u0395\u0399\u0394\u03a9\u039d \u0391\u039d\u0395\u03a5 \u039f\u03a3\u03a4\u03a9\u039d"
 	 * @generated
 	 * @ordered
 	 */
@@ -1051,7 +1039,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BEEF_FROZEN3
-	 * @model literal="\u039a\u03a1\u0395\u0391\u03a4\u0391 \u0392\u039f\u0395\u0399\u0391 \u039a\u0391\u03a4\u0395\u03a8\u03a5\u0393\u039c\u0395\u039d\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1066,7 +1053,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BEEF_FRESH
-	 * @model literal="\u039a\u03a1\u0395\u0391\u03a4\u0391 \u0392\u039f\u039f\u0395\u0399\u0394\u03a9\u039d \u039d\u03a9\u03a0\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1081,7 +1067,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CEREAL
-	 * @model literal="\u03a3\u0399\u03a4\u0397\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1096,7 +1081,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHEESE
-	 * @model literal="\u03a4\u03a5\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -1111,7 +1095,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHEESE_WHITE
-	 * @model literal="\u039b\u0395\u03a5\u039a\u039f \u03a4\u03a5\u03a1\u0399 \u0391\u039b\u039c\u03a5\u03a1\u039f \u0391\u03a0\u039f \u03a0\u03a1\u039f\u0392\u0395\u0399\u039f \u039a\u0391\u0399 \u0393\u0399\u0394\u0399\u039d\u039f \u0393\u0391\u039b\u0391 \u039a\u0391\u0399 \u039a\u0395\u03a6\u0391\u039b\u039f\u0393\u03a1\u0391\u0392\u0399\u0395\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1126,7 +1109,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHEESE_HARD
-	 * @model literal="\u03a4\u03a5\u03a1\u0399 \u0397\u039c\u0399\u03a3\u039a\u039b\u0397\u03a1\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1141,7 +1123,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHEESE2
-	 * @model literal="\u03a4\u03a5\u03a1\u0399\u0391 \u039a\u0391\u0399 \u03a0\u0397\u0393\u039c\u0395\u039d\u039f \u0393\u0391\u039b\u0391 \u0393\u0399\u0391 \u03a4\u03a5\u03a1\u0399\u0391 - \u03a4\u03a5\u03a1\u0399\u0391 \u039d\u03a9\u03a0\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1156,7 +1137,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COTTON_PIE_REMAINS
-	 * @model literal="\u03a5\u03a0\u039f\u039b\u0395\u0399\u039c\u0391\u03a4\u0391 \u0392\u0391\u039c\u0392\u0391\u039a\u039f\u03a0\u0399\u03a4\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1171,7 +1151,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHICKEN_FROZEN
-	 * @model literal="\u039a\u03a1\u0395\u0391\u03a3 \u039a\u039f\u03a4\u039f\u03a0\u039f\u03a5\u039b\u039f\u03a5 \u039a\u0391\u03a4/\u039d\u039f \u0391/\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1186,7 +1165,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CORN
-	 * @model literal="\u0391\u03a1\u0391\u0392\u039f\u03a3\u0399\u03a4\u039f\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1201,7 +1179,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CORN2
-	 * @model literal="\u0391\u03a1\u0391\u0392\u039f\u03a3\u0399\u03a4\u039f\u03a3 \u03a3\u0399\u03a4\u0391\u03a1\u0399 \u03a3\u0399\u039a\u0391\u039b\u0397 \u039a\u03a1\u0399\u0398\u0391\u03a1\u0399 \u0392\u03a1\u03a9\u039c\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1216,7 +1193,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CORN_FOR_POP_CORN
-	 * @model literal="\u039a\u0391\u039b\u0391\u039c\u03a0\u039f\u039a\u0399 \u0393\u0399\u0391 \u03a0\u039f\u03a0-\u039a\u039f\u03a1\u039d"
 	 * @generated
 	 * @ordered
 	 */
@@ -1231,7 +1207,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CORN_GLUTENE
-	 * @model literal="\u0393\u039b\u039f\u03a5\u03a4\u0395\u039d\u0397 \u0391\u03a1\u0391\u0392\u039f\u03a3\u0399\u03a4\u039f\u03a5"
 	 * @generated
 	 * @ordered
 	 */
@@ -1246,7 +1221,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CORN_GLUTENE2
-	 * @model literal="\u0393\u039b\u039f\u03a5\u03a4\u0395\u039d\u0397 \u039a\u0391\u039b\u0391\u039c\u03a0\u039f\u039a\u0399\u039f\u03a5"
 	 * @generated
 	 * @ordered
 	 */
@@ -1261,7 +1235,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DAIRY
-	 * @model literal="\u0393\u0391\u039b\u0391 & \u0393\u0391\u039b\u0391\u039a\u03a4\u039f\u039a\u039f\u039c\u0399\u039a\u0391 \u03a0\u03a1\u039f\u03aa\u039f\u039d\u03a4\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1276,7 +1249,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ETHANOL
-	 * @model literal="\u0391\u0399\u0398\u03a5\u039b\u0399\u039a\u0397 \u0391\u039b\u039a\u039f\u039f\u039b\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1291,7 +1263,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FLOUR
-	 * @model literal="\u0391\u039b\u0395\u03a5\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -1306,7 +1277,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FETA
-	 * @model literal="\u03a6\u0395\u03a4\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1321,7 +1291,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FETA_CHEESE
-	 * @model literal="\u03a4\u03a5\u03a1\u0399 \u03a6\u0395\u03a4\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1336,7 +1305,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC
-	 * @model literal="\u03a3\u039a\u039f\u03a1\u0394\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1351,7 +1319,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC_FRESH
-	 * @model literal="\u03a3\u039a\u039f\u03a1\u0394\u0391 \u039d\u03a9\u03a0\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1366,7 +1333,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC_POWDER
-	 * @model literal="\u03a3\u039a\u039f\u03a1\u0394\u0391 \u03a3\u0395 \u03a3\u039a\u039f\u039d\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1381,7 +1347,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC_DEHYDRATED
-	 * @model literal="\u0391\u03a6\u03a5\u0394\u0391\u03a4\u03a9\u039c\u0395\u039d\u039f \u03a3\u039a\u039f\u03a1\u0394\u039f \u03a3\u0395 \u03a3\u039a\u039f\u039d\u0397 \u039a\u0391\u0399 \u039a\u039f\u039a\u039a\u039f\u03a5\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1396,7 +1361,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC3
-	 * @model literal="\u03a3\u039a\u039f\u03a1\u0394\u0391 \u03a3\u0395 \u0391\u039b\u039c\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1411,7 +1375,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC_DRY
-	 * @model literal="\u03a3\u039a\u039f\u03a1\u0394\u039f \u0391\u03a0\u039f\u039e\u0397\u03a1\u0391\u039c\u0395\u039d\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1426,7 +1389,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GARLIC_DRY2
-	 * @model literal="\u039e\u0395\u03a1\u039f \u03a3\u039a\u039f\u03a1\u0394\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1441,7 +1403,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GLYCOZE
-	 * @model literal="\u0393\u039b\u03a5\u039a\u039f\u0396\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1456,7 +1417,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GRAVIERA
-	 * @model literal="\u0393\u03a1\u0391\u0392\u0399\u0395\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1471,7 +1431,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GLUTENE
-	 * @model literal="\u0393\u039b\u039f\u03a5\u03a4\u0395\u039d\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1486,7 +1445,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #KEFALOGRAVIERA
-	 * @model literal="\u039a\u0395\u03a6\u0391\u039b\u039f\u0393\u03a1\u0391\u0392\u0399\u0395\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1501,7 +1459,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #KEFALOTYRI
-	 * @model literal="\u039a\u0395\u03a6\u0391\u039b\u039f\u03a4\u03a5\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -1516,7 +1473,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MEAT
-	 * @model literal="\u0392\u039f\u0395\u0399\u039f \u039a\u03a1\u0395\u0391\u03a3 \u039a\u0391\u0399 \u03a0\u039f\u03a5\u039b\u0395\u03a1\u0399\u039a\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1531,7 +1487,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MANOYRI
-	 * @model literal="\u03a4\u03a5\u03a1\u0399 \u039c\u0391\u039d\u039f\u03a5\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -1546,7 +1501,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MUSHROOMS2
-	 * @model literal="\u039c\u0391\u039d\u0399\u03a4\u0391\u03a1\u0399\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1561,7 +1515,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MUSHROOMS
-	 * @model literal="\u039a\u039f\u039d\u03a3\u0395\u03a1\u0392\u0395\u03a3 \u039c\u0391\u039d\u0399\u03a4\u0391\u03a1\u0399\u03a9\u039d"
 	 * @generated
 	 * @ordered
 	 */
@@ -1576,7 +1529,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MYZHTHRA
-	 * @model literal="\u039c\u03a5\u0396\u0397\u0398\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1591,7 +1543,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MYZHTRA_DRY
-	 * @model literal="\u039e\u0397\u03a1\u0397 \u039c\u03a5\u0396\u0397\u0398\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1606,7 +1557,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OLIVEOIL
-	 * @model literal="\u0395\u039b\u0391\u0399\u039f\u039b\u0391\u0394\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1621,7 +1571,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PASTA
-	 * @model literal="\u0396\u03a5\u039c\u0391\u03a1\u0399\u039aA"
 	 * @generated
 	 * @ordered
 	 */
@@ -1636,7 +1585,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POP_CORN
-	 * @model literal="\u03a0\u039f\u03a0 \u039a\u039f\u03a1\u039d"
 	 * @generated
 	 * @ordered
 	 */
@@ -1651,7 +1599,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PITYRA
-	 * @model literal="\u03a0\u0399\u03a4\u03a5\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1666,7 +1613,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE
-	 * @model literal="\u03a1\u03a5\u0396\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -1681,7 +1627,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE_BASMATI
-	 * @model literal="\u03a1\u03a5\u0396\u0399 BASMATI"
 	 * @generated
 	 * @ordered
 	 */
@@ -1696,7 +1641,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE_JASMINE
-	 * @model literal="\u03a1\u03a5\u0396\u0399 \u0393\u0399\u0391\u03a3\u0395\u039c\u0399\u039f\u03a5"
 	 * @generated
 	 * @ordered
 	 */
@@ -1711,7 +1655,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE_WHITENED
-	 * @model literal="\u03a1\u03a5\u0396\u0399 \u039b\u0395\u03a5\u039a\u0391\u03a3\u039c\u0395\u039d\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1726,7 +1669,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE_PARTS
-	 * @model literal="\u0398\u03a1\u0391\u03a5\u03a3\u039c\u0391\u03a4\u0391 \u03a1\u03a5\u0396\u0399\u039f\u03a5"
 	 * @generated
 	 * @ordered
 	 */
@@ -1741,7 +1683,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE_GRAINS_WHITENED
-	 * @model literal="\u03a1\u03a5\u0396\u0399 \u039b\u0395\u03a5\u039a\u0391\u03a3\u039c\u0395\u039d\u039f \u03a3\u0395 \u039a\u039f\u039a\u039a\u039f\u03a5\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1756,7 +1697,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RICE_MEDIUM_WHITENED
-	 * @model literal="\u03a1\u03a5\u0396\u0399 \u039b\u0395\u03a5\u039a\u0391\u03a3\u039c\u0395\u039d\u039f \u039c\u0395\u03a3\u0391\u0399\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1771,7 +1711,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RYE
-	 * @model literal="\u03a3\u0399\u039a\u0391\u039b\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1786,7 +1725,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SOFT_FLOUR
-	 * @model literal="\u0391\u039b\u0395\u03a5\u03a1\u0399 \u0391\u03a0\u039f \u039c\u0391\u039b\u0391\u039a\u039f \u03a3\u0399\u03a4\u0391\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -1801,7 +1739,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SOFT_FLOUR2
-	 * @model literal="\u0391\u039b\u0395\u03a5\u03a1\u0399 \u039c\u0391\u039b\u0391\u039a\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1816,7 +1753,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SOFT_FLOUR3
-	 * @model literal="\u0391\u039b\u0395\u03a5\u03a1\u0399 \u03a3\u0399\u03a4\u039f\u03a5 \u039c\u0391\u039b\u0391\u039a\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1831,7 +1767,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SOYA
-	 * @model literal="\u03a3\u039f\u0393\u0399\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1846,7 +1781,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SORGOS
-	 * @model literal="\u03a3\u039f\u03a1\u0393\u039f\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1861,7 +1795,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUGAR
-	 * @model literal="\u0396\u0391\u03a7\u0391\u03a1\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1876,7 +1809,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUGARCANE_RAW
-	 * @model literal="\u0396\u0391\u03a7\u0391\u03a1\u0397 \u0391\u03a0\u039f \u0396\u0391\u03a7\u0391\u03a1\u039f\u039a\u0391\u039b\u0391\u039c\u039f \u0391\u039a\u0391\u03a4\u0395\u03a1\u0393\u0391\u03a3\u03a4\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1891,7 +1823,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUGAR_WHITE
-	 * @model literal="\u0396\u0391\u03a7\u0391\u03a1\u0397 \u039b\u0395\u03a5\u039a\u0397 \u0391\u03a0\u039f \u0396\u0391\u03a7\u0391\u03a1\u039f\u03a4\u0395\u03a5\u03a4\u039b\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1906,7 +1837,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUGAR_BROWN
-	 * @model literal="\u039a\u0391\u03a3\u03a4\u0391\u039d\u0397 \u0396\u0391\u03a7\u0391\u03a1\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -1921,7 +1851,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SYRUP_GLUCOZE
-	 * @model literal="\u03a3\u0399\u03a1\u039f\u03a0\u0399 \u0393\u039b\u03a5\u039a\u039f\u0396\u0397\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1936,7 +1865,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SYRUP_SCENTED
-	 * @model literal="\u03a3\u0399\u03a1\u039f\u03a0\u0399\u0391 \u0391\u03a0\u039f \u0396\u0391\u03a7\u0391\u03a1\u0391 \u0391\u03a1\u03a9\u039c\u0391\u03a4\u0399\u03a3\u039c\u0395\u039d\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -1951,7 +1879,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WHEAT
-	 * @model literal="\u03a3\u0399\u03a4\u039f\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1966,7 +1893,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WHEAT_FOR_BREAD
-	 * @model literal="\u03a3\u0399\u03a4\u0391\u03a1\u0399 \u03a3\u039a\u039b\u0397\u03a1\u039f \u039a\u0391\u0399 \u039c\u0391\u039b\u0391\u039a\u039f \u0391\u03a1\u03a4\u039f\u03a0\u039f\u0399\u0397\u039c\u0395\u039d\u039f"
 	 * @generated
 	 * @ordered
 	 */
@@ -1981,7 +1907,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WHEAT_DURUM
-	 * @model literal="\u03a3\u0399\u03a4\u039f\u03a3 \u03a3\u039a\u039b\u0397\u03a1\u039f\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -1996,7 +1921,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WHEAT_SOFT
-	 * @model literal="\u03a3\u0399\u03a4\u039f\u03a3 \u039c\u0391\u039b\u0391\u039a\u039f\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -2011,7 +1935,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WHEAT_FLOUR
-	 * @model literal="\u0391\u039b\u0395\u03a5\u03a1\u0399\u0391 \u03a3\u0399\u03a4\u0391\u03a1\u0399\u039f\u03a5"
 	 * @generated
 	 * @ordered
 	 */
@@ -2026,7 +1949,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WHEAT_SEEDS
-	 * @model literal="\u03a3\u03a0\u039f\u03a1\u039f\u0399 \u03a3\u0399\u03a4\u0397\u03a1\u03a9\u039d"
 	 * @generated
 	 * @ordered
 	 */
@@ -2041,7 +1963,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #VLACHOTYRI
-	 * @model literal="\u0392\u039b\u0391\u03a7\u039f\u03a4\u03a5\u03a1\u0399"
 	 * @generated
 	 * @ordered
 	 */
@@ -2056,7 +1977,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #VIGLA
-	 * @model literal="\u03a6\u0395\u03a4\u0391 \u0392\u0399\u0393\u039b\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -2071,7 +1991,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OAT
-	 * @model literal="\u0392\u03a1\u03a9\u039c\u0397"
 	 * @generated
 	 * @ordered
 	 */
@@ -2086,7 +2005,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FROZEN_TURKEY
-	 * @model literal="\u0393\u0391\u039b\u039f\u03a0\u039f\u03a5\u039b\u0395\u03a3 \u039a\u0391\u03a4\u0395\u03a8\u03a5\u0393\u039c\u0395\u039d\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -2101,7 +2019,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OLIVE_KERNEL_LIQUID
-	 * @model literal="\u0395\u039b\u0391\u0399\u039f\u03a0\u03a5\u03a1\u0397\u039d\u0391\u03a3 \u03a5\u0393\u03a1\u039f\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -2116,7 +2033,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #VEGETABLES_DRY
-	 * @model literal="\u039b\u0391\u03a7\u0391\u039d\u0399\u039a\u0391 \u039e\u0395\u03a1\u0391"
 	 * @generated
 	 * @ordered
 	 */
@@ -2131,7 +2047,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SPOROI_SITHRWN2
-	 * @model literal="\u03a3\u03a0\u039f\u03a1\u039f\u0399 \u03a3\u0399\u03a4\u0397\u03a1\u03a9\u039d-\u0396\u03a9\u039f\u03a4\u03a1\u039f\u03a6\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -2146,7 +2061,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #XORTONOMES
-	 * @model literal="\u03a7\u039f\u03a1\u03a4\u039f\u039d\u039f\u039c\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -2161,7 +2075,6 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #XORTONOMES2
-	 * @model literal="\u03a7\u039f\u03a1\u03a4\u039f\u039d\u039f\u039c\u0395\u03a3-\u0396\u03a9\u039f\u03a4\u03a1\u039f\u03a6\u0395\u03a3"
 	 * @generated
 	 * @ordered
 	 */
@@ -2477,13 +2390,3 @@ public enum AgrixProductTypes implements InternalAgrixProductTypes {
 	}
 	
 } //AgrixProductTypes
-
-/**
- * A private implementation interface used to hide the inheritance from Enumerator.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
- * @generated
- */
-interface InternalAgrixProductTypes extends org.eclipse.emf.common.util.Enumerator {
-	// Empty 
-}

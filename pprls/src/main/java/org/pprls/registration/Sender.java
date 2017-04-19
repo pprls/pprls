@@ -23,7 +23,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   <li>{@link org.pprls.registration.Sender#getRegistryNumber <em>Registry Number</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface Sender {
@@ -38,7 +37,6 @@ public interface Sender {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Afm</em>' attribute.
 	 * @see #setAfm(String)
-	 * @model default="000000000" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getAfm();
@@ -64,7 +62,6 @@ public interface Sender {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Address</em>' attribute.
 	 * @see #setAddress(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getAddress();
@@ -90,7 +87,6 @@ public interface Sender {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getName();
@@ -115,8 +111,6 @@ public interface Sender {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Phones</em>' attribute list.
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=EAGER)\r\n@Fetch(FetchMode.JOIN)'"
 	 * @generated
 	 */
 	List<String> getPhones();
@@ -131,7 +125,6 @@ public interface Sender {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registry Number</em>' reference.
 	 * @see #setRegistryNumber(SenderRegistryNumber)
-	 * @model resolveProxies="false" unsettable="true" required="true"
 	 * @generated
 	 */
 	SenderRegistryNumber getRegistryNumber();
@@ -149,7 +142,6 @@ public interface Sender {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean" required="true"
 	 * @generated
 	 */
 	boolean hasRegistryNumber();
@@ -157,7 +149,6 @@ public interface Sender {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model numberDataType="org.eclipse.emf.ecore.xml.type.String" dateDataType="org.eclipse.emf.ecore.xml.type.Date"
 	 * @generated
 	 */
 	void setRegistryNumber(String number, XMLGregorianCalendar date);

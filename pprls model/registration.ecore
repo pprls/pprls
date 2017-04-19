@@ -384,9 +384,9 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastDoneDate" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+        eType="#//Date"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastAcceptDate" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+        eType="#//Date"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="physicalLocation" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//Action"
@@ -488,7 +488,7 @@
         eType="#//SenderRegistryNumber" unsettable="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PostageInfo">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postageTime" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postageTime" eType="#//Date"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="postageMethod" eType="#//PostalMethod"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="voucherNumber" lowerBound="1"
@@ -497,7 +497,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SenderRegistryNumber" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="#//Date"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="DocumentIdType" instanceClassName="java.util.UUID"/>
   <eClassifiers xsi:type="ecore:EClass" name="StateTransition">
@@ -575,7 +575,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RegistryNumber">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="#//Year"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="#//Date"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegistrationService">
     <eOperations name="getNumberForYear" lowerBound="1" eType="#//RegistryNumber">
@@ -587,4 +587,5 @@
     <eLiterals name="CC" value="1" literal="Κοινοποίηση"/>
     <eLiterals name="INTERNAL" value="2" literal="Εσωτερική Διανομή"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.util.Date"/>
 </ecore:EPackage>

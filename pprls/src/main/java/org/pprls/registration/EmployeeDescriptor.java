@@ -21,7 +21,6 @@ package org.pprls.registration;
  *   <li>{@link org.pprls.registration.EmployeeDescriptor#getRegistrationNumber <em>Registration Number</em>}</li>
  * </ul>
  *
- * @model
  * @generated
  */
 public interface EmployeeDescriptor {
@@ -36,7 +35,6 @@ public interface EmployeeDescriptor {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unit Path</em>' attribute.
 	 * @see #setUnitPath(String)
-	 * @model default="" unique="false" dataType="org.eclipse.emf.ecore.xml.type.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getUnitPath();
@@ -60,7 +58,6 @@ public interface EmployeeDescriptor {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unit Name</em>' attribute.
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getUnitName();
@@ -74,7 +71,6 @@ public interface EmployeeDescriptor {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Directorate</em>' attribute.
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getDirectorate();
@@ -90,7 +86,6 @@ public interface EmployeeDescriptor {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Full Name</em>' attribute.
 	 * @see #setFullName(String)
-	 * @model default="" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 * @generated
 	 */
 	String getFullName();
@@ -115,7 +110,6 @@ public interface EmployeeDescriptor {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unit Id</em>' attribute.
 	 * @see #setUnitId(short)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Short" required="true"
 	 * @generated
 	 */
 	short getUnitId();
@@ -140,7 +134,6 @@ public interface EmployeeDescriptor {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Registration Number</em>' attribute.
 	 * @see #setRegistrationNumber(short)
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.Short" required="true"
 	 * @generated
 	 */
 	short getRegistrationNumber();
@@ -158,7 +151,6 @@ public interface EmployeeDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
 	 * @generated
 	 */
 	void newOperation1();
