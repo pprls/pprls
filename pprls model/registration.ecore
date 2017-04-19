@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="registration" nsURI="http://org.pprls/domain/registration/1.0"
-    nsPrefix="org.pprls.registration">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="registration" nsURI="http://org.pprls/registration/1.0" nsPrefix="org.pprls.registration">
   <eClassifiers xsi:type="ecore:EEnum" name="FileType">
     <eLiterals name="PDF"/>
     <eLiterals name="DOC" value="1"/>
@@ -583,53 +582,4 @@
     <eLiterals name="CC" value="1" literal="Κοινοποίηση"/>
     <eLiterals name="INTERNAL" value="2" literal="Εσωτερική Διανομή"/>
   </eClassifiers>
-  <eSubpackages name="builders" nsURI="http://paperless/builders/1.0" nsPrefix="paperless">
-    <eClassifiers xsi:type="ecore:EClass" name="EmployeeDescriptorBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//EmployeeDescriptor">
-        <eParameters name="unit"/>
-        <eParameters name="employee"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DocumentBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//Document">
-        <eParameters name="owner" eType="#//EmployeeDescriptor"/>
-        <eParameters name="handler" eType="#//EmployeeDescriptor"/>
-        <eParameters name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-        <eParameters name="action" eType="#//Action"/>
-        <eParameters name="internalNumber" eType="#//InternalNumber"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OutgoingBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//Outgoing">
-        <eParameters name="type" eType="#//DocumentType"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="IncomingBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//Incoming"/>
-      <eOperations name="buildAgrexAgrim" lowerBound="1" eType="#//Incoming">
-        <eParameters name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-        <eParameters name="product" eType="#//AgrixProduct"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StatusBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//Status">
-        <eParameters name="handler" eType="#//EmployeeDescriptor"/>
-        <eParameters name="owner" eType="#//EmployeeDescriptor"/>
-        <eParameters name="state" eType="#//DocumentStatus"/>
-        <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StateTransitionBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//StateTransition">
-        <eParameters name="state" lowerBound="1" eType="#//DocumentStatus"/>
-        <eParameters name="operation" lowerBound="1" eType="#//IncomingDocumentOperations"/>
-      </eOperations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RegistryNumberBuilder">
-      <eOperations name="build" lowerBound="1" eType="#//RegistryNumber">
-        <eParameters name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
-        <eParameters name="year" eType="#//Year"/>
-      </eOperations>
-    </eClassifiers>
-  </eSubpackages>
 </ecore:EPackage>
