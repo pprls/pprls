@@ -125,6 +125,7 @@
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
           </endLabelStyleDescription>
         </computedStyleDescriptions>
+<<<<<<< HEAD
         <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_VS0qsR6lEeeZsKbd2rwR0A" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
           <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
@@ -137,7 +138,30 @@
           </centerLabelStyleDescription>
           <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_n19OkiUPEeeiQ92JoU-57w" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+=======
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_4MbWpB6UEeeZsKbd2rwR0A" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_4MbWpR6UEeeZsKbd2rwR0A" showIcon="false" labelExpression="service:renderEOpposite">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </beginLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_4MbWph6UEeeZsKbd2rwR0A" showIcon="false" labelExpression="service:render">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </endLabelStyleDescription>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_4MkghB6UEeeZsKbd2rwR0A" sourceArrow="InputArrow" targetArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_4MkghR6UEeeZsKbd2rwR0A" showIcon="false" labelExpression="service:renderEOpposite">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </beginLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_4Mkghh6UEeeZsKbd2rwR0A" showIcon="false" labelExpression="service:render">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+>>>>>>> branch 'master' of https://github.com/pprls/pprls
+          </endLabelStyleDescription>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_VS0qsR6lEeeZsKbd2rwR0A" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
@@ -1612,6 +1636,7 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_4NnpgB6UEeeZsKbd2rwR0A" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4NnpgR6UEeeZsKbd2rwR0A" x="3865" y="135"/>
+<<<<<<< HEAD
         </children>
         <children xmi:type="notation:Node" xmi:id="_I0zfICUZEeeiQ92JoU-57w" type="2003" element="_IzvvMCUZEeeiQ92JoU-57w">
           <children xmi:type="notation:Node" xmi:id="_I1JdYCUZEeeiQ92JoU-57w" type="5007"/>
@@ -1625,6 +1650,8 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_I0zfISUZEeeiQ92JoU-57w" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I0zfIiUZEeeiQ92JoU-57w" x="3309" y="408" width="140" height="50"/>
+=======
+>>>>>>> branch 'master' of https://github.com/pprls/pprls
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_tXvE-R6UEeeZsKbd2rwR0A"/>
         <edges xmi:type="notation:Edge" xmi:id="_4SYNkB6UEeeZsKbd2rwR0A" type="4001" element="_4L-qoB6UEeeZsKbd2rwR0A" source="_4NBMfh6UEeeZsKbd2rwR0A" target="_4Nd4ih6UEeeZsKbd2rwR0A">
