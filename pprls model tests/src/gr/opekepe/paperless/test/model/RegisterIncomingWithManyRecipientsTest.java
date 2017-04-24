@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.pprls.application.services.services.FileService;
 import org.pprls.application.services.services.ServicesFactory;
+import org.pprls.registration.Classification;
 import org.pprls.registration.Incoming;
 import org.pprls.registration.PostalMethod;
 import org.pprls.registration.Recipient;
@@ -17,8 +18,9 @@ import org.pprls.registration.RegistrationService;
 import org.pprls.registration.RegistryNumber;
 
 public class RegisterIncomingWithManyRecipientsTest {
-	RegistrationService registrationService;
-	FileService fileService;
+	private RegistrationService registrationService;
+	private FileService fileService;
+	
 	@Before
 	public void setUp()
 	{
@@ -39,6 +41,8 @@ public class RegisterIncomingWithManyRecipientsTest {
 		
 		incoming.setAda("Some Ada");
 		
+		incoming.setClassification(Classification.INTERNAL);
+		//incoming.setTag(Tag)
 		List<String> filenames = new ArrayList<>();
 		
 		

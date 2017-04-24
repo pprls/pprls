@@ -12,14 +12,6 @@
     <eLiterals name="XLSX" value="7"/>
     <eLiterals name="ODS" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Tag">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="Tag"/>
-    </eAnnotations>
-    <eOperations name="newOperation1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral=""/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Year">
     <eLiterals name="YEAR_2006" value="2006" literal="2006"/>
     <eLiterals name="YEAR_2007" value="2007" literal="2007"/>
@@ -44,28 +36,7 @@
     <eLiterals name="ANY" literal="ANY"/>
     <eLiterals name="YEAR_EPOCH" value="1970" literal="1970"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DispatcherOrganization" eSuperTypes="#//Dispatcher">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latinName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean">
-      <eAnnotations source="teneo.jpa">
-        <details key="value" value="@Type(type = &quot;org.hibernate.type.NumericBooleanType&quot;)"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
-        eType="#//DispatcherUnit" containment="true" resolveProxies="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DispatcherUnit" eSuperTypes="#//Dispatcher">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="belongsTo" lowerBound="1"
-        eType="#//DispatcherOrganization" resolveProxies="false">
-      <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@Fetch(HbFetchType.SELECT)"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Recipient">
+  <eClassifiers xsi:type="ecore:EClass" name="Correspondant">
     <eOperations name="createPostageInfo" lowerBound="1" eType="#//PostageInfo">
       <eParameters name="postageDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
       <eParameters name="postalMethod" eType="#//PostalMethod"/>
@@ -83,7 +54,16 @@
         defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="postageinfo" eType="#//PostageInfo"
         resolveProxies="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientType" eType="#//RecipientType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientType" eType="#//CorespondantType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phones" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        defaultValueLiteral="">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value="@OneToMany(fetch=EAGER)&#xD;&#xA;@Fetch(FetchMode.JOIN)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="registryNumber" eType="#//SenderRegistryNumber"
+        unsettable="true" resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentType">
     <eLiterals name="NOTE" literal="Σημείωμα"/>
@@ -103,21 +83,11 @@
     <eLiterals name="Empowerment" value="8" literal="Eξουσιοδότηση"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Outgoing" eSuperTypes="#//RegistryRecord">
-    <eOperations name="getBasicEditor" lowerBound="1" eType="#//EmployeeDescriptor"/>
-    <eOperations name="getOwner" lowerBound="1" eType="#//EmployeeDescriptor"/>
-    <eOperations name="getState" lowerBound="1" eType="#//DocumentStatus"/>
+    <eOperations name="getBasicEditor" lowerBound="1" eType="#//EntityDescriptor"/>
     <eOperations name="isSigned" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
-    <eOperations name="close" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
-      <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    </eOperations>
-    <eOperations name="reissue" eType="#//Outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reissued" eType="#//Outgoing"
-        resolveProxies="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedIncoming" eType="#//Incoming"
-        resolveProxies="false">
-      <eAnnotations source="teneo.jpa"/>
-    </eStructuralFeatures>
+    <eOperations name="reissue"/>
+    <eOperations name="getState"/>
+    <eOperations name="close"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfRepeats" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int" defaultValueLiteral="0"
         derived="true">
@@ -125,31 +95,24 @@
         <details key="appinfo" value=" @Formula(&quot;(select count(*) from Outgoing o where o.outgoing_reissued_e_id=e_id)&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="issuer" lowerBound="1"
+        upperBound="-1" eType="#//EntityDescriptor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="editor" lowerBound="1"
-        upperBound="-1" eType="#//EmployeeDescriptor" resolveProxies="false"/>
+        upperBound="-1" eType="#//EntityDescriptor" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reissued" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedIncoming" eType="#//Incoming"
+        resolveProxies="false">
+      <eAnnotations source="teneo.jpa"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralProtocolNumber">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="#//Year"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dispatcher" abstract="true" interface="true">
-    <eOperations name="getName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Incoming" eSuperTypes="#//RegistryRecord">
-    <eOperations name="createSender" lowerBound="1" eType="#//Sender">
-      <eParameters name="afm" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="phones" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
-    </eOperations>
-    <eOperations name="hasSenderRegistryNumber" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
-    <eOperations name="getSenderRegistryNumber" lowerBound="1" eType="#//SenderRegistryNumber"/>
     <eOperations name="reply" lowerBound="1" eType="#//Outgoing"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relatedToOutgoing" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRelated" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
         defaultValueLiteral="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -159,10 +122,6 @@
         <details key="value" value="@Type(type = &quot;org.hibernate.type.NumericBooleanType&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
-        upperBound="-1" eType="#//Sender" resolveProxies="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="agrexagrim" eType="#//AgrexAgrim"
-        resolveProxies="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentStatus">
     <eLiterals name="ACCEPTED" value="2" literal="Αποδεκτό"/>
@@ -182,109 +141,6 @@
         eType="#//Status" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="internalNumber" lowerBound="1"
         eType="#//InternalNumber" resolveProxies="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AgrexAgrim">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Decimal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="product" eType="#//AgrixProduct"
-        resolveProxies="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MeasurementUnits">
-    <eLiterals name="KG" literal="kg"/>
-    <eLiterals name="LT" value="1" literal="lt"/>
-    <eLiterals name="TN" value="3" literal="tn"/>
-    <eLiterals name="PCS" value="4" literal="pcs"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AgrixProduct">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="product" eType="#//AgrixProductTypes"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//MeasurementUnits"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AgrixProductTypes">
-    <eLiterals name="ALCOHOLE" value="4" literal="ΑΛΚΟΟΛΗ ΓΕΩΡΓΙΚΗΣ ΠΡΟΕΛΕΥΣΗΣ"/>
-    <eLiterals name="ALEVRA" value="34" literal="ΑΛΕΥΡΑ"/>
-    <eLiterals name="ANIMAL_FOOD" value="12" literal="ΖΩΟΤΡΟΦΕΣ"/>
-    <eLiterals name="ANIMAL_FOOD2" value="190" literal="ΠΑΡΑΣΚΕΥΑΣΜΑΤΑ-ΖΩΟΤΡΟΦΕΣ"/>
-    <eLiterals name="ANIMAL_FOOD_WHEAT" value="50" literal="ΖΩΟΤΡΟΦΕΣ -ΣΠΟΡΟΙ ΣΙΤΗΡΩΝ"/>
-    <eLiterals name="ANIMAL_FOOD_REMAINS" value="777" literal="ΥΠΟΛΕΙΜΜΑΤΑ ΒΙΟΜ. ΤΡΟΦΙΜΩΝ-ΖΩΟΤΡΟΦΕΣ"/>
-    <eLiterals name="BARLEY" value="30" literal="ΚΡΙΘΑΡΙ"/>
-    <eLiterals name="BEEF" value="28" literal="ΒΟΕΙΟ ΚΡΕΑΣ"/>
-    <eLiterals name="BEEF_FROZEN" value="280" literal="ΒΟΕΙΟ ΚΡΕΑΣ ΚΑΤ/ΝΟ"/>
-    <eLiterals name="BEEF_FROZEN2" value="281" literal="ΒΟΕΙΟΝ ΚΑΤΕΨΥΓΜΕΝΟ"/>
-    <eLiterals name="BEEF_NO_BONES" value="290" literal="ΚΡΕΑΣ ΒΟΟΕΙΔΩΝ ΑΝΕΥ ΟΣΤΩΝ"/>
-    <eLiterals name="BEEF_FROZEN3" value="289" literal="ΚΡΕΑΤΑ ΒΟΕΙΑ ΚΑΤΕΨΥΓΜΕΝΑ"/>
-    <eLiterals name="BEEF_FRESH" value="288" literal="ΚΡΕΑΤΑ ΒΟΟΕΙΔΩΝ ΝΩΠΑ"/>
-    <eLiterals name="CEREAL" value="1" literal="ΣΙΤΗΡΑ"/>
-    <eLiterals name="CHEESE" value="9" literal="ΤΥΡΙ"/>
-    <eLiterals name="CHEESE_WHITE" value="99" literal="ΛΕΥΚΟ ΤΥΡΙ ΑΛΜΥΡΟ ΑΠΟ ΠΡΟΒΕΙΟ ΚΑΙ ΓΙΔΙΝΟ ΓΑΛΑ ΚΑΙ ΚΕΦΑΛΟΓΡΑΒΙΕΡΑ"/>
-    <eLiterals name="CHEESE_HARD" value="133" literal="ΤΥΡΙ ΗΜΙΣΚΛΗΡΟ"/>
-    <eLiterals name="CHEESE2" value="845" literal="ΤΥΡΙΑ ΚΑΙ ΠΗΓΜΕΝΟ ΓΑΛΑ ΓΙΑ ΤΥΡΙΑ - ΤΥΡΙΑ ΝΩΠΑ"/>
-    <eLiterals name="COTTON_PIE_REMAINS" value="930" literal="ΥΠΟΛΕΙΜΑΤΑ ΒΑΜΒΑΚΟΠΙΤΑ"/>
-    <eLiterals name="CHICKEN_FROZEN" value="301" literal="ΚΡΕΑΣ ΚΟΤΟΠΟΥΛΟΥ ΚΑΤ/ΝΟ Α/Ο"/>
-    <eLiterals name="CORN" value="18" literal="ΑΡΑΒΟΣΙΤΟΣ"/>
-    <eLiterals name="CORN2" value="200" literal="ΑΡΑΒΟΣΙΤΟΣ ΣΙΤΑΡΙ ΣΙΚΑΛΗ ΚΡΙΘΑΡΙ ΒΡΩΜΗ"/>
-    <eLiterals name="CORN_FOR_POP_CORN" value="16" literal="ΚΑΛΑΜΠΟΚΙ ΓΙΑ ΠΟΠ-ΚΟΡΝ"/>
-    <eLiterals name="CORN_GLUTENE" value="20" literal="ΓΛΟΥΤΕΝΗ ΑΡΑΒΟΣΙΤΟΥ"/>
-    <eLiterals name="CORN_GLUTENE2" value="500" literal="ΓΛΟΥΤΕΝΗ ΚΑΛΑΜΠΟΚΙΟΥ"/>
-    <eLiterals name="DAIRY" value="3" literal="ΓΑΛΑ &amp; ΓΑΛΑΚΤΟΚΟΜΙΚΑ ΠΡΟΪΟΝΤΑ"/>
-    <eLiterals name="ETHANOL" value="35" literal="ΑΙΘΥΛΙΚΗ ΑΛΚΟΟΛΗ"/>
-    <eLiterals name="FLOUR" value="10" literal="ΑΛΕΥΡΙ"/>
-    <eLiterals name="FETA" value="15" literal="ΦΕΤΑ"/>
-    <eLiterals name="FETA_CHEESE" value="33" literal="ΤΥΡΙ ΦΕΤΑ"/>
-    <eLiterals name="GARLIC" value="277" literal="ΣΚΟΡΔΑ"/>
-    <eLiterals name="GARLIC_FRESH" value="276" literal="ΣΚΟΡΔΑ ΝΩΠΑ"/>
-    <eLiterals name="GARLIC_POWDER" value="19" literal="ΣΚΟΡΔΑ ΣΕ ΣΚΟΝΗ"/>
-    <eLiterals name="GARLIC_DEHYDRATED" value="400" literal="ΑΦΥΔΑΤΩΜΕΝΟ ΣΚΟΡΔΟ ΣΕ ΣΚΟΝΗ ΚΑΙ ΚΟΚΚΟΥΣ"/>
-    <eLiterals name="GARLIC3" value="275" literal="ΣΚΟΡΔΑ ΣΕ ΑΛΜΗ"/>
-    <eLiterals name="GARLIC_DRY" value="270" literal="ΣΚΟΡΔΟ ΑΠΟΞΗΡΑΜΕΝΟ"/>
-    <eLiterals name="GARLIC_DRY2" value="95" literal="ΞΕΡΟ ΣΚΟΡΔΟ"/>
-    <eLiterals name="GLYCOZE" value="450" literal="ΓΛΥΚΟΖΗ"/>
-    <eLiterals name="GRAVIERA" value="40" literal="ΓΡΑΒΙΕΡΑ"/>
-    <eLiterals name="GLUTENE" value="29" literal="ΓΛΟΥΤΕΝΗ"/>
-    <eLiterals name="KEFALOGRAVIERA" value="23" literal="ΚΕΦΑΛΟΓΡΑΒΙΕΡΑ"/>
-    <eLiterals name="KEFALOTYRI" value="14" literal="ΚΕΦΑΛΟΤΥΡΙ"/>
-    <eLiterals name="MEAT" literal="ΒΟΕΙΟ ΚΡΕΑΣ ΚΑΙ ΠΟΥΛΕΡΙΚΑ"/>
-    <eLiterals name="MANOYRI" literal="ΤΥΡΙ ΜΑΝΟΥΡΙ"/>
-    <eLiterals name="MUSHROOMS2" value="98" literal="ΜΑΝΙΤΑΡΙΑ"/>
-    <eLiterals name="MUSHROOMS" value="6" literal="ΚΟΝΣΕΡΒΕΣ ΜΑΝΙΤΑΡΙΩΝ"/>
-    <eLiterals name="MYZHTHRA" value="585" literal="ΜΥΖΗΘΡΑ"/>
-    <eLiterals name="MYZHTRA_DRY" value="93" literal="ΞΗΡΗ ΜΥΖΗΘΡΑ"/>
-    <eLiterals name="OLIVEOIL" value="7" literal="ΕΛΑΙΟΛΑΔΟ"/>
-    <eLiterals name="PASTA" value="8" literal="ΖΥΜΑΡΙΚA"/>
-    <eLiterals name="POP_CORN" value="24" literal="ΠΟΠ ΚΟΡΝ"/>
-    <eLiterals name="PITYRA" value="180" literal="ΠΙΤΥΡΑ"/>
-    <eLiterals name="RICE" value="2" literal="ΡΥΖΙ"/>
-    <eLiterals name="RICE_BASMATI" value="139" literal="ΡΥΖΙ BASMATI"/>
-    <eLiterals name="RICE_JASMINE" value="170" literal="ΡΥΖΙ ΓΙΑΣΕΜΙΟΥ"/>
-    <eLiterals name="RICE_WHITENED" value="140" literal="ΡΥΖΙ ΛΕΥΚΑΣΜΕΝΟ"/>
-    <eLiterals name="RICE_PARTS" value="59" literal="ΘΡΑΥΣΜΑΤΑ ΡΥΖΙΟΥ"/>
-    <eLiterals name="RICE_GRAINS_WHITENED" value="25" literal="ΡΥΖΙ ΛΕΥΚΑΣΜΕΝΟ ΣΕ ΚΟΚΚΟΥΣ"/>
-    <eLiterals name="RICE_MEDIUM_WHITENED" value="26" literal="ΡΥΖΙ ΛΕΥΚΑΣΜΕΝΟ ΜΕΣΑΙΟ"/>
-    <eLiterals name="RYE" value="31" literal="ΣΙΚΑΛΗ"/>
-    <eLiterals name="SOFT_FLOUR" value="13" literal="ΑΛΕΥΡΙ ΑΠΟ ΜΑΛΑΚΟ ΣΙΤΑΡΙ"/>
-    <eLiterals name="SOFT_FLOUR2" value="360" literal="ΑΛΕΥΡΙ ΜΑΛΑΚΟ"/>
-    <eLiterals name="SOFT_FLOUR3" value="361" literal="ΑΛΕΥΡΙ ΣΙΤΟΥ ΜΑΛΑΚΟ"/>
-    <eLiterals name="SOYA" value="366" literal="ΣΟΓΙΑ"/>
-    <eLiterals name="SORGOS" value="800" literal="ΣΟΡΓΟΣ"/>
-    <eLiterals name="SUGAR" value="5" literal="ΖΑΧΑΡΗ"/>
-    <eLiterals name="SUGARCANE_RAW" value="17" literal="ΖΑΧΑΡΗ ΑΠΟ ΖΑΧΑΡΟΚΑΛΑΜΟ ΑΚΑΤΕΡΓΑΣΤΗ"/>
-    <eLiterals name="SUGAR_WHITE" value="42" literal="ΖΑΧΑΡΗ ΛΕΥΚΗ ΑΠΟ ΖΑΧΑΡΟΤΕΥΤΛΑ"/>
-    <eLiterals name="SUGAR_BROWN" value="60" literal="ΚΑΣΤΑΝΗ ΖΑΧΑΡΗ"/>
-    <eLiterals name="SYRUP_GLUCOZE" value="255" literal="ΣΙΡΟΠΙ ΓΛΥΚΟΖΗΣ"/>
-    <eLiterals name="SYRUP_SCENTED" value="254" literal="ΣΙΡΟΠΙΑ ΑΠΟ ΖΑΧΑΡΑ ΑΡΩΜΑΤΙΣΜΕΝΑ"/>
-    <eLiterals name="WHEAT" value="22" literal="ΣΙΤΟΣ"/>
-    <eLiterals name="WHEAT_FOR_BREAD" value="333" literal="ΣΙΤΑΡΙ ΣΚΛΗΡΟ ΚΑΙ ΜΑΛΑΚΟ ΑΡΤΟΠΟΙΗΜΕΝΟ"/>
-    <eLiterals name="WHEAT_DURUM" value="32" literal="ΣΙΤΟΣ ΣΚΛΗΡΟΣ"/>
-    <eLiterals name="WHEAT_SOFT" value="21" literal="ΣΙΤΟΣ ΜΑΛΑΚΟΣ"/>
-    <eLiterals name="WHEAT_FLOUR" value="365" literal="ΑΛΕΥΡΙΑ ΣΙΤΑΡΙΟΥ"/>
-    <eLiterals name="WHEAT_SEEDS" value="11" literal="ΣΠΟΡΟΙ ΣΙΤΗΡΩΝ"/>
-    <eLiterals name="VLACHOTYRI" value="27" literal="ΒΛΑΧΟΤΥΡΙ"/>
-    <eLiterals name="VIGLA" literal="ΦΕΤΑ ΒΙΓΛΑ"/>
-    <eLiterals name="OAT" value="36" literal="ΒΡΩΜΗ"/>
-    <eLiterals name="FROZEN_TURKEY" value="37" literal="ΓΑΛΟΠΟΥΛΕΣ ΚΑΤΕΨΥΓΜΕΝΕΣ"/>
-    <eLiterals name="OLIVE_KERNEL_LIQUID" value="41" literal="ΕΛΑΙΟΠΥΡΗΝΑΣ ΥΓΡΟΣ"/>
-    <eLiterals name="VEGETABLES_DRY" value="69" literal="ΛΑΧΑΝΙΚΑ ΞΕΡΑ"/>
-    <eLiterals name="SPOROI_SITHRWN2" value="550" literal="ΣΠΟΡΟΙ ΣΙΤΗΡΩΝ-ΖΩΟΤΡΟΦΕΣ"/>
-    <eLiterals name="XORTONOMES" value="899" literal="ΧΟΡΤΟΝΟΜΕΣ"/>
-    <eLiterals name="XORTONOMES2" value="898" literal="ΧΟΡΤΟΝΟΜΕΣ-ΖΩΟΤΡΟΦΕΣ"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IncomingDocumentOperations">
     <eLiterals name="ASSIGN" literal="Ανάθεση"/>
@@ -341,20 +197,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="Document">
     <eOperations name="getCurrentInternalNunber" lowerBound="1" eType="#//InternalNumber"/>
     <eOperations name="cancel" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
+      <eParameters name="handler" eType="#//EntityDescriptor"/>
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="close" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
+      <eParameters name="handler" eType="#//EntityDescriptor"/>
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="accept" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
+      <eParameters name="handler" eType="#//EntityDescriptor"/>
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="forward">
-      <eParameters name="owner" eType="#//EmployeeDescriptor"/>
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
+      <eParameters name="owner" eType="#//EntityDescriptor"/>
+      <eParameters name="handler" eType="#//EntityDescriptor"/>
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="hasBeenThroughThisDirectorateBefore" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean">
@@ -365,9 +221,9 @@
     <eOperations name="changeState" lowerBound="1">
       <eParameters name="operation" lowerBound="1" eType="#//IncomingDocumentOperations"/>
       <eParameters name="logMessage" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="handler" lowerBound="1" eType="#//EmployeeDescriptor"/>
+      <eParameters name="handler" lowerBound="1" eType="#//EntityDescriptor"/>
     </eOperations>
-    <eOperations name="getOwner" lowerBound="1" eType="#//EmployeeDescriptor"/>
+    <eOperations name="getOwner" lowerBound="1" eType="#//EntityDescriptor"/>
     <eOperations name="isPending" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
     <eOperations name="isAccepted" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
     <eOperations name="isDone" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
@@ -424,7 +280,7 @@
       <details key="appinfo" value="@Embeddable"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="handler" lowerBound="1"
-        eType="#//EmployeeDescriptor" containment="true" resolveProxies="false">
+        eType="#//EntityDescriptor" containment="true" resolveProxies="false">
       <eAnnotations source="teneo.jpa">
         <details key="appInfo" value="@Embedded&#xD;&#xA;@AttributeOverrides({&#xD;&#xA;@AttributeOverride(name=&quot;path&quot;, column=@Column(name=&quot;registeringUnitPath&quot;))&#xD;&#xA;})"/>
       </eAnnotations>
@@ -432,27 +288,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" lowerBound="1"
         eType="#//DocumentStatus" defaultValueLiteral="Σε αναμονή"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//EmployeeDescriptor"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//EntityDescriptor"
         containment="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="log" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EmployeeDescriptor">
-    <eOperations name="newOperation1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitPath" ordered="false"
-        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" changeable="false"
-        volatile="true" transient="true" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directorate" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" changeable="false"
-        volatile="true" transient="true" derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitId" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="registrationNumber" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityDescriptor">
+    <eOperations name="getLevelName" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eParameters name="level" eType="#//Level"/>
+    </eOperations>
+    <eOperations name="getLevelId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short">
+      <eParameters name="level" eType="#//Level"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="level" lowerBound="1" upperBound="-1"
+        eType="#//Level"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalNumber">
     <eAnnotations source="teneo.jpa">
@@ -465,28 +315,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short" defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="#//Year"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sender">
-    <eOperations name="hasRegistryNumber" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
-    <eOperations name="setRegistryNumber" unique="false" lowerBound="1">
-      <eParameters name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Afm" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral="000000000"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phones" lowerBound="1"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
-        defaultValueLiteral="">
-      <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@OneToMany(fetch=EAGER)&#xD;&#xA;@Fetch(FetchMode.JOIN)"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="registryNumber" lowerBound="1"
-        eType="#//SenderRegistryNumber" unsettable="true" resolveProxies="false"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PostageInfo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="postageTime" eType="#//Date"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="postageMethod" eType="#//PostalMethod"
@@ -494,7 +322,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="voucherNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String" defaultValueLiteral=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SenderRegistryNumber" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="SenderRegistryNumber">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="#//Date"/>
@@ -508,30 +336,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegistryRecord">
     <eOperations name="requiresProtocolNumber" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
-    <eOperations name="getThreadForId" lowerBound="1" eType="#//Document">
-      <eParameters name="id" eType="#//DocumentIdType"/>
-    </eOperations>
-    <eOperations name="startNewThread" eType="#//Document">
-      <eParameters name="handler" lowerBound="1" eType="#//EmployeeDescriptor"/>
-      <eParameters name="owner" lowerBound="1" eType="#//EmployeeDescriptor"/>
-      <eParameters name="action" lowerBound="1" eType="#//Action"/>
-      <eParameters name="comments" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-      <eParameters name="number" lowerBound="1" eType="#//InternalNumber"/>
-    </eOperations>
-    <eOperations name="cancelAllThreads" lowerBound="1"/>
-    <eOperations name="reserve" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
-      <eParameters name="owner" eType="#//EmployeeDescriptor"/>
-      <eParameters name="number" eType="#//InternalNumber"/>
-    </eOperations>
     <eOperations name="canEdit" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
     <eOperations name="cancel" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
+      <eParameters name="handler" eType="#//EntityDescriptor"/>
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="isCancelled" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
     <eOperations name="revert" lowerBound="1">
-      <eParameters name="handler" eType="#//EmployeeDescriptor"/>
+      <eParameters name="handler" eType="#//EntityDescriptor"/>
       <eParameters name="log" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     </eOperations>
     <eOperations name="mapToFilepath" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
@@ -552,8 +364,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//DocumentType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="#//DocumentIdType"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classification" eType="#//Classification"
-        defaultValueLiteral="Εσωτερικό"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classification" lowerBound="1"
+        eType="#//Classification" defaultValueLiteral="Εσωτερικό"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ada" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
         defaultValueLiteral="">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -562,15 +374,19 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="document" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//Document" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//Tag" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="registrynumber" lowerBound="1"
         eType="#//RegistryNumber" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recipients" lowerBound="1"
-        upperBound="-1" eType="#//Recipient" resolveProxies="false">
+        upperBound="-1" eType="#//Correspondant" resolveProxies="false">
       <eAnnotations source="teneo.jpa">
         <details key="appinfo" value=" @OneToMany(fetch =EAGER)"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedNumbers" upperBound="-1"
+        eType="#//RegistryNumber"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relatedExternalDocuments"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tags" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RegistryNumber">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Short"/>
@@ -582,10 +398,22 @@
       <eParameters name="year" lowerBound="1" eType="#//Year"/>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="RecipientType">
+  <eClassifiers xsi:type="ecore:EEnum" name="CorespondantType">
     <eLiterals name="RECIPIENT" literal="Παραλήπτης"/>
     <eLiterals name="CC" value="1" literal="Κοινοποίηση"/>
     <eLiterals name="INTERNAL" value="2" literal="Εσωτερική Διανομή"/>
+    <eLiterals name="SENDER" value="3" literal="Αποστολέας"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.util.Date"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Level">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelNumber" eType="#//LevelType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LevelType">
+    <eLiterals name="ORGANIZATION" literal="Organization"/>
+    <eLiterals name="UNIT" value="1" literal="Unit"/>
+    <eLiterals name="SUBUNIT" value="2" literal="Subunit"/>
+    <eLiterals name="PERSON" value="4"/>
+    <eLiterals name="DEPARTMENT" value="3"/>
+  </eClassifiers>
 </ecore:EPackage>
