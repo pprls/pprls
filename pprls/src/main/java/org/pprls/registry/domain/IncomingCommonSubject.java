@@ -6,9 +6,7 @@ package org.pprls.registry.domain;
 import org.pprls.registry.domain.IncomingCommonSubject;
 
 /**
- * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Incoming Common Subject</b></em>'.
- * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -17,89 +15,46 @@ import org.pprls.registry.domain.IncomingCommonSubject;
  *   <li>{@link org.pprls.registry.registry.domain.IncomingCommonSubject#getDirectorateId <em>Directorate Id</em>}</li>
  * </ul>
  *
- * @generated
  */
 public class IncomingCommonSubject {
-	/**
-	 * The default value of the '{@link #getSubject() <em>Subject</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubject()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SUBJECT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getSubject()
-	 * @generated
-	 * @ordered
 	 */
-	protected String subject = SUBJECT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDirectorateId() <em>Directorate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDirectorateId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final short DIRECTORATE_ID_EDEFAULT = 0;
+	protected String subject = "";
 
 	/**
 	 * The cached value of the '{@link #getDirectorateId() <em>Directorate Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getDirectorateId()
-	 * @generated
-	 * @ordered
 	 */
-	protected short directorateId = DIRECTORATE_ID_EDEFAULT;
+	protected short directorateId = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public IncomingCommonSubject() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public String getSubject() {
 		return subject;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void setSubject(String newSubject) {
 		subject = newSubject;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public short getDirectorateId() {
 		return directorateId;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void setDirectorateId(short newDirectorateId) {
 		directorateId = newDirectorateId;
@@ -107,11 +62,7 @@ public class IncomingCommonSubject {
 
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (subject: ");
@@ -122,4 +73,4 @@ public class IncomingCommonSubject {
 		return result.toString();
 	}
 
-} //IncomingCommonSubjectImpl
+} 

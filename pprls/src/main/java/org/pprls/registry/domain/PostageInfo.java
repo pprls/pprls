@@ -3,6 +3,7 @@
  */
 package org.pprls.registry.domain;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Embeddable;
@@ -10,9 +11,7 @@ import javax.persistence.Embeddable;
 import org.pprls.registry.domain.PostageInfo;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Postage Info</b></em>'.
- * <!-- end-user-doc -->
+ * Information about the courier '<em><b>Postage Info</b></em>'.
  * <p>
  * The following features are implemented:
  * </p>
@@ -22,128 +21,78 @@ import org.pprls.registry.domain.PostageInfo;
  *   <li>{@link org.pprls.registry.registry.domain.PostageInfo#getVoucherNumber <em>Voucher Number</em>}</li>
  * </ul>
  *
- * @generated
  */
 @Embeddable
 public class PostageInfo {
-	/**
-	 * The default value of the '{@link #getPostageTime() <em>Postage Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostageTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date POSTAGE_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getPostageTime() <em>Postage Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getPostageTime()
-	 * @generated
-	 * @ordered
 	 */
-	protected Date postageTime = POSTAGE_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPostageMethod() <em>Postage Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostageMethod()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final PostalMethod POSTAGE_METHOD_EDEFAULT = PostalMethod.OTHER;
+	protected LocalDateTime postageTime;
 
 	/**
 	 * The cached value of the '{@link #getPostageMethod() <em>Postage Method</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getPostageMethod()
-	 * @generated
-	 * @ordered
 	 */
-	protected PostalMethod postageMethod = POSTAGE_METHOD_EDEFAULT;
+	protected PostageMethod postageMethod = PostageMethod.OTHER;
 
 	/**
 	 * The default value of the '{@link #getVoucherNumber() <em>Voucher Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getVoucherNumber()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final String VOUCHER_NUMBER_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getVoucherNumber() <em>Voucher Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getVoucherNumber()
-	 * @generated
-	 * @ordered
 	 */
 	protected String voucherNumber = VOUCHER_NUMBER_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
 	public PostageInfo() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
-	public Date getPostageTime() {
+	public LocalDateTime getPostageTime() {
 		return postageTime;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
-	public void setPostageTime(Date newPostageTime) {
-		postageTime = newPostageTime;
+	public void setPostageTime(LocalDateTime postageDate) {
+		postageTime = postageDate;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
-	public PostalMethod getPostageMethod() {
+	public PostageMethod getPostageMethod() {
 		return postageMethod;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
-	public void setPostageMethod(PostalMethod newPostageMethod) {
-		postageMethod = newPostageMethod == null ? POSTAGE_METHOD_EDEFAULT : newPostageMethod;
+	public void setPostageMethod(PostageMethod newPostageMethod) {
+		postageMethod = newPostageMethod;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
 	public String getVoucherNumber() {
 		return voucherNumber;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
 	public void setVoucherNumber(String newVoucherNumber) {
 		voucherNumber = newVoucherNumber;
@@ -151,11 +100,8 @@ public class PostageInfo {
 
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * 
 	 */
-	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (postageTime: ");

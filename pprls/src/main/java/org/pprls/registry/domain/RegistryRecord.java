@@ -17,8 +17,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object
- * '<em><b>Registry Record</b></em>'. <!-- end-user-doc -->
+ * An implementation of the model object '<em><b>Registry Record</b></em>'.
  * <p>
  * The following features are implemented:
  * </p>
@@ -45,18 +44,14 @@ import org.hibernate.annotations.GenericGenerator;
  * <em>Recipients</em>}</li>
  * </ul>
  *
- * @generated
  */
 @MappedSuperclass
 public class RegistryRecord {
 	
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * 
 	 * @see #getId()
-	 * @generated
-	 * @ordered
 	 */
 	@Id
 	@GeneratedValue(generator = "system-uuid2")
@@ -73,69 +68,55 @@ public class RegistryRecord {
 
 	/**
 	 * The default value of the '{@link #getAttachedFilesDescription()
-	 * <em>Attached Files Description</em>}' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <em>Attached Files Description</em>}' attribute. 
 	 * 
 	 * @see #getAttachedFilesDescription()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final String ATTACHED_FILES_DESCRIPTION_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getAttachedFilesDescription()
-	 * <em>Attached Files Description</em>}' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <em>Attached Files Description</em>}' attribute. 
 	 * 
 	 * @see #getAttachedFilesDescription()
-	 * @generated
-	 * @ordered
 	 */
 	protected String attachedFilesDescription = ATTACHED_FILES_DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getComments() <em>Comments</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * attribute. 
 	 * 
 	 * @see #getComments()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final String COMMENTS_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getComments() <em>Comments</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * attribute. 
 	 * 
 	 * @see #getComments()
-	 * @generated
-	 * @ordered
 	 */
 	protected String comments = COMMENTS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSubject() <em>Subject</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * attribute. 
 	 * 
 	 * @see #getSubject()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final String SUBJECT_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * attribute. 
 	 * 
 	 * @see #getSubject()
-	 * @generated
-	 * @ordered
 	 */
     protected String subject = SUBJECT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getFilepaths() <em>Filepaths</em>}'
-	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * attribute list. 
 	 * 
 	 * @see #getFilepaths()
 	 * @generated
@@ -146,84 +127,62 @@ public class RegistryRecord {
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see #getType()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final DocumentType TYPE_EDEFAULT = DocumentType.NOTE;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @see #getType()
-	 * @generated
-	 * @ordered
 	 */
 	protected DocumentType type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getClassification()
-	 * <em>Classification</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * <em>Classification</em>}' attribute. 
 	 * 
 	 * @see #getClassification()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final Classification CLASSIFICATION_EDEFAULT = Classification.INTERNAL;
 
 	/**
 	 * The cached value of the '{@link #getClassification()
-	 * <em>Classification</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * <em>Classification</em>}' attribute.
 	 * 
 	 * @see #getClassification()
-	 * @generated
-	 * @ordered
 	 */
 	protected Classification classification = CLASSIFICATION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAda() <em>Ada</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getAda() <em>Ada</em>}' attribute.
 	 * 
 	 * @see #getAda()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final String ADA_EDEFAULT = "";
 
 	/**
-	 * The cached value of the '{@link #getAda() <em>Ada</em>}' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getAda() <em>Ada</em>}' attribute. 
 	 * 
 	 * @see #getAda()
-	 * @generated
-	 * @ordered
 	 */
 	protected String ada = ADA_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDocument() <em>Document</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * containment reference list. 
 	 * 
 	 * @see #getDocument()
-	 * @generated
-	 * @ordered
+
 	 */
 //	@OneToMany
 //	protected List<Document> document;
 
 	/**
-	 * The cached value of the '{@link #getTag() <em>Tag</em>}' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTag() <em>Tag</em>}' reference. 
 	 * 
 	 * @see #getTag()
-	 * @generated
-	 * @ordered
 	 */
 	protected String tag;
 
@@ -241,201 +200,157 @@ public class RegistryRecord {
 	 * 
 	 */
 	@ElementCollection
-	protected List<Correspondant> correspondants = new ArrayList<Correspondant>();
+	protected List<Correspondent> correspondants = new ArrayList<Correspondent>();
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public RegistryRecord() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public String getAttachedFilesDescription() {
 		return attachedFilesDescription;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setAttachedFilesDescription(String newAttachedFilesDescription) {
 		attachedFilesDescription = newAttachedFilesDescription;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public String getComments() {
 		return comments;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setComments(String newComments) {
 		comments = newComments;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public String getSubject() {
 		return subject;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setSubject(String newSubject) {
 		subject = newSubject;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public List<String> getFilepaths() {
 		return filepaths;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public DocumentType getType() {
 		return type;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setType(DocumentType newType) {
-		type = newType == null ? TYPE_EDEFAULT : newType;
+		type = newType;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setId(UUID newId) {
 		id = newId;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public Classification getClassification() {
 		return classification;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setClassification(Classification newClassification) {
 		classification = newClassification == null ? CLASSIFICATION_EDEFAULT : newClassification;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public String getAda() {
 		return ada;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setAda(String newAda) {
 		ada = newAda;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 //	public List<Document> getDocument() {
 //		return document;
 //	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public String getTag() {
 		return tag;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setTag(String newTag) {
 		tag = newTag;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public RegistryNumber getRegistryNumber() {
 		return registryNumber;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void setRegistryNumber(RegistryNumber newRegistryNumber) {
 		registryNumber = newRegistryNumber;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
-	public List<Correspondant> getCorrespondants() {
+	public List<Correspondent> getCorrespondants() {
 		return correspondants;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public boolean requiresProtocolNumber() {
 		// TODO: implement this method
@@ -444,9 +359,7 @@ public class RegistryRecord {
 	}
 	
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void cancelAllThreads() {
 		// TODO: implement this method
@@ -455,9 +368,7 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public boolean canEdit() {
 		// TODO: implement this method
@@ -466,9 +377,7 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void cancel(EntityDescriptor handler, String log) {
 		// TODO: implement this method
@@ -477,9 +386,7 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public boolean isCancelled() {
 		// TODO: implement this method
@@ -488,9 +395,7 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public void revert(EntityDescriptor handler, String log) {
 		// TODO: implement this method
@@ -499,9 +404,7 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
 	public String mapToFilepath(String filepath) {
 		// TODO: implement this method
@@ -510,11 +413,8 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
 	 */
-	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append("registry ");

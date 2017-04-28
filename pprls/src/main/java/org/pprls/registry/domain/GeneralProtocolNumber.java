@@ -6,9 +6,7 @@ package org.pprls.registry.domain;
 import org.pprls.registry.domain.GeneralProtocolNumber;
 
 /**
- * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>General Protocol Number</b></em>'.
- * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -17,89 +15,57 @@ import org.pprls.registry.domain.GeneralProtocolNumber;
  *   <li>{@link org.pprls.registry.registry.domain.GeneralProtocolNumber#getNumber <em>Number</em>}</li>
  * </ul>
  *
- * @generated
  */
 public class GeneralProtocolNumber {
 	/**
-	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The '{@link #getYear() <em>Year</em>}' attribute.
 	 * @see #getYear()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final Year YEAR_EDEFAULT = Year.YEAR_2006;
 
 	/**
-	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The '{@link #getYear() <em>Year</em>}' attribute.
 	 * @see #getYear()
-	 * @generated
-	 * @ordered
 	 */
 	protected Year year = YEAR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The '{@link #getNumber() <em>Number</em>}' attribute.
 	 * @see #getNumber()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final short NUMBER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The '{@link #getNumber() <em>Number</em>}' attribute.
 	 * @see #getNumber()
-	 * @generated
-	 * @ordered
 	 */
 	protected short number = NUMBER_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public GeneralProtocolNumber() {
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public Year getYear() {
 		return year;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void setYear(Year newYear) {
 		year = newYear == null ? YEAR_EDEFAULT : newYear;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public short getNumber() {
 		return number;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void setNumber(short newNumber) {
 		number = newNumber;
@@ -107,9 +73,6 @@ public class GeneralProtocolNumber {
 
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public String toString() {
@@ -122,4 +85,4 @@ public class GeneralProtocolNumber {
 		return result.toString();
 	}
 
-} //GeneralProtocolNumberImpl
+} 

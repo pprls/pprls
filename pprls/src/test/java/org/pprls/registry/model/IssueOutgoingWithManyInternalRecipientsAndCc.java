@@ -16,7 +16,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.pprls.registry.domain.Builder;
 import org.pprls.registry.domain.Classification;
-import org.pprls.registry.domain.Correspondant;
+import org.pprls.registry.domain.Correspondent;
 import org.pprls.registry.domain.DocumentType;
 import org.pprls.registry.domain.EntityDescriptor;
 import org.pprls.registry.domain.Outgoing;
@@ -69,8 +69,8 @@ public class IssueOutgoingWithManyInternalRecipientsAndCc {
 		List<EntityDescriptor> editors = new ArrayList<>();
 		outgoing.addEditors(editors);
 
-		List<Correspondant> correspondants = new ArrayList<>();
-		Correspondant correspondant = Builder.INSTANCE.createCorrespondant();
+		List<Correspondent> correspondants = new ArrayList<>();
+		Correspondent correspondant = Builder.INSTANCE.createCorrespondent();
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondant.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondant);

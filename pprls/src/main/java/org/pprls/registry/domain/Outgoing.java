@@ -29,42 +29,26 @@ public class Outgoing extends RegistryRecord{
 	
 	/**
 	 * The cached value of the '{@link #getReissued() <em>Reissued</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getReissued()
-	 * @generated
-	 * @ordered
 	 */
 	@OneToOne
 	protected Outgoing reissued;
 
 	/**
 	 * The cached value of the '{@link #getRelatedIncoming() <em>Related Incoming</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getRelatedIncoming()
-	 * @generated
-	 * @ordered
 	 */
 	//protected Incoming relatedIncoming;
 
 	/**
 	 * The default value of the '{@link #getNumberOfRepeats() <em>Number Of Repeats</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getNumberOfRepeats()
-	 * @generated
-	 * @ordered
 	 */
 	protected static final int NUMBER_OF_REPEATS_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getNumberOfRepeats() <em>Number Of Repeats</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #getNumberOfRepeats()
-	 * @generated
-	 * @ordered
 	 */
 	protected int numberOfRepeats = NUMBER_OF_REPEATS_EDEFAULT;
 
@@ -82,26 +66,17 @@ public class Outgoing extends RegistryRecord{
 
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected Outgoing() {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public Outgoing getReissued() {
 		return reissued;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void setReissued(Outgoing newReissued) {
 		reissued = newReissued;
@@ -205,11 +180,7 @@ public class Outgoing extends RegistryRecord{
 
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append("Outgoing registry number (");
@@ -246,11 +217,11 @@ public class Outgoing extends RegistryRecord{
 	}
 
 
-	public void addCorrespondants(List<Correspondant> newCorrespondants) {
+	public void addCorrespondants(List<Correspondent> newCorrespondants) {
 		correspondants.addAll(newCorrespondants);
 	}
 	
-	public void setCorrespondants(List<Correspondant> newCorrespondants) {
+	public void setCorrespondants(List<Correspondent> newCorrespondants) {
 		correspondants = newCorrespondants;
 	}
 

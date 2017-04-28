@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.pprls.registry.domain.Correspondant;
+import org.pprls.registry.domain.Correspondent;
 import org.pprls.registry.domain.Outgoing;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -27,7 +27,7 @@ public class OutgoingDto implements Serializable {
 
 	public OutgoingDto(Outgoing outgoing) {
 		this.setId(outgoing.getId());
-		for(Correspondant correspondant : outgoing.getCorrespondants()){
+		for(Correspondent correspondant : outgoing.getCorrespondants()){
 			entityIds.add(correspondant.getEntityDescriptor().getEntityId());
 		}
 	}

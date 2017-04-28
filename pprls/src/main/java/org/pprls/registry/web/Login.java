@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.pprls.registry.domain.Classification;
-import org.pprls.registry.domain.Correspondant;
+import org.pprls.registry.domain.Correspondent;
 import org.pprls.registry.domain.DocumentType;
 import org.pprls.registry.domain.EntityDescriptor;
 import org.pprls.registry.domain.Outgoing;
