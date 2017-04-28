@@ -1,26 +1,16 @@
 package org.pprls.registry.web;
 
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.pprls.registry.domain.Classification;
-import org.pprls.registry.domain.Correspondent;
-import org.pprls.registry.domain.DocumentType;
-import org.pprls.registry.domain.EntityDescriptor;
-import org.pprls.registry.domain.Outgoing;
-import org.pprls.registry.domain.RegistryNumber;
-import org.pprls.registry.domain.RegistryRecord;
-import org.pprls.registry.domain.Year;
 import org.pprls.registry.domain.service.RegistrationService;
 import org.pprls.registry.service.FileService;
 import org.pprls.registry.service.repository.RegistryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Login {

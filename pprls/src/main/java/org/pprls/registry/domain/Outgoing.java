@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.pprls.document.domain.DocumentStatus;
+
 /**
  * 
  * Outgoing registry record

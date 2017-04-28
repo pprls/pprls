@@ -1,20 +1,7 @@
 package org.pprls.registry.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.pprls.registry.domain.Classification;
-import org.pprls.registry.domain.Correspondent;
-import org.pprls.registry.domain.DocumentType;
-import org.pprls.registry.domain.Incoming;
-import org.pprls.registry.domain.PostageMethod;
-import org.pprls.registry.domain.RegistryNumber;
-import org.pprls.registry.domain.Year;
 import org.pprls.registry.domain.service.RegistrationService;
 import org.pprls.registry.service.FileService;
 import org.springframework.boot.test.context.SpringBootTest;

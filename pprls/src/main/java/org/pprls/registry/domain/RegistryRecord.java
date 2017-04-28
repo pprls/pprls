@@ -15,6 +15,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.pprls.document.domain.DocumentType;
 
 /**
  * An implementation of the model object '<em><b>Registry Record</b></em>'.
