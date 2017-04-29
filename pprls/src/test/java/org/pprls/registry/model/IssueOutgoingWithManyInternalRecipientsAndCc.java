@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.pprls.document.domain.DocumentType;
+import org.pprls.core.DocumentType;
 import org.pprls.registry.domain.Builder;
 import org.pprls.registry.domain.Classification;
 import org.pprls.registry.domain.Correspondent;

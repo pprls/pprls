@@ -3,6 +3,7 @@
  */
 package org.pprls.document.domain;
 
+import org.pprls.core.DocumentStatus;
 import org.pprls.document.domain.StateTransition;
 
 /**

@@ -7,10 +7,9 @@ import java.util.List;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.pprls.document.domain.DocumentStatus;
+import org.pprls.core.DocumentStatus;
 
 /**
  * 

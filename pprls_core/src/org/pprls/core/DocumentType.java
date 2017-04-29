@@ -1,7 +1,7 @@
 /**
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
-package org.pprls.document.domain;
+package org.pprls.core;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.pprls.core.DocumentStatus;
 import org.pprls.document.domain.Document;
 import org.pprls.document.domain.EntityDescriptor;
 import org.pprls.document.domain.InternalNumber;

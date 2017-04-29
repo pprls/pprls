@@ -5,6 +5,7 @@ package org.pprls.document.domain;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import org.pprls.core.DocumentStatus;
 import org.pprls.document.domain.EntityDescriptor;
 import org.pprls.document.domain.Status;
 
