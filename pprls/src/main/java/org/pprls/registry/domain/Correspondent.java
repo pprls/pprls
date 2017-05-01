@@ -5,7 +5,6 @@ package org.pprls.registry.domain;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-import org.pprls.registry.model.Nobody;
 
 /**
  * A person that sent or receives an document. An '<em><b>Correspondent</b></em>'.

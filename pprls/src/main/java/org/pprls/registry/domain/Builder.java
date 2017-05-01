@@ -3,8 +3,6 @@ package org.pprls.registry.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.pprls.registry.model.Nobody;
-
 /**
  * Builder to create domain objects
  * @author kapostolou
@@ -29,8 +27,9 @@ public enum Builder {
 	 * 
 	 * @return
 	 */
-	public Correspondent createCorrespondent() {
+	public Correspondent createCorrespondent(CorrespondentType type) {
 		Correspondent correspondent = new Correspondent();
+		correspondent.setCorrespondantType(type);
 		return correspondent;
 	}
 
@@ -59,6 +58,18 @@ public enum Builder {
 		postageInfo.setVoucherNumber(voucherNumber);
 		
 		return postageInfo; 
+	}
+
+	/**
+	 * Create on Incoming
+	 * 
+	 * @param sender
+	 * @return
+	 */
+	public Incoming createIncoming(Correspondent sender) {
+		Incoming incoming = new Incoming();
+		incoming.getCorrespondents().add(sender);
+		return incoming;
 	}
 
 }

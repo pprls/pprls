@@ -196,7 +196,7 @@ public class RegistryRecord {
 	protected RegistryNumber registryNumber;
 
 	/**
-	 * The '{@link #getCorrespondants() <em>Recipients</em>}'
+	 * The '{@link #getCorrespondents() <em>Recipients</em>}'
 	 * reference list. 
 	 * 
 	 */
@@ -346,7 +346,7 @@ public class RegistryRecord {
 	/**
 	 * 
 	 */
-	public List<Correspondent> getCorrespondants() {
+	public List<Correspondent> getCorrespondents() {
 		return correspondants;
 	}
 
