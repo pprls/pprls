@@ -5,7 +5,7 @@ package org.pprls.document.domain;
 
 import org.pprls.document.domain.IncomingStatusHistory;
 import org.pprls.document.domain.InternalNumber;
-import org.pprls.document.domain.Status;
+import org.pprls.document.domain.DocumentStatus;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class IncomingStatusHistory {
 	 * @generated
 	 * @ordered
 	 */
-	protected Status status;
+	protected DocumentStatus status;
 
 	/**
 	 * The cached value of the '{@link #getInternalNumber() <em>Internal Number</em>}' reference.
@@ -134,7 +134,7 @@ public class IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Status getStatus() {
+	public DocumentStatus getStatus() {
 		return status;
 	}
 
@@ -143,7 +143,7 @@ public class IncomingStatusHistory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatus(Status newStatus) {
+	public void setStatus(DocumentStatus newStatus) {
 		status = newStatus;
 	}
 

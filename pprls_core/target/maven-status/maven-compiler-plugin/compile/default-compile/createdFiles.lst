@@ -1,0 +1,4 @@
+org\pprls\core\DocumentType.class
+org\pprls\core\Nobody.class
+org\pprls\core\EntityDescriptor.class
+org\pprls\core\dto\RegistryRecordDto.class

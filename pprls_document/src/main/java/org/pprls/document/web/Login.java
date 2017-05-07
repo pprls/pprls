@@ -1,85 +1,61 @@
 package org.pprls.document.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.pprls.document.service.FileService;
-import org.pprls.document.service.repository.DocumentRepository;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Login {
 	
-	private static final Logger log = LoggerFactory.getLogger(Login.class);
-	
-//	/@Autowired
-	//private RegistrationService registrationService;
-	@Autowired
-	private FileService fileService;
-	@Autowired
-	private DocumentRepository repository;
-	
-	@RequestMapping("/")
-    public String index() {
-        return "Greetings from PPRLS!";
-    }
-	
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
+	@RequestMapping({ "/", "/index" })
+	public String index() {
+		return "index";
+	}
+
+	@RequestMapping("/home")
+	public String home() {
+		return "home";
+	}
+
+	@RequestMapping("/admin")
+	public String admin() {
+		return "admin";
+	}
+
+	@RequestMapping("/forbidden")
+	public String forbidden() {
+		return "forbidden";
+	}
+
+	@RequestMapping("/logout")
+	public String logout() {
+		SecurityUtils.getSubject().logout();
+		return "redirect:index";
+	}
+
 	@RequestMapping("/login")
-    public String login() {
-        return "Now you must login";
-    }
-	
-	@RequestMapping("/issue")
-    public String issue() {
-
-		
-//		List<EmployeeDescriptor> issuers = new ArrayList<>();
-//		Outgoing outgoing = (Outgoing) OutgoingBuilderFactory.INSTANCE.build(issuers);
-//		Outgoing outgoing = new Outgoing();
-
-//		List<EmployeeDescriptor> editors = new ArrayList<>();
-//		outgoing.addEditors(editors);
-
-//		List<Recipient> correspondants = new ArrayList<>();
-//		outgoing.addCorrespondants(correspondants);
-
-	//	outgoing.setFirstName("Some subject");
-//		outgoing.setAda("some Ada");
-//		outgoing.setClassification(Classification.PUBLIC);
-//		outgoing.setComments("My Commnets");
-//		// outgoing.setTag(List<Tag>);
-//		outgoing.setType(DocumentType.DOCUMENT);
-//		outgoing.setAttachedFilesDescription("The description of the attached files");
-
-		//RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_2017);
-
-//		outgoing.setRegistrynumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-//		for (String filename : filenames) {
-//			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-//		}
-		
-	//	repository.save(outgoing);
-		
-        return "Now you issued an outgoing";
-    }
-	
-	@RequestMapping("/getOutgoing")
-    public String issue(String subject) {
-//		log.info("outgoing found with findBySubject('Some subject'):");
-//		log.info("--------------------------------------------");
-//		for (RegistryRecord outgoing : repository.findBySubject("Some subject")) {
-//			log.info(outgoing.toString());
-//		}
-        return "Now you issued an outgoing";
-    }
-
+	public String login(String username, String password) {
+		logger.debug("Authenticating");
+		Subject currentUser = SecurityUtils.getSubject();
+		if (StringUtils.hasText(username) && StringUtils.hasText(password)) {
+			try {
+				currentUser.login(new UsernamePasswordToken(username, password));
+				logger.debug("Logged in");
+			} catch (Exception e) {
+				logger.error(e.getLocalizedMessage(), e);
+				return "login";
+			}
+			return "redirect:index";
+		} else {
+			return "login";
+		}
+}
 
 }

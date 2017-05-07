@@ -14,12 +14,11 @@ public class MessageService {
 	/**
 	 * The constructor
 	 */
-	@Autowired
 	public MessageService() {
 	}
 
 	public void send(Message message) {
-		throw new UnsupportedOperationException();
+		rabbitTemplate.convertAndSend("registry.queue", message);
 	}
 	
 	

@@ -4,12 +4,15 @@
 package org.pprls.registry.domain;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
-import org.pprls.core.DocumentStatus;
+import org.pprls.core.EntityDescriptor;
+import org.pprls.core.Nobody;
 
 /**
  * 
@@ -54,17 +57,16 @@ public class Outgoing extends RegistryRecord{
 	protected int numberOfRepeats = NUMBER_OF_REPEATS_EDEFAULT;
 
 	/**
-	 * The '{@link #getEditor() <em>Editor</em>}' reference list.
+	 * The '{@link #getEditor() <em>Editor</em>}' reference set.
 	 */
 	@ElementCollection
-	protected List<EntityDescriptor> editor;
+	protected Set<EntityDescriptor> editor;
 	
 	/**
-	 * The '{@link #getIssuer() <em>Issuer</em>}' reference list.
+	 * The '{@link #getIssuer() <em>Issuer</em>}' reference set.
 	 */
 	@ElementCollection
-	protected List<EntityDescriptor> issuer;
-
+	protected Set<EntityDescriptor> issuer;
 
 	/**
 	 */
@@ -114,14 +116,14 @@ public class Outgoing extends RegistryRecord{
 	/**
 	 * Get a list of the entities who issue the outgoing.
 	 */
-	public List<EntityDescriptor> getIssuser() {
+	public Set<EntityDescriptor> getIssuser() {
 		return issuer;
 	}
 
 	/**
 	 * Get a list of the people who edit the outgoing.
 	 */
-	public List<EntityDescriptor> getEditor() {
+	public Set<EntityDescriptor> getEditor() {
 		return editor;
 	}
 
@@ -142,16 +144,8 @@ public class Outgoing extends RegistryRecord{
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
-	/**
-	 * Getter for the state of the outgoing
-	 */
-	public DocumentStatus getState() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
+	
+	
 	/**
 	 * True if the outgoing is digitally signed
 	 */
@@ -195,18 +189,18 @@ public class Outgoing extends RegistryRecord{
 		
 	}
 
-	public Outgoing reissue(List<EntityDescriptor> issuers) {
+	public Outgoing reissue(Set<EntityDescriptor> issuers) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void addEditors(List<EntityDescriptor> editors) {
+	public void addEditors(Set<EntityDescriptor> editors) {
 		editor = editors;
 		
 	}
 
 
-	public void addIssuers(List<EntityDescriptor> issuers) {
+	public void addIssuers(Set<EntityDescriptor> issuers) {
 		issuer = issuers;
 		
 	}
@@ -218,12 +212,19 @@ public class Outgoing extends RegistryRecord{
 	}
 
 
-	public void addCorrespondants(List<Correspondent> newCorrespondants) {
-		correspondants.addAll(newCorrespondants);
+	public void addCorrespondents(List<Correspondent> newCorrespondants) {
+		correspondents.addAll(newCorrespondants);
 	}
 	
-	public void setCorrespondants(List<Correspondent> newCorrespondants) {
-		correspondants = newCorrespondants;
+	public void setCorrespondents(List<Correspondent> newCorrespondants) {
+		correspondents = newCorrespondants;
+	}
+	
+	public Set<EntityDescriptor> getEntityDescriptors(){
+		return correspondents.stream()
+        .filter(correspondent ->!( correspondent.getEntityDescriptor() instanceof Nobody))
+        .map(correspondent -> correspondent.getEntityDescriptor())
+        .collect(Collectors.toSet());
 	}
 
 } 

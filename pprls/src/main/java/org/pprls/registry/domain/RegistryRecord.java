@@ -12,10 +12,9 @@ import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.pprls.core.DocumentType;
+import org.pprls.core.EntityDescriptor;
 
 /**
  * An implementation of the model object '<em><b>Registry Record</b></em>'.
@@ -36,7 +35,6 @@ import org.pprls.core.DocumentType;
  * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getClassification
  * <em>Classification</em>}</li>
  * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getAda <em>Ada</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getDocument
  * <em>Document</em>}</li>
  * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getTag <em>Tag</em>}</li>
  * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getRegistrynumber
@@ -68,28 +66,12 @@ public class RegistryRecord {
 	}
 
 	/**
-	 * The default value of the '{@link #getAttachedFilesDescription()
-	 * <em>Attached Files Description</em>}' attribute. 
-	 * 
-	 * @see #getAttachedFilesDescription()
-	 */
-	protected static final String ATTACHED_FILES_DESCRIPTION_EDEFAULT = "";
-
-	/**
 	 * The cached value of the '{@link #getAttachedFilesDescription()
 	 * <em>Attached Files Description</em>}' attribute. 
 	 * 
 	 * @see #getAttachedFilesDescription()
 	 */
-	protected String attachedFilesDescription = ATTACHED_FILES_DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getComments() <em>Comments</em>}'
-	 * attribute. 
-	 * 
-	 * @see #getComments()
-	 */
-	protected static final String COMMENTS_EDEFAULT = "";
+	protected String attachedFilesDescription = "";
 
 	/**
 	 * The cached value of the '{@link #getComments() <em>Comments</em>}'
@@ -97,15 +79,7 @@ public class RegistryRecord {
 	 * 
 	 * @see #getComments()
 	 */
-	protected String comments = COMMENTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSubject() <em>Subject</em>}'
-	 * attribute. 
-	 * 
-	 * @see #getSubject()
-	 */
-	protected static final String SUBJECT_EDEFAULT = "";
+	protected String comments = "";
 
 	/**
 	 * The cached value of the '{@link #getSubject() <em>Subject</em>}'
@@ -113,7 +87,7 @@ public class RegistryRecord {
 	 * 
 	 * @see #getSubject()
 	 */
-    protected String subject = SUBJECT_EDEFAULT;
+    protected String subject = "";
 
 	/**
 	 * The cached value of the '{@link #getFilepaths() <em>Filepaths</em>}'
@@ -127,26 +101,11 @@ public class RegistryRecord {
 	protected List<String> filepaths;
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * 
-	 * @see #getType()
-	 */
-	protected static final DocumentType TYPE_EDEFAULT = DocumentType.NOTE;
-
-	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * 
 	 * @see #getType()
 	 */
-	protected DocumentType type = TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getClassification()
-	 * <em>Classification</em>}' attribute. 
-	 * 
-	 * @see #getClassification()
-	 */
-	protected static final Classification CLASSIFICATION_EDEFAULT = Classification.INTERNAL;
+	protected DocumentType type = DocumentType.DOCUMENT;
 
 	/**
 	 * The cached value of the '{@link #getClassification()
@@ -154,31 +113,19 @@ public class RegistryRecord {
 	 * 
 	 * @see #getClassification()
 	 */
-	protected Classification classification = CLASSIFICATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAda() <em>Ada</em>}' attribute.
-	 * 
-	 * @see #getAda()
-	 */
-	protected static final String ADA_EDEFAULT = "";
+	protected Classification classification = Classification.INTERNAL;
+	
+	@Embedded
+	protected RegistryStatus initialStatus;
+	@Embedded
+	protected RegistryStatus currentStatus;
 
 	/**
 	 * The cached value of the '{@link #getAda() <em>Ada</em>}' attribute. 
 	 * 
 	 * @see #getAda()
 	 */
-	protected String ada = ADA_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDocument() <em>Document</em>}'
-	 * containment reference list. 
-	 * 
-	 * @see #getDocument()
-
-	 */
-//	@OneToMany
-//	protected List<Document> document;
+	protected String ada = "";
 
 	/**
 	 * The cached value of the '{@link #getTag() <em>Tag</em>}' reference. 
@@ -201,13 +148,12 @@ public class RegistryRecord {
 	 * 
 	 */
 	@ElementCollection
-	protected List<Correspondent> correspondants = new ArrayList<Correspondent>();
+	protected List<Correspondent> correspondents = new ArrayList<Correspondent>();
 
 	/**
 	 * 
 	 */
 	public RegistryRecord() {
-		super();
 	}
 
 	/**
@@ -291,7 +237,23 @@ public class RegistryRecord {
 	 * 
 	 */
 	public void setClassification(Classification newClassification) {
-		classification = newClassification == null ? CLASSIFICATION_EDEFAULT : newClassification;
+		classification = newClassification;
+	}
+
+	public RegistryStatus getInitialStatus() {
+		return initialStatus;
+	}
+
+	public void setInitialStatus(RegistryStatus initialStatus) {
+		this.initialStatus = initialStatus;
+	}
+
+	public RegistryStatus getCurrentStatus() {
+		return currentStatus;
+	}
+
+	public void setCurrentStatus(RegistryStatus currentStatus) {
+		this.currentStatus = currentStatus;
 	}
 
 	/**
@@ -307,13 +269,6 @@ public class RegistryRecord {
 	public void setAda(String newAda) {
 		ada = newAda;
 	}
-
-	/**
-	 * 
-	 */
-//	public List<Document> getDocument() {
-//		return document;
-//	}
 
 	/**
 	 * 
@@ -347,7 +302,7 @@ public class RegistryRecord {
 	 * 
 	 */
 	public List<Correspondent> getCorrespondents() {
-		return correspondants;
+		return correspondents;
 	}
 
 	/**
@@ -381,9 +336,13 @@ public class RegistryRecord {
 	 * 
 	 */
 	public void cancel(EntityDescriptor handler, String log) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		RegistryStatus newStatus = new RegistryStatus();
+		newStatus.setState(RegistryState.CANCELLED);
+		newStatus.setLog(log);
+		newStatus.setHandler(handler);
+		
+		setCurrentStatus(newStatus);		
 	}
 
 	/**

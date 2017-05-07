@@ -8,6 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface DocumentRepository extends CrudRepository<Document, UUID> {
 	
-	 List<Document> findById(Document document);
+	Document findById(UUID id);
+
+	List<Document> findAllByRegistryRecordId(UUID id);
 
 }

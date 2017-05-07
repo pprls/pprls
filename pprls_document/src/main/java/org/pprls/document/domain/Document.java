@@ -3,15 +3,17 @@
  */
 package org.pprls.document.domain;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-import org.pprls.core.DocumentStatus;
-import org.pprls.document.domain.Document;
-import org.pprls.document.domain.EntityDescriptor;
-import org.pprls.document.domain.InternalNumber;
-import org.pprls.document.domain.Status;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.pprls.core.EntityDescriptor;
 
 /**
  * The digital representation of a paper document.
@@ -19,75 +21,86 @@ import org.pprls.document.domain.Status;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.pprls.document.document.domain.Document#getId <em>Id</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getCurrentstatus <em>Currentstatus</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getInitialstatus <em>Initialstatus</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getLastDoneDate <em>Last Done Date</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getLastAcceptDate <em>Last Accept Date</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getPhysicalLocation <em>Physical Location</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getAction <em>Action</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getComments <em>Comments</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getAcceptingUnits <em>Accepting Units</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getThreadType <em>Thread Type</em>}</li>
- *   <li>{@link org.pprls.document.document.domain.Document#getInternalNumber <em>Internal Number</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getId
+ * <em>Id</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getCurrentstatus
+ * <em>CurrentStatus</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getLastDoneDate
+ * <em>Last Done Date</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getLastAcceptDate
+ * <em>Last Accept Date</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getPhysicalLocation
+ * <em>Physical Location</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getAction
+ * <em>Action</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getComments
+ * <em>Comments</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getAcceptingUnits
+ * <em>Accepting Units</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getThreadType
+ * <em>Thread Type</em>}</li>
+ * <li>{@link org.pprls.document.document.domain.Document#getInternalNumber
+ * <em>Internal Number</em>}</li>
  * </ul>
  *
  */
+@Entity
+@EntityListeners(AuditingDocumentListener.class)
 public class Document {
 	/**
 	 * Unique id for this document.
 	 */
+	@Id
+	@GeneratedValue(generator = "system-uuid2")
+	@GenericGenerator(name = "system-uuid2", strategy = "uuid2")
 	protected UUID id;
+
+	protected UUID registryRecordId;
 
 	/**
 	 * The '{@link #getCurrentStatus() <em>CurrentStatus</em>}' reference.
+	 * 
 	 * @see #getCurrentStatus()
 	 */
-	protected Status currentStatus;
-
-	/**
-	 * The '{@link #getInitialStatus() <em>InitialStatus</em>}' reference.
-	 * @see #getInitialStatus()
-	 */
-	protected Status initialStatus;
+	protected DocumentStatus currentStatus;
 
 	/**
 	 * The '{@link #getLastDoneDate() <em>Last Done Date</em>}' attribute.
+	 * 
 	 * @see #getLastDoneDate()
 	 */
-	protected Date lastDoneDate;
+	protected LocalDateTime lastDoneDate = LocalDateTime.of(1970, 01, 01, 00, 00, 00);
 
 	/**
 	 * The '{@link #getLastAcceptDate() <em>Last Accept Date</em>}' attribute.
 	 */
-	protected Date lastAcceptDate;
+	protected LocalDateTime lastAcceptDate = LocalDateTime.of(1970, 01, 01, 00, 00, 00);
 
 	/**
-	 * The '{@link #getPhysicalLocation() <em>Physical Location</em>}' attribute.
+	 * The '{@link #getPhysicalLocation() <em>Physical Location</em>}'
+	 * attribute.
+	 * 
 	 * @see #getPhysicalLocation()
 	 */
-	protected String physicalLocation;
+	protected String physicalLocation = "";
 
 	/**
 	 * The '{@link #getAction() <em>Action</em>}' attribute.
+	 * 
 	 * @see #getAction()
 	 */
 	protected Action action = Action.NONE;
 
 	/**
 	 * The '{@link #getComments() <em>Comments</em>}' attribute.
+	 * 
 	 * @see #getComments()
 	 */
-	protected String comments;
-
-	/**
-	 * The '{@link #getAcceptingUnits() <em>Accepting Units</em>}' attribute list.
-	 * @see #getAcceptingUnits()
-	 */
-	protected List<Short> acceptingUnits;
+	protected String comments = "";
 
 	/**
 	 * The '{@link #getThreadType() <em>Thread Type</em>}' attribute.
+	 * 
 	 * @see #getThreadType()
 	 */
 	protected ThreadType threadType = ThreadType.RECIPIENT;
@@ -95,8 +108,16 @@ public class Document {
 	/**
 	 * The constructor
 	 */
-	public Document() {
-		super();
+	protected Document() {
+	}
+
+	/**
+	 * The constructor
+	 */
+	public Document(UUID id, EntityDescriptor owner) {
+		registryRecordId = id;
+
+		currentStatus = new DocumentStatus("Autocreate : create from message queue", owner);
 	}
 
 	/**
@@ -116,56 +137,42 @@ public class Document {
 	/**
 	 * Getter for the currentStatus
 	 */
-	public Status getCurrentStatus() {
+	public DocumentStatus getCurrentStatus() {
 		return currentStatus;
 	}
 
 	/**
 	 * Setter for the currentStatus
 	 */
-	public void setCurrentstatus(Status newCurrentstatus) {
+	public void setCurrentStatus(DocumentStatus newCurrentstatus) {
 		currentStatus = newCurrentstatus;
-	}
-
-	/**
-	 * Getter for the initialStatus
-	 */
-	public Status getInitialStatus() {
-		return initialStatus;
-	}
-
-	/**
-	 * Setter for the initialStatus
-	 */
-	public void setInitialStatus(Status newInitialStatus) {
-		initialStatus = newInitialStatus;
 	}
 
 	/**
 	 * Getter for the lastDoneDate
 	 */
-	public Date getLastDoneDate() {
+	public LocalDateTime getLastDoneDate() {
 		return lastDoneDate;
 	}
 
 	/**
 	 * Setter for the lastDoneDate
 	 */
-	public void setLastDoneDate(Date newLastDoneDate) {
+	public void setLastDoneDate(LocalDateTime newLastDoneDate) {
 		lastDoneDate = newLastDoneDate;
 	}
 
 	/**
 	 * Getter for the lastAcceptDate
 	 */
-	public Date getLastAcceptDate() {
+	public LocalDateTime getLastAcceptDate() {
 		return lastAcceptDate;
 	}
 
 	/**
 	 * Setter for the lastAcceptDate
 	 */
-	public void setLastAcceptDate(Date newLastAcceptDate) {
+	public void setLastAcceptDate(LocalDateTime newLastAcceptDate) {
 		lastAcceptDate = newLastAcceptDate;
 	}
 
@@ -209,13 +216,6 @@ public class Document {
 	 */
 	public void setComments(String newComments) {
 		comments = newComments;
-	}
-
-	/**
-	 * Getter for the acceptingUnits
-	 */
-	public List<Short> getAcceptingUnits() {
-		return acceptingUnits;
 	}
 
 	/**
@@ -269,7 +269,7 @@ public class Document {
 	}
 
 	/**
-	 * Did the document pass through this Entity 
+	 * Did the document pass through this Entity
 	 */
 	public boolean hasBeenThroughThisEntityBefore(short directorateId) {
 		// TODO: implement this method
@@ -343,12 +343,11 @@ public class Document {
 	/**
 	 * Get state
 	 */
-	public DocumentStatus getState() {
+	public DocumentState getState() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
 
 	/**
 	 * The well known toString()
@@ -369,11 +368,9 @@ public class Document {
 		result.append(", comments: ");
 		result.append(comments);
 		result.append(", acceptingUnits: ");
-		result.append(acceptingUnits);
 		result.append(", threadType: ");
 		result.append(threadType);
 		result.append(')');
 		return result.toString();
 	}
-
-} 
+}

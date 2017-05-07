@@ -7,8 +7,8 @@ import org.pprls.registry.domain.Incoming;
 import org.pprls.registry.domain.RegistryNumber;
 import org.springframework.data.repository.CrudRepository;
 
-public interface IncomingRepository extends CrudRepository<Incoming, UUID> {
-	
-	 List<Incoming> findByRegistryNumber(RegistryNumber registryNumber);
-
-}
+//public interface IncomingRepository extends CrudRepository<Incoming, UUID> {
+//	
+//	 List<Incoming> findByRegistryNumber(RegistryNumber registryNumber);
+//
+//}

@@ -3,7 +3,6 @@
  */
 package org.pprls.document.domain;
 
-import org.pprls.core.DocumentStatus;
 import org.pprls.document.domain.StateTransition;
 
 /**
@@ -29,7 +28,7 @@ public class StateTransition {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final DocumentStatus STATE_EDEFAULT = DocumentStatus.PENDING;
+	protected static final DocumentState STATE_EDEFAULT = DocumentState.PENDING;
 
 	/**
 	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
@@ -39,7 +38,7 @@ public class StateTransition {
 	 * @generated
 	 * @ordered
 	 */
-	protected DocumentStatus state = STATE_EDEFAULT;
+	protected DocumentState state = STATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
@@ -75,7 +74,7 @@ public class StateTransition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DocumentStatus getState() {
+	public DocumentState getState() {
 		return state;
 	}
 
@@ -84,7 +83,7 @@ public class StateTransition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setState(DocumentStatus newState) {
+	public void setState(DocumentState newState) {
 		state = newState == null ? STATE_EDEFAULT : newState;
 	}
 

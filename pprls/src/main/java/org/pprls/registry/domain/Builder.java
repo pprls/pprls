@@ -1,7 +1,9 @@
 package org.pprls.registry.domain;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
+
+import org.pprls.core.EntityDescriptor;
 
 /**
  * Builder to create domain objects
@@ -16,9 +18,12 @@ public enum Builder {
 	 * 
 	 * @return Outgoing objects with issuers set
 	 */
-	public Outgoing createOutgoing(List<EntityDescriptor> issuers){
+	public Outgoing createOutgoing(Set<EntityDescriptor> issuers, EntityDescriptor newHandler){
 		Outgoing outgoing = new Outgoing();
 		outgoing.addIssuers(issuers);
+		RegistryStatus registryStatus = new RegistryStatus(newHandler);
+		outgoing.setInitialStatus(registryStatus);
+		outgoing.setCurrentStatus(registryStatus);
 		return outgoing;
 	}
 
