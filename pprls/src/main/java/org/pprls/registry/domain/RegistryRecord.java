@@ -9,12 +9,16 @@ import java.util.UUID;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
+import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.pprls.core.EntityDescriptor;
+import org.pprls.registry.domain.audit.AuditingRegistryListener;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * An implementation of the model object '<em><b>Registry Record</b></em>'.
@@ -45,6 +49,8 @@ import org.pprls.core.EntityDescriptor;
  *
  */
 @MappedSuperclass
+@EntityListeners(AuditingRegistryListener.class)
+@Document(indexName = "auditregistryrecord", type = "registryrecord")
 public class RegistryRecord {
 	
 	/**
@@ -64,6 +70,7 @@ public class RegistryRecord {
 	public UUID getId() {
 		return id;
 	}
+
 
 	/**
 	 * The cached value of the '{@link #getAttachedFilesDescription()
@@ -147,7 +154,7 @@ public class RegistryRecord {
 	 * reference list. 
 	 * 
 	 */
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	protected List<Correspondent> correspondents = new ArrayList<Correspondent>();
 
 	/**
@@ -349,18 +356,25 @@ public class RegistryRecord {
 	 * 
 	 */
 	public boolean isCancelled() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return getCurrentStatus().getState().equals(RegistryState.CANCELLED);
 	}
 
 	/**
+	 * @param latestRegistryStatus 
 	 * 
 	 */
-	public void revert(EntityDescriptor handler, String log) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+	public void revertTo(RegistryStatus latestRegistryStatus) {
+		setCurrentStatus(latestRegistryStatus);
+	}
+	
+	public void revert() {
 		throw new UnsupportedOperationException();
+		
+	}
+	
+	public void undo() {
+		throw new UnsupportedOperationException();
+		
 	}
 
 	/**

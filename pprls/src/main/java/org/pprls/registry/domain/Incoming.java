@@ -3,10 +3,6 @@
  */
 package org.pprls.registry.domain;
 
-import java.util.List;
-
-import org.pprls.registry.domain.SenderRegistryNumber;
-
 /**
  * An implementation of the model object '<em><b>Incoming</b></em>'.
  * <p>

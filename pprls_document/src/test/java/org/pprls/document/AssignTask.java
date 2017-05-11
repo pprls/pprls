@@ -1,15 +1,16 @@
 package org.pprls.document;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.pprls.document.domain.Document;
 import org.pprls.core.EntityDescriptor;
 import org.pprls.core.dto.RegistryRecordDto;
+import org.pprls.document.domain.Document;
 import org.pprls.document.service.repository.DocumentRepository;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.beans.factory.annotation.Autowired;

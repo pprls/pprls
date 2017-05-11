@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import javax.persistence.Embeddable;
-
 /**
  * A representation of the literals of the enumeration '<em><b>Document Status</b></em>',
  * and utility methods for working with them.

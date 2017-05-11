@@ -3,8 +3,6 @@
  */
 package org.pprls.registry.domain;
 
-import org.pprls.registry.domain.Producer;
-
 /**
  * An implementation of the model object '<em><b>Producer</b></em>'.
  * <p>

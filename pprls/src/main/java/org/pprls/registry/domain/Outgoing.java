@@ -128,43 +128,6 @@ public class Outgoing extends RegistryRecord{
 	}
 
 	/**
-	 * how originally created the outgoing
-	 */
-	public EntityDescriptor getBasicEditor() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * Getter for the owner of the outgoing
-	 */
-	public EntityDescriptor getOwner() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-	
-	
-	/**
-	 * True if the outgoing is digitally signed
-	 */
-	public boolean isSigned() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * Set the state of the outgoing record to closed 
-	 */
-	public void close(EntityDescriptor handler, String log) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
 	 * Reissue the outgoing
 	 */
 	public Outgoing reissue() {
@@ -226,5 +189,7 @@ public class Outgoing extends RegistryRecord{
         .map(correspondent -> correspondent.getEntityDescriptor())
         .collect(Collectors.toSet());
 	}
+
+
 
 } 

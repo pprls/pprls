@@ -3,10 +3,6 @@
  */
 package org.pprls.document.domain;
 
-import org.pprls.document.domain.IncomingStatusHistory;
-import org.pprls.document.domain.InternalNumber;
-import org.pprls.document.domain.DocumentStatus;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Incoming Status History</b></em>'.

@@ -3,8 +3,6 @@
  */
 package org.pprls.document.domain;
 
-import org.pprls.document.domain.InternalNumber;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Internal Number</b></em>'.

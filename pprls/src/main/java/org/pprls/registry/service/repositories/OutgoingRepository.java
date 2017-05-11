@@ -1,4 +1,4 @@
-package org.pprls.registry.service.repository;
+package org.pprls.registry.service.repositories;
 
 import java.util.List;
 import java.util.UUID;

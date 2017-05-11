@@ -6,12 +6,6 @@ package org.pprls.registry.domain;
 import java.util.Date;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import org.pprls.registry.domain.SenderRegistryNumber;
 
 /**
  * An implementation of the model object '<em><b>Sender Registry Number</b></em>'.

@@ -2,19 +2,16 @@ package org.pprls.registry;
 
 import java.util.Arrays;
 
-import org.springframework.amqp.core.AmqpAdmin;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitAdmin;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.pprls.registry.domain.audit.AutowireHelper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackages = {"org.pprls.registry.service.repositories"})
 public class Application {
 	public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -33,5 +30,10 @@ public class Application {
             }
 
         };
+    }
+    
+    @Bean
+    public AutowireHelper autowire(){
+    	return AutowireHelper.getInstance();
     }
 }

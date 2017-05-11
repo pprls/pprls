@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.pprls.registry.domain.service.RegistrationService;
 import org.pprls.registry.service.FileService;
-import org.pprls.registry.service.repository.OutgoingRepository;
+import org.pprls.registry.service.repositories.OutgoingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

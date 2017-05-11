@@ -6,12 +6,6 @@ package org.pprls.document.domain;
 import java.util.Date;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import org.pprls.document.domain.SenderRegistryNumber;
 
 /**
  * <!-- begin-user-doc -->

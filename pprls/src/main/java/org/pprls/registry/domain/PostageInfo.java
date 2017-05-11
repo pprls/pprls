@@ -4,11 +4,8 @@
 package org.pprls.registry.domain;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import javax.persistence.Embeddable;
-
-import org.pprls.registry.domain.PostageInfo;
 
 /**
  * Information about the courier '<em><b>Postage Info</b></em>'.

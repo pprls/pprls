@@ -3,8 +3,6 @@
  */
 package org.pprls.registry.domain;
 
-import org.pprls.registry.domain.GeneralProtocolNumber;
-
 /**
  * An implementation of the model object '<em><b>General Protocol Number</b></em>'.
  * <p>

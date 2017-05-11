@@ -3,8 +3,6 @@
  */
 package org.pprls.registry.domain;
 
-import org.pprls.registry.domain.IncomingCommonSubject;
-
 /**
  * An implementation of the model object '<em><b>Incoming Common Subject</b></em>'.
  * <p>

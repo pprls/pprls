@@ -5,13 +5,17 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.h2.tools.Server;
+import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -30,7 +34,8 @@ import org.pprls.registry.domain.Year;
 import org.pprls.registry.domain.service.RegistrationService;
 import org.pprls.registry.service.FileService;
 import org.pprls.registry.service.MessageService;
-import org.pprls.registry.service.repository.OutgoingRepository;
+import org.pprls.registry.service.audit.repositories.AuditingRepository;
+import org.pprls.registry.service.repositories.OutgoingRepository;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
@@ -53,7 +58,9 @@ public class OutgoingRegisterTest {
 	@Autowired
 	private FileService fileService;
 	@Autowired
-	private OutgoingRepository registrtyRepository;
+	private AuditingRepository audtitingRepository;
+	@Autowired
+	private OutgoingRepository registryRepository;
 	// @Mock
 	@Autowired
 	private MessageService messageService;
@@ -61,21 +68,32 @@ public class OutgoingRegisterTest {
 	private LocalDateTime datetime = LocalDateTime.of(2017, 04, 27, 9, 28);
 	private Year year = Year.get(datetime.getYear());
 	private short regnum = 6;
-
+	
+	@BeforeClass
+	public static void initTest(){
+	    try {
+			Server webServer = Server.createWebServer("-web", "-webAllowOthers", "-webPort", "8082");
+			webServer.start();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Before
 	public void setup() {
+
 		MockitoAnnotations.initMocks(this);
 
 		when(registrationService.getNumberForYear(Year.YEAR_EPOCH))
 				.thenReturn(new RegistryNumber(regnum, datetime, year));
-	}
 
-	//@Test
-	public void sendMessage() {
-		Message message = MessageBuilder.withBody("Testing message".getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId("007")
-				.setHeader("Event", "Testing message").build();
-		messageService.send(message);
+	}
+	
+	@After
+	public void tearDown() {
+		registryRepository.deleteAll();
+		audtitingRepository.deleteAll();
 	}
 
 	@Test
@@ -114,9 +132,9 @@ public class OutgoingRegisterTest {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 
 		assertEquals(1, resultOutgoings.size());
 		assertEquals(regnum, resultOutgoings.get(0).getRegistryNumber().getRegistryNumber());
@@ -173,13 +191,13 @@ public class OutgoingRegisterTest {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
 		EntityDescriptor handler = new EntityDescriptor();
 		outgoing.cancel(handler, "Cancel the bloody thing");
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(1, resultOutgoings.size());
 		outgoing = resultOutgoings.get(0);
 		assertEquals(RegistryState.CANCELLED, outgoing.getCurrentStatus().getState());
@@ -233,16 +251,23 @@ public class OutgoingRegisterTest {
 		for (String filename : filenames) {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
-
-		registrtyRepository.save(outgoing);
+        // ACTIVE
+		outgoing = registryRepository.save(outgoing);
 		
 		EntityDescriptor handler = new EntityDescriptor();
 		outgoing.cancel(handler, "Cancel the bloody thing");
-		registrtyRepository.save(outgoing);
+		// CANCEL
+		outgoing = registryRepository.save(outgoing);
 		
-		handler = new EntityDescriptor();
-		outgoing.revert(handler, "Reverting because we changed our mind");
-		registrtyRepository.save(outgoing);
+//		RegistryHistory registryStatusHistory = registryStatusHistoryRepository.findFirstByRegistryIdOrderByRegistryStatusDateDesc(outgoing.getId());
+//		RegistryStatus latestRegistryStatus = registryStatusHistory.getRegistryStatus();
+//		handler = new EntityDescriptor();
+//		latestRegistryStatus.setHandler(handler);
+//		latestRegistryStatus.setDate(LocalDateTime.now());
+//		latestRegistryStatus.setLog("Reverting because we changed our mind");
+//		outgoing.revertTo(latestRegistryStatus);
+//		// ACTIVE
+//		outgoing = registryRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -256,7 +281,7 @@ public class OutgoingRegisterTest {
 				.setHeader("Event", "RevertOutgoing").build();
 		messageService.send(message);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		outgoing = resultOutgoings.get(0);
 		assertEquals(RegistryState.ACTIVE, outgoing.getCurrentStatus().getState());
 
@@ -298,12 +323,12 @@ public class OutgoingRegisterTest {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
 		Correspondent internal = Builder.INSTANCE.createCorrespondent(CorrespondentType.INTERNAL);
 		outgoing.getCorrespondents().add(internal);
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -317,7 +342,7 @@ public class OutgoingRegisterTest {
 				.setHeader("Event", "AddCorrespondendToOutgoing").build();
 		messageService.send(message);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(2, resultOutgoings.get(0).getCorrespondents().size());
 	}
 
@@ -357,11 +382,11 @@ public class OutgoingRegisterTest {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-		registrtyRepository.save(outgoing);
-
+		registryRepository.save(outgoing);
+		
 		outgoing.setSubject("New subject");
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -375,7 +400,7 @@ public class OutgoingRegisterTest {
 				.setHeader("Event", "ChangeOutgoing").build();
 		messageService.send(message);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals("New subject", resultOutgoings.get(0).getSubject());
 	}
 
@@ -415,7 +440,7 @@ public class OutgoingRegisterTest {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 		
 		for (Correspondent corespondent : outgoing.getCorrespondents()) {
 			if (corespondent.getCorrespondentType() == CorrespondentType.INTERNAL) {
@@ -424,7 +449,7 @@ public class OutgoingRegisterTest {
 			}
 		}
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -438,7 +463,7 @@ public class OutgoingRegisterTest {
 				.setHeader("Event", "RemoveCorrespondentOutgoing").build();
 		messageService.send(message);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(1, resultOutgoings.size());
 		assertEquals(1, resultOutgoings.get(0).getCorrespondents().size());
 	}
@@ -479,10 +504,10 @@ public class OutgoingRegisterTest {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 		
 		outgoing.reissue();
-		registrtyRepository.save(outgoing);
+		registryRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -496,7 +521,7 @@ public class OutgoingRegisterTest {
 				.setHeader("Event", "ReissueOutgoing").build();
 		messageService.send(message);
 
-		List<Outgoing> resultOutgoings = registrtyRepository.findByRegistryNumber(number);
+		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(2, resultOutgoings.size());
 
 		outgoing = resultOutgoings.get(0);
