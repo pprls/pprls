@@ -14,6 +14,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.pprls.core.EntityDescriptor;
@@ -50,7 +51,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
  */
 @MappedSuperclass
 @EntityListeners(AuditingRegistryListener.class)
-@Document(indexName = "auditregistryrecord", type = "registryrecord")
 public class RegistryRecord {
 	
 	/**
@@ -62,6 +62,9 @@ public class RegistryRecord {
 	@GeneratedValue(generator = "system-uuid2")
 	@GenericGenerator(name = "system-uuid2", strategy = "uuid2")
 	protected UUID id;
+	
+	@Version
+	protected long version;
 	
 	/**
 	 * Getter for the UUID

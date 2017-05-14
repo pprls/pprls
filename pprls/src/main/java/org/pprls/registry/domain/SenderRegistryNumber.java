@@ -7,6 +7,8 @@ import java.util.Date;
 
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * An implementation of the model object '<em><b>Sender Registry Number</b></em>'.
  * <p>

@@ -9,10 +9,13 @@ import java.util.stream.Collectors;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.OneToOne;
 
 import org.pprls.core.EntityDescriptor;
 import org.pprls.core.Nobody;
+import org.pprls.registry.domain.audit.AuditingRegistryListener;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * 

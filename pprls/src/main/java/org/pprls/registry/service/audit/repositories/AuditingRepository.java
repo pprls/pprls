@@ -2,11 +2,11 @@ package org.pprls.registry.service.audit.repositories;
 
 import java.util.UUID;
 
-import org.pprls.registry.domain.RegistryRecord;
+import org.pprls.registry.domain.RegistryHistory;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-public interface AuditingRepository extends ElasticsearchRepository<RegistryRecord, UUID> {
+public interface AuditingRepository extends ElasticsearchRepository<RegistryHistory, UUID> {
 
-	public RegistryRecord getOneById(UUID id);
+	public RegistryHistory getOneByRegistryRecordIdOrderByTimeStampDesc(UUID id);
 
 }

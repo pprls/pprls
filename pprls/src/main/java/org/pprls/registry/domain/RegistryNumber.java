@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * The human oriented unique number
  * <p>
@@ -46,16 +48,10 @@ public class RegistryNumber {
 	protected Year year = YEAR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
-	 * @see #getDate()
-	 */
-	protected static final LocalDateTime DATE_EDEFAULT = null;
-
-	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
 	 * @see #getDate()
 	 */
-	protected LocalDateTime date = DATE_EDEFAULT;
+	protected LocalDateTime date = LocalDateTime.now();
 
 	/**
 	 * Create registry number for current year

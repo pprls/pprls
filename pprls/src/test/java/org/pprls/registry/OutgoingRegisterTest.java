@@ -28,6 +28,7 @@ import org.pprls.registry.domain.Correspondent;
 import org.pprls.registry.domain.CorrespondentType;
 import org.pprls.registry.domain.DocumentType;
 import org.pprls.registry.domain.Outgoing;
+import org.pprls.registry.domain.RegistryHistory;
 import org.pprls.registry.domain.RegistryNumber;
 import org.pprls.registry.domain.RegistryState;
 import org.pprls.registry.domain.Year;
@@ -43,6 +44,7 @@ import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -51,6 +53,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 @SpringBootTest
 @EntityScan("org.pprls.registry.domain")
 @EnableRabbit
+@EnableElasticsearchRepositories(basePackages = "org/pprls/registry/service/audit/repositories/")
 public class OutgoingRegisterTest {
 
 	@Mock
@@ -259,15 +262,9 @@ public class OutgoingRegisterTest {
 		// CANCEL
 		outgoing = registryRepository.save(outgoing);
 		
-//		RegistryHistory registryStatusHistory = registryStatusHistoryRepository.findFirstByRegistryIdOrderByRegistryStatusDateDesc(outgoing.getId());
-//		RegistryStatus latestRegistryStatus = registryStatusHistory.getRegistryStatus();
-//		handler = new EntityDescriptor();
-//		latestRegistryStatus.setHandler(handler);
-//		latestRegistryStatus.setDate(LocalDateTime.now());
-//		latestRegistryStatus.setLog("Reverting because we changed our mind");
-//		outgoing.revertTo(latestRegistryStatus);
-//		// ACTIVE
-//		outgoing = registryRepository.save(outgoing);
+		RegistryHistory lastRecord = audtitingRepository.getOneByRegistryRecordIdOrderByTimeStampDesc(outgoing.getId());
+		// ACTIVE
+		outgoing = registryRepository.save((Outgoing) (lastRecord.getRegistryRecord()));
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
