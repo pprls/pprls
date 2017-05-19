@@ -1,11 +1,12 @@
 package org.pprls.registry;
 
-import java.time.LocalDateTime;
-import java.util.Arrays;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.pprls.registry.domain.audit.AutowireHelper;
-import org.pprls.registry.domain.audit.LocalDateDeserializer;
-import org.pprls.registry.domain.audit.LocalDateSerializer;
+import org.pprls.registry.mappers.DefaultEntityMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,18 +14,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"org.pprls.registry.service.repositories"})
 public class Application {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
@@ -42,18 +40,25 @@ public class Application {
 
         };
     }
-    
+
     @Bean
-    public AutowireHelper autowire(){
-    	return AutowireHelper.getInstance();
+    public AutowireHelper autowire() {
+        return AutowireHelper.getInstance();
     }
-    
+
     @Bean
-    public ObjectMapper mapper(){
-    	ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        
+    @Primary
+    public ObjectMapper mapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ISO_INSTANT));
+
+        javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ISO_INSTANT));
+        mapper.enable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        mapper.registerModule(javaTimeModule);
+
         return mapper;
     }
+
+
 }

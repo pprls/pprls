@@ -45,6 +45,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -54,6 +55,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 @EntityScan("org.pprls.registry.domain")
 @EnableRabbit
 @EnableElasticsearchRepositories(basePackages = "org/pprls/registry/service/audit/repositories/")
+//@ContextConfiguration(classes=ElasticConfiguration.class)
 public class OutgoingRegisterTest {
 
 	@Mock
