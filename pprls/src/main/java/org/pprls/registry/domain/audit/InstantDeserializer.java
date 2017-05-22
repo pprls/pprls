@@ -8,9 +8,9 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
-public class LocalDateDeserializer extends JsonDeserializer {
+public class InstantDeserializer extends JsonDeserializer {
 	
-	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd::MM::yyyy HH:mm:ss");
+	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_INSTANT;
 
     @Override
     public LocalDateTime deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {

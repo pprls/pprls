@@ -9,9 +9,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-public class LocalDateSerializer extends JsonSerializer {
+public class InstantSerializer extends JsonSerializer {
 	
-	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd::MM::yyyy HH:mm:ss");
+	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_INSTANT;
 
     public void serialize(Object value, JsonGenerator gen, SerializerProvider serializers) throws IOException, JsonProcessingException {
         gen.writeString(((LocalDateTime)value).format(FORMATTER));

@@ -6,8 +6,9 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -45,6 +46,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -54,6 +56,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 @EntityScan("org.pprls.registry.domain")
 @EnableRabbit
 @EnableElasticsearchRepositories(basePackages = "org/pprls/registry/service/audit/repositories/")
+@ContextConfiguration(classes = ElasticConfiguration.class)
 public class OutgoingRegisterTest {
 
 	@Mock
@@ -68,8 +71,8 @@ public class OutgoingRegisterTest {
 	@Autowired
 	private MessageService messageService;
 
-	private LocalDateTime datetime = LocalDateTime.of(2017, 04, 27, 9, 28);
-	private Year year = Year.get(datetime.getYear());
+	private Instant datetime = Instant.parse("2017-04-27T09:28:00Z");
+	private Year year = Year.YEAR_2017;
 	private short regnum = 6;
 	
 	@BeforeClass

@@ -3,9 +3,15 @@
  */
 package org.pprls.registry.domain;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Embeddable;
+
+import org.springframework.data.elasticsearch.annotations.DateFormat;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -23,35 +29,24 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  */
 @Embeddable
 public class RegistryNumber {
-	/**
-	 * The default value of the '{@link #getRegistryNumber() <em>Registry Number</em>}' attribute.
-	 * @see #getRegistryNumber()
-	 */
-	protected static final short REGISTRY_NUMBER_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getRegistryNumber() <em>Registry Number</em>}' attribute.
 	 * @see #getRegistryNumber()
 	 */
-	protected short registryNumber = REGISTRY_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
-	 * @see #getYear()
-	 */
-	protected static final Year YEAR_EDEFAULT = Year.YEAR_2006;
+	protected short registryNumber = 0;
 
 	/**
 	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
 	 * @see #getYear()
 	 */
-	protected Year year = YEAR_EDEFAULT;
+	protected Year year = Year.YEAR_2006;
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
 	 * @see #getDate()
-	 */
-	protected LocalDateTime date = LocalDateTime.now();
+	 */ 
+	protected Instant date = Instant.now();
 
 	/**
 	 * Create registry number for current year
@@ -64,7 +59,7 @@ public class RegistryNumber {
 	 * @param newDateTime date of registration
 	 * @param year 
 	 */
-	public RegistryNumber(Short number, LocalDateTime dateTime, Year newYear) {
+	public RegistryNumber(Short number, Instant dateTime, Year newYear) {
 		registryNumber = number;
 		date = dateTime;
 		year = newYear;
@@ -96,13 +91,13 @@ public class RegistryNumber {
 
 	/**
 	 */
-	public LocalDateTime getDate() {
+	public Instant getDate() {
 		return date;
 	}
 
 	/**
 	 */
-	public void setDate(LocalDateTime newDate) {
+	public void setDate(Instant newDate) {
 		date = newDate;
 	}
 

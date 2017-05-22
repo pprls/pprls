@@ -13,55 +13,60 @@ import java.util.List;
  */
 public enum DocumentState {
 	
+	/**
+	 * The '<em><b>UNREAD</b></em>' literal object.
+	 * @see #UNREAD_VALUE
+	 */
+	UNREAD(0, "UNREAD", "Μη αναγνωσμένο"),
+	
+	/**
+	 * The '<em><b>PENDING</b></em>' literal object.
+	 * @see #PENDING_VALUE
+	 */
+	PENDING(1, "PENDING", "Σε αναμονή"),
 	
 	/**
 	 * The '<em><b>ASSIGN</b></em>' literal object.
 	 * @see #ASSIGN_VALUE
 	 */
-	ASSIGN(0, "ASSIGN", "Αρχή"),
+	ASSIGN(2, "ASSIGN", "Αρχή"),
 	
 	/**
 	 * The '<em><b>ACCEPTED</b></em>' literal object.
 	 * @see #ACCEPTED_VALUE
 	 */
-	ACCEPTED(1, "ACCEPTED", "Αποδεκτό"),
+	ACCEPTED(3, "ACCEPTED", "Αποδεκτό"),
 
 	/**
 	 * The '<em><b>DONE</b></em>' literal object.
 	 * @see #DONE_VALUE
 	 */
-	DONE(2, "DONE", "Ολοκληρωμένο"),
+	DONE(4, "DONE", "Ολοκληρωμένο"),
 
 	/**
 	 * The '<em><b>ARCHIVED</b></em>' literal object.
 	 * @see #ARCHIVED_VALUE
 	 */
-	ARCHIVED(3, "ARCHIVED", "Αρχειοθετημένο"),
+	ARCHIVED(5, "ARCHIVED", "Αρχειοθετημένο"),
 
 	/**
 	 * The '<em><b>REJECTED</b></em>' literal object.
 	 * @see #REJECTED_VALUE
 	 */
-	REJECTED(4, "REJECTED", "Απορριφθέν"),
+	REJECTED(6, "REJECTED", "Απορριφθέν"),
 
 	/**
 	 * The '<em><b>CANCELLED</b></em>' literal object.
 	 * @see #CANCELLED_VALUE
 	 */
-	CANCELLED(5, "CANCELLED", "Ακυρωμένο"),
-
-	/**
-	 * The '<em><b>PENDING</b></em>' literal object.
-	 * @see #PENDING_VALUE
-	 */
-	PENDING(6, "PENDING", "Σε αναμονή"),
+	CANCELLED(7, "CANCELLED", "Ακυρωμένο"),
 
 	/**
 	 * The '<em><b>UNDER REVISION</b></em>' literal object.
 	 * @see #UNDER_REVISION_VALUE
 	 */
-	UNDER_REVISION(7, "UNDER_REVISION", "Επαναληψη το ορθό");
-
+	UNDER_REVISION(8, "UNDER_REVISION", "Επαναληψη το ορθό");
+	
 
 	/**
 	 * The '<em><b>START</b></em>' literal value.
@@ -71,7 +76,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #ASSIGN
 	 */
-	public static final int ASSIGN_VALUE = 0;
+	public static final int ASSIGN_VALUE = 2;
 
 	/**
 	 * The '<em><b>ACCEPTED</b></em>' literal value.
@@ -80,7 +85,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #ACCEPTED
 	 */
-	public static final int ACCEPTED_VALUE = 1;
+	public static final int ACCEPTED_VALUE = 3;
 
 	/**
 	 * The '<em><b>DONE</b></em>' literal value.
@@ -89,7 +94,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #DONE
 	 */
-	public static final int DONE_VALUE = 2;
+	public static final int DONE_VALUE = 4;
 
 	/**
 	 * The '<em><b>ARCHIVED</b></em>' literal value.
@@ -98,7 +103,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #ARCHIVED
 	 */
-	public static final int ARCHIVED_VALUE = 3;
+	public static final int ARCHIVED_VALUE = 5;
 
 	/**
 	 * The '<em><b>REJECTED</b></em>' literal value.
@@ -107,7 +112,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #REJECTED
 	 */
-	public static final int REJECTED_VALUE = 4;
+	public static final int REJECTED_VALUE = 6;
 
 	/**
 	 * The '<em><b>CANCELLED</b></em>' literal value.
@@ -116,7 +121,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #CANCELLED
 	 */
-	public static final int CANCELLED_VALUE = 5;
+	public static final int CANCELLED_VALUE = 7;
 
 	/**
 	 * The '<em><b>PENDING</b></em>' literal value.>
@@ -125,7 +130,7 @@ public enum DocumentState {
 	 * </p>
 	 * @see #PENDING
 	 */
-	public static final int PENDING_VALUE = 6;
+	public static final int PENDING_VALUE = 1;
 
 	/**
 	 * The '<em><b>UNDER REVISION</b></em>' literal value.
@@ -134,7 +139,16 @@ public enum DocumentState {
 	 * </p>
 	 * @see #UNDER_REVISION
 	 */
-	public static final int UNDER_REVISION_VALUE = 7;
+	public static final int UNDER_REVISION_VALUE = 8;
+	
+	/**
+	 * The '<em><b>UNREAD</b></em>' literal value.
+	 * <p>
+	 * A document 
+	 * </p>
+	 * @see #UNREAD
+	 */
+	public static final int UNREAD_VALUE = 0;
 
 
 
@@ -143,6 +157,8 @@ public enum DocumentState {
 	 */
 	private static final DocumentState[] VALUES_ARRAY =
 		new DocumentState[] {
+			UNREAD,
+			PENDING,
 			ASSIGN,
 			ACCEPTED,
 			DONE,
@@ -195,6 +211,7 @@ public enum DocumentState {
 	 */
 	public static DocumentState get(int value) {
 		switch (value) {
+			case UNREAD_VALUE: return UNREAD;
 			case ASSIGN_VALUE: return ASSIGN;
 			case ACCEPTED_VALUE: return ACCEPTED;
 			case DONE_VALUE: return DONE;

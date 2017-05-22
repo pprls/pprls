@@ -100,6 +100,7 @@
     <eLiterals name="PENDING" value="1" literal="Σε αναμονή"/>
     <eLiterals name="UNDER_REVISION" value="4" literal="Σε αναθεώρηση"/>
     <eLiterals name="START" value="5" literal="Έναρξη"/>
+    <eLiterals name="UNREAD" value="8"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentOperations">
     <eLiterals name="ASSIGN" literal="Ανάθεση"/>
@@ -109,6 +110,7 @@
     <eLiterals name="REVERT" value="4" literal="Ανάκληση"/>
     <eLiterals name="ARCHIVE" value="5" literal="Αρχειοθέτηση"/>
     <eLiterals name="ACCEPT" value="6" literal="Αποδοχή"/>
+    <eLiterals name="READ" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Producer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -351,5 +353,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="RegistryStatusHistory">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentId" eType="#//UUID"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="registryStatus : RegistryStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Case">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tags" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="have" lowerBound="1" upperBound="-1"
+        eType="#//Document"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="#//UUID"/>
   </eClassifiers>
 </ecore:EPackage>

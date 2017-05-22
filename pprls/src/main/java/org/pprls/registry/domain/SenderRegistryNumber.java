@@ -3,9 +3,14 @@
  */
 package org.pprls.registry.domain;
 
+import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Embeddable;
+
+import org.springframework.data.elasticsearch.annotations.DateFormat;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -22,29 +27,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  */
 @Embeddable
 public class SenderRegistryNumber {
-	/**
-	 * The default value of the '{@link #getRegistryNumber() <em>Registry Number</em>}' attribute.
-	 * @see #getRegistryNumber()
-	 */
-	protected static final String REGISTRY_NUMBER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRegistryNumber() <em>Registry Number</em>}' attribute.
 	 * @see #getRegistryNumber()
 	 */
-	protected String registryNumber = REGISTRY_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
-	 * @see #getDate()
-	 */
-	protected static final Date DATE_EDEFAULT = null;
+	protected String registryNumber = "0";
 
 	/**
 	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
 	 * @see #getDate()
 	 */
-	protected Date date = DATE_EDEFAULT;
+	protected Instant date = Instant.now();
 
 	/**
 	 */
@@ -66,13 +60,13 @@ public class SenderRegistryNumber {
 
 	/**
 	 */
-	public Date getDate() {
+	public Instant getDate() {
 		return date;
 	}
 
 	/**
 	 */
-	public void setDate(Date newDate) {
+	public void setDate(Instant newDate) {
 		date = newDate;
 	}
 
