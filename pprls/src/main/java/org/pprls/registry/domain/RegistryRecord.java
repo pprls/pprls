@@ -3,23 +3,17 @@
  */
 package org.pprls.registry.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
-import javax.persistence.ElementCollection;
-import javax.persistence.Embedded;
-import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
-
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.hibernate.annotations.GenericGenerator;
 import org.pprls.core.EntityDescriptor;
 import org.pprls.registry.domain.audit.AuditingRegistryListener;
-import org.springframework.data.elasticsearch.annotations.Document;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * An implementation of the model object '<em><b>Registry Record</b></em>'.
@@ -50,7 +44,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
  *
  */
 @MappedSuperclass
-@EntityListeners(AuditingRegistryListener.class)
 public class RegistryRecord {
 	
 	/**
@@ -62,10 +55,11 @@ public class RegistryRecord {
 	@GeneratedValue(generator = "system-uuid2")
 	@GenericGenerator(name = "system-uuid2", strategy = "uuid2")
 	protected UUID id;
-	
+
+	@JsonIgnore
 	@Version
 	protected long version;
-	
+
 	/**
 	 * Getter for the UUID
 	 * @return uuid
@@ -358,6 +352,7 @@ public class RegistryRecord {
 	/**
 	 * 
 	 */
+	@JsonIgnore
 	public boolean isCancelled() {
 		return getCurrentStatus().getState().equals(RegistryState.CANCELLED);
 	}
