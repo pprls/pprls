@@ -56,7 +56,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 @EntityScan("org.pprls.registry.domain")
 @EnableRabbit
 @EnableElasticsearchRepositories(basePackages = "org/pprls/registry/service/audit/repositories/")
-@ContextConfiguration(classes = ElasticConfiguration.class)
+//@ContextConfiguration(classes=ElasticConfiguration.class)
 public class OutgoingRegisterTest {
 
 	@Mock
