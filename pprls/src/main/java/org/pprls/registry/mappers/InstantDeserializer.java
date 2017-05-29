@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 public class InstantDeserializer extends JsonDeserializer {
  
- public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_INSTANT;
+ private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
     @Override
     public LocalDateTime deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {

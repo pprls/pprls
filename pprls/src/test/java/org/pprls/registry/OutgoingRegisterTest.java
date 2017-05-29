@@ -1,17 +1,6 @@
 package org.pprls.registry;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
-import static org.mockito.Mockito.when;
-
-import java.sql.SQLException;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.h2.tools.Server;
 import org.junit.After;
 import org.junit.Before;
@@ -22,20 +11,12 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.pprls.core.EntityDescriptor;
 import org.pprls.core.dto.RegistryRecordDto;
-import org.pprls.registry.domain.Builder;
-import org.pprls.registry.domain.Classification;
-import org.pprls.registry.domain.Correspondent;
-import org.pprls.registry.domain.CorrespondentType;
-import org.pprls.registry.domain.DocumentType;
-import org.pprls.registry.domain.Outgoing;
-import org.pprls.registry.domain.RegistryHistory;
-import org.pprls.registry.domain.RegistryNumber;
-import org.pprls.registry.domain.RegistryState;
-import org.pprls.registry.domain.Year;
+import org.pprls.registry.domain.*;
+import org.pprls.registry.domain.service.OutgoingRegistryHistory;
 import org.pprls.registry.domain.service.RegistrationService;
 import org.pprls.registry.service.FileService;
 import org.pprls.registry.service.MessageService;
-import org.pprls.registry.service.audit.repositories.AuditingRepository;
+import org.pprls.registry.service.audit.repositories.AuditingOutgoingRepository;
 import org.pprls.registry.service.repositories.OutgoingRepository;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
@@ -47,7 +28,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -62,15 +51,15 @@ public class OutgoingRegisterTest {
 	@Autowired
 	private FileService fileService;
 	@Autowired
-	private AuditingRepository audtitingRepository;
+	private AuditingOutgoingRepository audtitingRepository;
 	@Autowired
 	private OutgoingRepository registryRepository;
 	// @Mock
 	@Autowired
 	private MessageService messageService;
 
-	private Instant datetime = Instant.parse("2017-04-27T09:28:00Z");
-	private Year year = Year.YEAR_2017;
+	private LocalDateTime datetime = LocalDateTime.of(2017, 4, 27, 9, 28);
+	private Year year = Year.get(datetime.getYear());
 	private short regnum = 6;
 	
 	@BeforeClass
@@ -206,7 +195,7 @@ public class OutgoingRegisterTest {
 		outgoing = resultOutgoings.get(0);
 		assertEquals(RegistryState.CANCELLED, outgoing.getCurrentStatus().getState());
 
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());;
+		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
 		try {
 			jsonString = outDto.toJSON();
@@ -262,10 +251,12 @@ public class OutgoingRegisterTest {
 		outgoing.cancel(handler, "Cancel the bloody thing");
 		// CANCEL
 		outgoing = registryRepository.save(outgoing);
-		
-		RegistryHistory lastRecord = audtitingRepository.getOneByRegistryRecordIdOrderByTimeStampDesc(outgoing.getId());
+
+		List<OutgoingRegistryHistory> lastRecord = audtitingRepository.findByOutgoingIdOrderByTimeStampAsc(outgoing.getId());
 		// ACTIVE
-		outgoing = registryRepository.save((Outgoing) (lastRecord.getRegistryRecord()));
+		assertTrue(!lastRecord.isEmpty());
+		outgoing.revertTo(lastRecord.get(0).getOutgoing());
+		outgoing = registryRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -524,7 +515,7 @@ public class OutgoingRegisterTest {
 
 		outgoing = resultOutgoings.get(0);
 		assertNotNull(outgoing.getReissued());
-		outgoing = resultOutgoings.get(1);
+		//outgoing = resultOutgoings.get(1);
 		// assert from the other side
 
 		fail("test is not complete");
