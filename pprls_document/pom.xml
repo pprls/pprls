@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>pprls</name>
+<name>pprls_document</name>
 	<description>PPRLS Document Managment System</description>
 
 	<parent>

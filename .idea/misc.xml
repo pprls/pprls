@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/pprls/pom.xml" />
         <option value="$PROJECT_DIR$/pprls_core/pom.xml" />
         <option value="$PROJECT_DIR$/pprls_document/pom.xml" />
+        <option value="$PROJECT_DIR$/pprls_registry/pom.xml" />
       </list>
     </option>
   </component>
