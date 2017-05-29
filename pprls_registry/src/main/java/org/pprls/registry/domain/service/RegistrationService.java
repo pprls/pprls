@@ -3,8 +3,10 @@
  */
 package org.pprls.registry.domain.service;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -42,9 +44,9 @@ public class RegistrationService {
 	 */
 	public RegistryNumber getNumberForYear(Year year) {
 		Short number=0;
-		LocalDateTime localdatetime=null;
+		Instant date = Instant.EPOCH;
 		// Get from repository number and date and year
-		return new RegistryNumber(number, localdatetime, year);
+		return new RegistryNumber(number, date, year);
 	}
 	
 	/**
@@ -52,10 +54,10 @@ public class RegistrationService {
 	 */
 	public RegistryNumber getReservedRegistryNumber(LocalDateTime time) {
 		Short number=0;
-		LocalDateTime localdatetime=null;
+		Instant date = Instant.EPOCH;
 		Year year=Year.YEAR_EPOCH;
 		// Get from repository resurved number and date and year 
-		return new RegistryNumber(number, localdatetime, year);
+		return new RegistryNumber(number, date, year);
 	}
 	
 	@Transactional

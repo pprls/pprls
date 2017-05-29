@@ -3,12 +3,17 @@
  */
 package org.pprls.registry.domain;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
 import org.pprls.core.EntityDescriptor;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -47,7 +52,7 @@ public class RegistryStatus {
 	 * The '{@link #getDate() <em>Date</em>}' attribute.
 	 * @see #getDate()
 	 */
-	protected LocalDateTime date = LocalDateTime.now();
+	protected Instant date = Instant.now();
 
 	/**
 	 * The '{@link #getLog() <em>Log</em>}' attribute.
@@ -99,14 +104,14 @@ public class RegistryStatus {
 	/**
 	 * date getter
 	 */
-	public LocalDateTime getDate() {
+	public Instant getDate() {
 		return date;
 	}
 
 	/**
 	 * date setter
 	 */
-	public void setDate(LocalDateTime newDate) {
+	public void setDate(Instant newDate) {
 		date = newDate;
 	}
 
