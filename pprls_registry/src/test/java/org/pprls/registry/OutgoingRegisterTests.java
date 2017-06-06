@@ -29,7 +29,9 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.SQLException;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -58,11 +60,12 @@ public class OutgoingRegisterTest {
 	@Autowired
 	private MessageService messageService;
 
-	private LocalDateTime datetime = LocalDateTime.of(2017, 4, 27, 9, 28);
-	private Year year = Year.get(datetime.getYear());
+	private Instant instant = Instant.parse("2017-4-27 9:28");
+	private Year year = Year.get(instant.get(ChronoField.YEAR));
 	private short regnum = 6;
 	
 	@BeforeClass
+	/* Start server to be able to access h2 database form the web. */
 	public static void initTest(){
 	    try {
 			Server webServer = Server.createWebServer("-web", "-webAllowOthers", "-webPort", "8082");
@@ -78,8 +81,8 @@ public class OutgoingRegisterTest {
 
 		MockitoAnnotations.initMocks(this);
 
-		when(registrationService.getNumberForYear(Year.YEAR_EPOCH))
-				.thenReturn(new RegistryNumber(regnum, datetime, year));
+		when(registrationService.getNumberForYear(year))
+				.thenReturn(new RegistryNumber(regnum, instant, year));
 
 	}
 	
@@ -110,7 +113,7 @@ public class OutgoingRegisterTest {
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
 		outgoing.setComments("My Comments");
-		outgoing.setTag("ΔΠ 2016 ΚΑΤΑΓΓΕΛΙΑ");
+		outgoing.setTag("Απάντηση σε ΔΠ 2016 ΚΑΤΑΓΓΕΛΙΑ");
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
@@ -132,7 +135,7 @@ public class OutgoingRegisterTest {
 		assertEquals(1, resultOutgoings.size());
 		assertEquals(regnum, resultOutgoings.get(0).getRegistryNumber().getRegistryNumber());
 		assertEquals(year, resultOutgoings.get(0).getRegistryNumber().getYear());
-		assertEquals(datetime, resultOutgoings.get(0).getRegistryNumber().getDate());
+		assertEquals(instant, resultOutgoings.get(0).getRegistryNumber().getDate());
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
