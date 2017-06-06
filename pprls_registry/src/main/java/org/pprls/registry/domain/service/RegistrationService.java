@@ -44,9 +44,9 @@ public class RegistrationService {
 	 */
 	public RegistryNumber getNumberForYear(Year year) {
 		Short number=0;
-		Instant date = Instant.EPOCH;
+		Instant instant = Instant.EPOCH;
 		// Get from repository number and date and year
-		return new RegistryNumber(number, date, year);
+		return new RegistryNumber(number, instant, year);
 	}
 	
 	/**

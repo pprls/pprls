@@ -59,9 +59,9 @@ public class RegistryNumber {
 	 * @param newDateTime date of registration
 	 * @param year 
 	 */
-	public RegistryNumber(Short number, Instant dateTime, Year newYear) {
+	public RegistryNumber(Short number, Instant instant, Year newYear) {
 		registryNumber = number;
-		date = dateTime;
+		date = instant;
 		year = newYear;
 	}
 

@@ -3,6 +3,8 @@
  */
 package org.pprls.registry.domain;
 
+import javax.persistence.Entity;
+
 /**
  * An implementation of the model object '<em><b>Incoming</b></em>'.
  * <p>
@@ -15,6 +17,7 @@ package org.pprls.registry.domain;
  * </ul>
  *
  */
+@Entity
 public class Incoming extends RegistryRecord {
 	/**
 	 * The default value of the '{@link #isRelatedToOutgoing() <em>Related To Outgoing</em>}' attribute.

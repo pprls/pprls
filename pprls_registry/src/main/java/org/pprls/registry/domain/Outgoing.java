@@ -17,6 +17,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.OneToOne;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -135,10 +136,18 @@ public class Outgoing extends RegistryRecord{
 	/**
 	 * Reissue the outgoing
 	 */
-	public Outgoing reissue() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Outgoing reissue(EntityDescriptor handler) {
+		Outgoing outgoing = Builder.INSTANCE.createOutgoing(this.getIssuer(), handler);
+		outgoing.setCorrespondents(this.getCorrespondents());
+		outgoing.setAda(this.getAda());
+		outgoing.setAttachedFilesDescription(this.getAttachedFilesDescription());
+		outgoing.setClassification(this.getClassification());
+		outgoing.setSubject(this.getSubject());
+		outgoing.setComments(this.getComments());
+		outgoing.setRegistryNumber(this.getRegistryNumber());
+		outgoing.setTag(this.getTag());
+		outgoing.setType(this.getType());
+		return outgoing;
 	}
 
 
