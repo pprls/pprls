@@ -3,21 +3,17 @@
  */
 package org.pprls.registry.domain;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.uuid.Generators;
+import com.fasterxml.uuid.impl.TimeBasedGenerator;
 import org.pprls.core.EntityDescriptor;
 import org.pprls.core.Nobody;
 import org.pprls.registry.domain.audit.AuditingOutgoingListener;
-import org.pprls.registry.domain.audit.AuditingRegistryListener;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.OneToOne;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -37,7 +33,7 @@ import java.util.stream.Collectors;
 @Entity
 @EntityListeners(AuditingOutgoingListener.class)
 public class Outgoing extends RegistryRecord{
-	
+
 	/**
 	 * The cached value of the '{@link #getReissued() <em>Reissued</em>}' reference.
 	 * @see #getReissued()
@@ -77,6 +73,9 @@ public class Outgoing extends RegistryRecord{
 	/**
 	 */
 	protected Outgoing() {
+		TimeBasedGenerator uuidGenerator;
+		uuidGenerator = Generators.timeBasedGenerator();
+		id = uuidGenerator.generate();
 	}
 
 	/**
@@ -147,6 +146,8 @@ public class Outgoing extends RegistryRecord{
 		outgoing.setRegistryNumber(this.getRegistryNumber());
 		outgoing.setTag(this.getTag());
 		outgoing.setType(this.getType());
+		this.setReissued(outgoing.getId());
+		outgoing.setNumberOfRepeats(1);
 		return outgoing;
 	}
 

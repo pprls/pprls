@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.pprls.core.EntityDescriptor;
@@ -41,7 +42,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -52,7 +52,7 @@ import static org.mockito.Mockito.when;
 //@ContextConfiguration(classes=ElasticConfiguration.class)
 public class OutgoingRegisterTests {
 
-	@Mock
+	@Autowired
 	private RegistrationService registrationService;
 	@Autowired
 	private FileService fileService;
@@ -60,8 +60,7 @@ public class OutgoingRegisterTests {
 	private AuditingOutgoingRepository audtitingRepository;
 	@Autowired
 	private OutgoingRepository registryRepository;
-	// @Mock
-	@Autowired
+	@InjectMocks
 	private MessageService messageService;
 
 	private Instant instant = Instant.parse("2017-04-27T09:28:00.00Z");
@@ -177,39 +176,17 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
-		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
+		registrationService.createOutgoing(outgoing);
 
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-
-		registryRepository.save(outgoing);
 
 		EntityDescriptor handler = new EntityDescriptor();
-		outgoing.cancel(handler, "Cancel the bloody thing");
-		registryRepository.save(outgoing);
+		registrationService.cancelOutgoing(handler, "Cancel the bloody thing");
 
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(1, resultOutgoings.size());
 		outgoing = resultOutgoings.get(0);
 		assertEquals(RegistryState.CANCELLED, outgoing.getCurrentStatus().getState());
 
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "CancelOutgoing").build();
-		messageService.send(message);
 
 	}
 
@@ -238,42 +215,17 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
-		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-        // ACTIVE
-		outgoing = registryRepository.save(outgoing);
-		
+		registrationService.createOutgoing(outgoing);
 		EntityDescriptor handler = new EntityDescriptor();
-		outgoing.cancel(handler, "Cancel the bloody thing");
-		// CANCEL
-		outgoing = registryRepository.save(outgoing);
+		registrationService.cancelOutgoing(handler, "Cancel the bloody thing");
 
 		List<OutgoingRegistryHistory> lastRecord = audtitingRepository.findByOutgoingIdOrderByTimeStampAsc(outgoing.getId());
 		// ACTIVE
 		assertTrue(!lastRecord.isEmpty());
-		outgoing.revertTo(lastRecord.get(0).getOutgoing());
-		outgoing = registryRepository.save(outgoing);
+		registrationService.revertTo(lastRecord.get(0).getOutgoing());
+		registryRepository.save(outgoing);
 
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "RevertOutgoing").build();
-		messageService.send(message);
-
+		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		outgoing = resultOutgoings.get(0);
 		assertEquals(RegistryState.ACTIVE, outgoing.getCurrentStatus().getState());
@@ -307,16 +259,7 @@ public class OutgoingRegisterTests {
 
 		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-
-		registryRepository.save(outgoing);
+		registrationService.createOutgoing(outgoing);
 
 		Correspondent internal = Builder.INSTANCE.createCorrespondent(CorrespondentType.INTERNAL);
 		outgoing.getCorrespondents().add(internal);
@@ -496,10 +439,12 @@ public class OutgoingRegisterTests {
 		for (String filename : filenames) {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
-
+	    //create outgoing
 		registryRepository.save(outgoing);
 
+		//reissue outgoing
 		Outgoing replacementOutgoing = outgoing.reissue(newEntityDescriptor);
+		registryRepository.save(outgoing);
 		registryRepository.save(replacementOutgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
