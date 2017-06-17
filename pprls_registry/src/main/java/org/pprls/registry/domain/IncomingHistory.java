@@ -5,6 +5,8 @@ import java.util.UUID;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.uuid.Generators;
+import com.fasterxml.uuid.impl.TimeBasedGenerator;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -20,8 +22,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
 public class RegistryHistory {
 
 	@Id
-	@GeneratedValue(generator = "system-uuid2")
-	@GenericGenerator(name = "system-uuid2", strategy = "uuid2")
 	private UUID id;
 	
 	/**
@@ -38,7 +38,9 @@ public class RegistryHistory {
 	 * The constructor
 	 */
 	protected RegistryHistory() {
-
+		TimeBasedGenerator uuidGenerator;
+		uuidGenerator = Generators.timeBasedGenerator();
+		id = uuidGenerator.generate();
 	}
 	
 	public RegistryHistory(RegistryRecord registryRecord) {
