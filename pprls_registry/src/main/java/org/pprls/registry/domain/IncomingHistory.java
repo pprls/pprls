@@ -1,14 +1,11 @@
 package org.pprls.registry.domain;
 
-import java.util.UUID;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.impl.TimeBasedGenerator;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.elasticsearch.annotations.Document;
+
+import javax.persistence.Id;
+import java.util.UUID;
 
 /**
  * A wrapper object for the registry record.
@@ -18,41 +15,41 @@ import org.springframework.data.elasticsearch.annotations.Document;
  *
  */
 
-@Document(indexName = "auditregistryrecord", type = "registryrecord")
-public class RegistryHistory {
+@Document(indexName = "auditincoming", type = "IncomingHistory")
+public class IncomingHistory {
 
 	@Id
 	private UUID id;
-	
+
 	/**
 	 * The object to be saved in history
 	 */
-	private RegistryRecord registryRecord;
-	
+	private Incoming incoming;
+
 	/**
 	 * The time of modification
 	 */
 	private long timeStamp = System.currentTimeMillis();
-	
+
 	/**
 	 * The constructor
 	 */
-	protected RegistryHistory() {
+	protected IncomingHistory() {
 		TimeBasedGenerator uuidGenerator;
 		uuidGenerator = Generators.timeBasedGenerator();
 		id = uuidGenerator.generate();
 	}
-	
-	public RegistryHistory(RegistryRecord registryRecord) {
-		this.registryRecord = registryRecord;
+
+	public IncomingHistory(RegistryRecord registryRecord) {
+		this.incoming = incoming;
 	}
 	
-	public RegistryRecord getRegistryRecord() {
-		return registryRecord;
+	public RegistryRecord getIncoming() {
+		return incoming;
 	}
 
-	public void setRegistryRecord(RegistryRecord registryRecord) {
-		this.registryRecord = registryRecord;
+	public void setIncoming(Incoming incoming) {
+		this.incoming = incoming;
 	}
 
 	public long getTimeStamp() {

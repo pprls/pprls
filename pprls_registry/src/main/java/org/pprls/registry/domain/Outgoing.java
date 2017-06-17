@@ -201,6 +201,7 @@ public class Outgoing extends RegistryRecord{
 		this.tag = outgoing.getTag();
 		this.type = outgoing.getType();
 	}
+
 	public void addCorrespondents(List<Correspondent> newCorrespondants) {
 		correspondents.addAll(newCorrespondants);
 	}

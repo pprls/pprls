@@ -185,7 +185,7 @@ public class IncomingRegisterTests {
 		assertEquals(instant, resultIncomings.get(0).getRegistryNumber().getDate());
 
 		Incoming incoming = resultIncomings.get(0);
-		incoming.revert();
+		//incoming.revert();
 		registrtyRepository.save(incoming);
 
         Set<EntityDescriptor> entities = new HashSet<>();

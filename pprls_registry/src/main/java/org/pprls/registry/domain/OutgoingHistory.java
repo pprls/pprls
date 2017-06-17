@@ -18,8 +18,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
  *
  */
 
-@Document(indexName = "auditregistryrecord", type = "registryrecord")
-public class RegistryHistory {
+@Document(indexName = "auditoutgoing", type = "OutgoingHistory")
+public class OutgoingHistory {
 
 	@Id
 	private UUID id;
@@ -27,7 +27,7 @@ public class RegistryHistory {
 	/**
 	 * The object to be saved in history
 	 */
-	private RegistryRecord registryRecord;
+	private Outgoing outgoing;
 	
 	/**
 	 * The time of modification
@@ -37,22 +37,22 @@ public class RegistryHistory {
 	/**
 	 * The constructor
 	 */
-	protected RegistryHistory() {
+	protected OutgoingHistory() {
 		TimeBasedGenerator uuidGenerator;
 		uuidGenerator = Generators.timeBasedGenerator();
 		id = uuidGenerator.generate();
 	}
 	
-	public RegistryHistory(RegistryRecord registryRecord) {
-		this.registryRecord = registryRecord;
+	public OutgoingHistory(Outgoing outgoing) {
+		this.outgoing = outgoing;
 	}
 	
-	public RegistryRecord getRegistryRecord() {
-		return registryRecord;
+	public Outgoing getOutgoing() {
+		return outgoing;
 	}
 
-	public void setRegistryRecord(RegistryRecord registryRecord) {
-		this.registryRecord = registryRecord;
+	public void setOutgoing(Outgoing outgoing) {
+		this.outgoing = outgoing;
 	}
 
 	public long getTimeStamp() {

@@ -1,6 +1,5 @@
 package org.pprls.registry;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.h2.tools.Server;
 import org.junit.After;
 import org.junit.Before;
@@ -11,24 +10,17 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.pprls.core.EntityDescriptor;
-import org.pprls.core.dto.RegistryRecordDto;
 import org.pprls.registry.domain.*;
-import org.pprls.registry.domain.service.OutgoingRegistryHistory;
 import org.pprls.registry.domain.service.RegistrationService;
-import org.pprls.registry.service.FileService;
+import org.pprls.registry.domain.service.RegistryRecordService;
 import org.pprls.registry.service.MessageService;
 import org.pprls.registry.service.audit.repositories.AuditingOutgoingRepository;
 import org.pprls.registry.service.repositories.OutgoingRepository;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.core.MessageBuilder;
-import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.SQLException;
@@ -52,22 +44,26 @@ import static org.mockito.Mockito.when;
 //@ContextConfiguration(classes=ElasticConfiguration.class)
 public class OutgoingRegisterTests {
 
-	@Autowired
+	@Mock
+	private MessageService messageService;
+	@Mock
 	private RegistrationService registrationService;
 	@Autowired
-	private FileService fileService;
+	@InjectMocks
+	private RegistryRecordService registryRecordService;
 	@Autowired
-	private AuditingOutgoingRepository audtitingRepository;
+	private AuditingOutgoingRepository auditingRepository;
 	@Autowired
 	private OutgoingRepository registryRepository;
-	@InjectMocks
-	private MessageService messageService;
 
 	private Instant instant = Instant.parse("2017-04-27T09:28:00.00Z");
 	private LocalDateTime ldt = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
 	private Year year = Year.get(ldt.get(ChronoField.YEAR));
 	private short regnum = 6;
-	
+
+	public OutgoingRegisterTests() {
+	}
+
 	@BeforeClass
 	/* Start server to be able to access h2 database form the web. */
 	public static void initTest(){
@@ -89,11 +85,11 @@ public class OutgoingRegisterTests {
 	@After
 	public void tearDown() {
 		registryRepository.deleteAll();
-		audtitingRepository.deleteAll();
+		auditingRepository.deleteAll();
 	}
 
 	@Test
-	public void issueOutgoing() {
+	public void createOutgoing() {
 
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
@@ -117,38 +113,15 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
+
+        outgoing = registryRecordService.create(outgoing);
 		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-
-		registryRepository.save(outgoing);
-
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 
 		assertEquals(1, resultOutgoings.size());
 		assertEquals(regnum, resultOutgoings.get(0).getRegistryNumber().getRegistryNumber());
 		assertEquals(year, resultOutgoings.get(0).getRegistryNumber().getYear());
 		assertEquals(instant, resultOutgoings.get(0).getRegistryNumber().getDate());
-
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "CreateOutgoing").build();
-		messageService.send(message);
-
 	}
 
 	@Test
@@ -157,17 +130,14 @@ public class OutgoingRegisterTests {
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
 		Outgoing outgoing = Builder.INSTANCE.createOutgoing(issuers, newHandler);
-
 		Set<EntityDescriptor> editors = new TreeSet<>();
 		outgoing.addEditors(editors);
-
 		List<Correspondent> correspondants = new ArrayList<>();
 		Correspondent correspondent = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondent.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondent);
 		outgoing.addCorrespondents(correspondants);
-
 		outgoing.setSubject("Some subject");
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
@@ -176,16 +146,13 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
-		registrationService.createOutgoing(outgoing);
+        outgoing = registryRecordService.create(outgoing);
+        outgoing = registryRecordService.cancel(outgoing, newHandler);
 
-
-		EntityDescriptor handler = new EntityDescriptor();
-		registrationService.cancelOutgoing(handler, "Cancel the bloody thing");
-
+		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(1, resultOutgoings.size());
-		outgoing = resultOutgoings.get(0);
-		assertEquals(RegistryState.CANCELLED, outgoing.getCurrentStatus().getState());
+		assertEquals(RegistryState.CANCELLED, resultOutgoings.get(0).getCurrentStatus().getState());
 
 
 	}
@@ -196,17 +163,14 @@ public class OutgoingRegisterTests {
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
 		Outgoing outgoing = Builder.INSTANCE.createOutgoing(issuers, newHandler);
-
 		Set<EntityDescriptor> editors = new TreeSet<>();
 		outgoing.addEditors(editors);
-
 		List<Correspondent> correspondants = new ArrayList<>();
 		Correspondent correspondent = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondent.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondent);
 		outgoing.addCorrespondents(correspondants);
-
 		outgoing.setSubject("Some subject");
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
@@ -215,20 +179,15 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
-		registrationService.createOutgoing(outgoing);
+        outgoing = registryRecordService.create(outgoing);
 		EntityDescriptor handler = new EntityDescriptor();
-		registrationService.cancelOutgoing(handler, "Cancel the bloody thing");
-
-		List<OutgoingRegistryHistory> lastRecord = audtitingRepository.findByOutgoingIdOrderByTimeStampAsc(outgoing.getId());
-		// ACTIVE
-		assertTrue(!lastRecord.isEmpty());
-		registrationService.revertTo(lastRecord.get(0).getOutgoing());
-		registryRepository.save(outgoing);
+        outgoing = registryRecordService.cancel(outgoing, newHandler);
+        outgoing = registryRecordService.revert(outgoing,newHandler);
 
 		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
-		outgoing = resultOutgoings.get(0);
-		assertEquals(RegistryState.ACTIVE, outgoing.getCurrentStatus().getState());
+        assertEquals(1, resultOutgoings.size());
+		assertEquals(RegistryState.ACTIVE, resultOutgoings.get(0).getCurrentStatus().getState());
 
 	}
 
@@ -238,17 +197,14 @@ public class OutgoingRegisterTests {
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
 		Outgoing outgoing = Builder.INSTANCE.createOutgoing(issuers, newHandler);
-
 		Set<EntityDescriptor> editors = new TreeSet<>();
 		outgoing.addEditors(editors);
-
 		List<Correspondent> correspondants = new ArrayList<>();
 		Correspondent correspondent = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondent.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondent);
 		outgoing.addCorrespondents(correspondants);
-
 		outgoing.setSubject("Some subject");
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
@@ -256,29 +212,15 @@ public class OutgoingRegisterTests {
 		outgoing.setTag("ΔΠ 2016 ΚΑΤΑΓΓΕΛΙΑ");
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
-
-		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-		registrationService.createOutgoing(outgoing);
-
+		outgoing = registryRecordService.create(outgoing);
 		Correspondent internal = Builder.INSTANCE.createCorrespondent(CorrespondentType.INTERNAL);
 		outgoing.getCorrespondents().add(internal);
+		outgoing = registryRecordService.update(outgoing);
 
-		registryRepository.save(outgoing);
 
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "AddCorrespondendToOutgoing").build();
-		messageService.send(message);
-
+		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
+		assertEquals(1, resultOutgoings.size());
 		assertEquals(2, resultOutgoings.get(0).getCorrespondents().size());
 	}
 
@@ -288,17 +230,14 @@ public class OutgoingRegisterTests {
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
 		Outgoing outgoing = Builder.INSTANCE.createOutgoing(issuers, newHandler);
-
 		Set<EntityDescriptor> editors = new TreeSet<>();
 		outgoing.addEditors(editors);
-
 		List<Correspondent> correspondants = new ArrayList<>();
 		Correspondent correspondent = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondent.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondent);
 		outgoing.addCorrespondents(correspondants);
-
 		outgoing.setSubject("Some subject");
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
@@ -307,36 +246,13 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
-		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-
-		registryRepository.save(outgoing);
-		
+		outgoing = registryRecordService.create(outgoing);
 		outgoing.setSubject("New subject");
+		outgoing = registryRecordService.update(outgoing);
 
-		registryRepository.save(outgoing);
-
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "ChangeOutgoing").build();
-		messageService.send(message);
-
+		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
+		assertEquals(1, resultOutgoings.size());
 		assertEquals("New subject", resultOutgoings.get(0).getSubject());
 	}
 
@@ -346,17 +262,14 @@ public class OutgoingRegisterTests {
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
 		Outgoing outgoing = Builder.INSTANCE.createOutgoing(issuers, newHandler);
-
 		Set<EntityDescriptor> editors = new TreeSet<>();
 		outgoing.addEditors(editors);
-
 		List<Correspondent> correspondants = new ArrayList<>();
 		Correspondent correspondent = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondent.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondent);
 		outgoing.addCorrespondents(correspondants);
-
 		outgoing.setSubject("Some subject");
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
@@ -364,41 +277,16 @@ public class OutgoingRegisterTests {
 		outgoing.setTag("ΔΠ 2016 ΚΑΤΑΓΓΕΛΙΑ");
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
-
-		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-
-		registryRepository.save(outgoing);
-		
+		outgoing = registryRecordService.create(outgoing);
 		for (Correspondent corespondent : outgoing.getCorrespondents()) {
 			if (corespondent.getCorrespondentType() == CorrespondentType.INTERNAL) {
 				outgoing.getCorrespondents().remove(corespondent);
 				break;
 			}
 		}
+		outgoing = registryRecordService.update(outgoing);
 
-		registryRepository.save(outgoing);
-
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "RemoveCorrespondentOutgoing").build();
-		messageService.send(message);
-
+		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(1, resultOutgoings.size());
 		assertEquals(1, resultOutgoings.get(0).getCorrespondents().size());
@@ -410,17 +298,14 @@ public class OutgoingRegisterTests {
 		EntityDescriptor newHandler = Builder.INSTANCE.createEntityDescriptor();
 		Set<EntityDescriptor> issuers = new TreeSet<>();
 		Outgoing outgoing = Builder.INSTANCE.createOutgoing(issuers, newHandler);
-
 		Set<EntityDescriptor> editors = new TreeSet<>();
 		outgoing.addEditors(editors);
-
 		List<Correspondent> correspondants = new ArrayList<>();
 		Correspondent correspondent = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
 		EntityDescriptor newEntityDescriptor = Builder.INSTANCE.createEntityDescriptor();
 		correspondent.setEntityDescriptor(newEntityDescriptor);
 		correspondants.add(correspondent);
 		outgoing.addCorrespondents(correspondants);
-
 		outgoing.setSubject("Some subject");
 		outgoing.setAda("some Ada");
 		outgoing.setClassification(Classification.PUBLIC);
@@ -429,44 +314,22 @@ public class OutgoingRegisterTests {
 		outgoing.setType(DocumentType.DOCUMENT);
 		outgoing.setAttachedFilesDescription("The description of the attached files");
 
+		outgoing = registryRecordService.create(outgoing);
+		outgoing = registryRecordService.reissue(outgoing, newHandler);
+
 		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-	    //create outgoing
-		registryRepository.save(outgoing);
-
-		//reissue outgoing
-		Outgoing replacementOutgoing = outgoing.reissue(newEntityDescriptor);
-		registryRepository.save(outgoing);
-		registryRepository.save(replacementOutgoing);
-
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "ReissueOutgoing").build();
-		messageService.send(message);
-
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(2, resultOutgoings.size());
 
-		outgoing = resultOutgoings.get(0);
-		assertNotNull(outgoing.getReissued());
-		//outgoing = resultOutgoings.get(1);
-		// assert from the other side
+		assertEquals(1, resultOutgoings.get(0).getNumberOfRepeats());
+        assertEquals(resultOutgoings.get(0).getId(), resultOutgoings.get(1).getReissued());
+	}
 
+	public void setAudtitingRepository(AuditingOutgoingRepository auditingRepository) {
+		this.auditingRepository = auditingRepository;
+	}
 
+	public void setRegistryRepository(OutgoingRepository registryRepository) {
+		this.registryRepository = registryRepository;
 	}
 }

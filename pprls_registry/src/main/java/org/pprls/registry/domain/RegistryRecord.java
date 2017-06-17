@@ -3,12 +3,8 @@
  */
 package org.pprls.registry.domain;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import org.hibernate.annotations.GenericGenerator;
 import org.pprls.core.EntityDescriptor;
-import org.pprls.registry.domain.audit.AuditingRegistryListener;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,24 +17,24 @@ import java.util.UUID;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getAttachedFilesDescription
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getAttachedFilesDescription
  * <em>Attached Files Description</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getComments
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getComments
  * <em>Comments</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getSubject
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getSubject
  * <em>Subject</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getFilepaths
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getFilepaths
  * <em>Filepaths</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getType <em>Type</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getId <em>Id</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getClassification
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getType <em>Type</em>}</li>
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getId <em>Id</em>}</li>
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getClassification
  * <em>Classification</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getAda <em>Ada</em>}</li>
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getAda <em>Ada</em>}</li>
  * <em>Document</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getTag <em>Tag</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getRegistrynumber
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getTag <em>Tag</em>}</li>
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getRegistryNumber
  * <em>Registrynumber</em>}</li>
- * <li>{@link org.pprls.registry.registry.domain.RegistryRecord#getRecipients
+ * <li>{@link org.pprls.registry.domain.RegistryRecord#getCorrespondents
  * <em>Recipients</em>}</li>
  * </ul>
  *
@@ -52,8 +48,9 @@ public class RegistryRecord {
 	 * @see #getId()
 	 */
 	@Id
-	@GeneratedValue(generator = "system-uuid2")
-	@GenericGenerator(name = "system-uuid2", strategy = "uuid2")
+	// If we need hibernate to create the uuid then use these two annotations
+	//@GeneratedValue(generator = "system-uuid2")
+	//@GenericGenerator(name = "system-uuid2", strategy = "uuid2")
 	protected UUID id;
 
 	@JsonIgnore
@@ -140,7 +137,7 @@ public class RegistryRecord {
 
 	/**
 	 * Registry number is the human oriented unique number 
-	 * '{@link #getRegistrynumber()	 * <em>Registrynumber</em>}' reference. 
+	 * '{@link #getRegistryNumber()	 * <em>Registrynumber</em>}' reference.
 	 *
 	 */
 	@Embedded
@@ -355,24 +352,6 @@ public class RegistryRecord {
 	@JsonIgnore
 	public boolean isCancelled() {
 		return getCurrentStatus().getState().equals(RegistryState.CANCELLED);
-	}
-
-	/**
-	 * @param latestRegistryStatus 
-	 * 
-	 */
-	public void revertTo(RegistryStatus latestRegistryStatus) {
-		setCurrentStatus(latestRegistryStatus);
-	}
-	
-	public void revert() {
-		throw new UnsupportedOperationException();
-		
-	}
-	
-	public void undo() {
-		throw new UnsupportedOperationException();
-		
 	}
 
 	/**

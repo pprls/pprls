@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.mockito.Mock;
+import org.pprls.core.EntityDescriptor;
 import org.pprls.core.dto.RegistryRecordDto;
 import org.pprls.registry.domain.Outgoing;
 import org.pprls.registry.domain.RegistryNumber;
@@ -34,13 +35,6 @@ import static org.junit.Assert.fail;
 @Service
 public class RegistrationService {
 
-	@Autowired
-	private FileService fileService;
-	@Autowired
-	private OutgoingRepository registryRepository;
-	@Autowired
-	private MessageService messageService;
-	
 	/**
 	 * The constructor
 	 */
@@ -67,37 +61,5 @@ public class RegistrationService {
 		Year year=Year.YEAR_EPOCH;
 		// Get from repository resurved number and date and year 
 		return new RegistryNumber(number, date, year);
-	}
-	
-	@Transactional
-	public void createOutgoing(Outgoing outgoing){
-		
-		RegistryNumber number = getNumberForYear(Year.YEAR_EPOCH);
-
-		outgoing.setRegistryNumber(number);
-		List<String> filenames = new ArrayList<>();
-
-		// from: location on disk to read from
-		// to: location to write to
-		for (String filename : filenames) {
-			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
-		}
-		
-		registryRepository.save(outgoing);	
-	}
-
-	public void reissueOutgoing(Outgoing outgoing){
-		registryRepository.save(outgoing);
-		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
-		String jsonString = "";
-		try {
-			jsonString = outDto.toJSON();
-		} catch (JsonProcessingException e) {
-			fail(e.getLocalizedMessage());
-		}
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(outgoing.getId().toString())
-				.setHeader("Event", "CreateOutgoing").build();
-		messageService.send(message);
 	}
 } 
