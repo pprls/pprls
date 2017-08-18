@@ -10,12 +10,12 @@ import org.pprls.registry.domain.*;
 import org.pprls.registry.service.FileService;
 import org.pprls.registry.service.MessageService;
 import org.pprls.registry.service.audit.repositories.AuditingOutgoingRepository;
+import org.pprls.registry.service.repositories.IncomingRepository;
 import org.pprls.registry.service.repositories.OutgoingRepository;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -40,7 +40,9 @@ public class RegistryRecordService {
 	@Autowired
 	private FileService fileService;
 	@Autowired
-	private OutgoingRepository registryRepository;
+	private OutgoingRepository outgoingRepository;
+	@Autowired
+	private IncomingRepository incomingRepository;
 	@Autowired
 	private AuditingOutgoingRepository auditingRepository;
 
@@ -68,7 +70,7 @@ public class RegistryRecordService {
 			outgoing.getFilepaths().add(fileService.upload(filename, outgoing.mapToFilepath(filename)));
 		}
 
-        outgoing = registryRepository.save(outgoing);
+        outgoing = outgoingRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -85,8 +87,40 @@ public class RegistryRecordService {
 		return outgoing;
 	}
 
+
+	@Transactional
+	public Incoming create(Incoming incoming){
+
+		RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
+
+		incoming.setRegistryNumber(number);
+		List<String> filenames = new ArrayList<>();
+
+		// from: location on disk to read from
+		// to: location to write to
+		for (String filename : filenames) {
+			incoming.getFilepaths().add(fileService.upload(filename, incoming.mapToFilepath(filename)));
+		}
+
+		incoming = incomingRepository.save(incoming);
+
+		RegistryRecordDto outDto = new RegistryRecordDto(incoming.getId(), incoming.getEntityDescriptors());
+		String jsonString = "";
+		try {
+			jsonString = outDto.toJSON();
+		} catch (JsonProcessingException e) {
+			fail(e.getLocalizedMessage());
+		}
+		Message message = MessageBuilder.withBody(jsonString.getBytes())
+				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(incoming.getId().toString())
+				.setHeader("Event", "CreateIncoming").build();
+		messageService.send(message);
+
+		return incoming;
+	}
+
 	public Outgoing update(Outgoing outgoing){
-        outgoing = registryRepository.save(outgoing);
+        outgoing = outgoingRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -105,7 +139,7 @@ public class RegistryRecordService {
 
 	public Outgoing cancel(Outgoing outgoing, EntityDescriptor handler){
 		outgoing.cancel(handler, "Cancel the bloody thing");
-        outgoing = registryRepository.save(outgoing);
+        outgoing = outgoingRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -122,11 +156,31 @@ public class RegistryRecordService {
 		return outgoing;
 	}
 
+	public Incoming cancel(Incoming incoming, EntityDescriptor handler){
+		incoming.cancel(handler, "Cancel the bloody thing");
+		incoming = incomingRepository.save(incoming);
+
+		RegistryRecordDto outDto = new RegistryRecordDto(incoming.getId(), incoming.getEntityDescriptors());
+		String jsonString = "";
+		try {
+			jsonString = outDto.toJSON();
+		} catch (JsonProcessingException e) {
+			fail(e.getLocalizedMessage());
+		}
+		Message message = MessageBuilder.withBody(jsonString.getBytes())
+				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(incoming.getId().toString())
+				.setHeader("Event", "CancelOutgoing").build();
+		messageService.send(message);
+
+		return incoming;
+	}
+
+
 	@Transactional
 	public Outgoing reissue(Outgoing outgoing, EntityDescriptor handler){
 		Outgoing replacementOutgoing = outgoing.reissue(handler);
-        replacementOutgoing = registryRepository.save(replacementOutgoing);
-        outgoing = registryRepository.save(outgoing);
+        replacementOutgoing = outgoingRepository.save(replacementOutgoing);
+        outgoing = outgoingRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(replacementOutgoing.getId(), replacementOutgoing.getEntityDescriptors());
 		String jsonString = "";
@@ -152,14 +206,13 @@ public class RegistryRecordService {
 		OutgoingHistory lastRecord = null;
 		while(iterator.hasNext()){
 			lastRecord = iterator.next();
-			System.out.println(lastRecord.getOutgoing().getCurrentStatus().getState().getLiteral());
 		}
 
-
+		assert lastRecord != null;
 		assertEquals(RegistryState.ACTIVE_VALUE, lastRecord.getOutgoing().getCurrentStatus().getState().getValue());
 		lastRecord.getOutgoing().getCurrentStatus().setHandler(handler); //replace handel with the person how is down the revert
 		outgoing.revertTo(lastRecord.getOutgoing());
-		outgoing = registryRepository.save(outgoing);
+		outgoing = outgoingRepository.save(outgoing);
 
 		RegistryRecordDto outDto = new RegistryRecordDto(outgoing.getId(), outgoing.getEntityDescriptors());
 		String jsonString = "";

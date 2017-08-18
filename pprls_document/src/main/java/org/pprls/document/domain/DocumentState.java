@@ -239,7 +239,7 @@ public enum DocumentState {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private DocumentState(int value, String name, String literal) {
+	DocumentState(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

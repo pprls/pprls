@@ -1,4 +1,4 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;
@@ -73,8 +73,7 @@ public enum Action {
 	 * Returns the '<em><b>Action</b></em>' literal with the specified literal value.
 	 */
 	public static Action get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Action result = VALUES_ARRAY[i];
+		for(Action result : VALUES_ARRAY){
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -86,8 +85,7 @@ public enum Action {
 	 * Returns the '<em><b>Action</b></em>' literal with the specified name.
 	 */
 	public static Action getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Action result = VALUES_ARRAY[i];
+		for (Action result  : VALUES_ARRAY) {
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -126,7 +124,7 @@ public enum Action {
 	/**
 	 * The contractor
 	 */
-	private Action(int value, String name, String literal) {
+    Action(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

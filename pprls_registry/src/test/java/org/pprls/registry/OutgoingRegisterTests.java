@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -41,7 +41,6 @@ import static org.mockito.Mockito.when;
 @EntityScan("org.pprls.registry.domain")
 @EnableRabbit
 @EnableElasticsearchRepositories(basePackages = "org/pprls/registry/service/audit/repositories/")
-//@ContextConfiguration(classes=ElasticConfiguration.class)
 public class OutgoingRegisterTests {
 
 	@Mock
@@ -153,8 +152,6 @@ public class OutgoingRegisterTests {
 		List<Outgoing> resultOutgoings = registryRepository.findByRegistryNumber(number);
 		assertEquals(1, resultOutgoings.size());
 		assertEquals(RegistryState.CANCELLED, resultOutgoings.get(0).getCurrentStatus().getState());
-
-
 	}
 
 	@Test

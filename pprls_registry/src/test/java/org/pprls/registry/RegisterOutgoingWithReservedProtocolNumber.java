@@ -1,8 +1,8 @@
 package org.pprls.registry;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Test;
+
+import static org.junit.Assert.fail;
 
 public class RegisterOutgoingWithReservedProtocolNumber {
 

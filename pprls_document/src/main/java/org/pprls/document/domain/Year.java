@@ -683,7 +683,7 @@ public enum Year {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Year(int value, String name, String literal) {
+	Year(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

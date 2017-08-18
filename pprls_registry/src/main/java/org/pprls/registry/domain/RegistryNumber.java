@@ -3,17 +3,8 @@
  */
 package org.pprls.registry.domain;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 import javax.persistence.Embeddable;
-
-import org.springframework.data.elasticsearch.annotations.DateFormat;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.Instant;
 
 /**
  * The human oriented unique number

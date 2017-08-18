@@ -67,15 +67,6 @@ public enum PostageMethod {
 	 * @see #EMPOWERMENT_VALUE
 	 */
 	EMPOWERMENT(9, "Empowerment", "Εξουσιοδότηση");
-
-	/**
-	 * The '<em><b>Unsent</b></em>' literal value.
-	 * <p>
-	 * It was not sent
-	 * </p>
-	 * @see #UNSEND
-	 */
-	public static final int UNSENT_VALUE = 0;
 	
 	/**
 	 * The '<em><b>Other</b></em>' literal value.
@@ -186,8 +177,7 @@ public enum PostageMethod {
 	 * @return the matching enumerator or <code>null</code>.
 	 */
 	public static PostageMethod get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			PostageMethod result = VALUES_ARRAY[i];
+		for (PostageMethod result : VALUES_ARRAY) {
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -201,8 +191,7 @@ public enum PostageMethod {
 	 * @return the matching enumerator or <code>null</code>.
 	 */
 	public static PostageMethod getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			PostageMethod result = VALUES_ARRAY[i];
+		for (PostageMethod result : VALUES_ARRAY) {
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -248,7 +237,7 @@ public enum PostageMethod {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private PostageMethod(int value, String name, String literal) {
+    PostageMethod(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

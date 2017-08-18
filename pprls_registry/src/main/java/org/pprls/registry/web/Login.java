@@ -1,8 +1,5 @@
 package org.pprls.registry.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.pprls.registry.domain.service.RegistrationService;
 import org.pprls.registry.service.FileService;
 import org.pprls.registry.service.repositories.OutgoingRepository;
@@ -11,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class Login {

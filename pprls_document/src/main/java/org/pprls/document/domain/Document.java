@@ -69,12 +69,12 @@ public class Document {
 	 * 
 	 * @see #getLastDoneDate()
 	 */
-	protected LocalDateTime lastDoneDate = LocalDateTime.of(1970, 01, 01, 00, 00, 00);
+	protected LocalDateTime lastDoneDate = LocalDateTime.of(1970, 1, 1, 0, 0, 0);
 
 	/**
 	 * The '{@link #getLastAcceptDate() <em>Last Accept Date</em>}' attribute.
 	 */
-	protected LocalDateTime lastAcceptDate = LocalDateTime.of(1970, 01, 01, 00, 00, 00);
+	protected LocalDateTime lastAcceptDate = LocalDateTime.of(1970, 1, 1, 0, 0, 0);
 
 	/**
 	 * The '{@link #getPhysicalLocation() <em>Physical Location</em>}'

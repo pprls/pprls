@@ -1,4 +1,4 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;
@@ -155,7 +155,7 @@ public enum DocumentType {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private DocumentType(int value, String name, String literal) {
+    DocumentType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

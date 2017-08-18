@@ -7,7 +7,5 @@ package org.pprls.document.domain;
  */
 
 public enum Builder {
-	INSTANCE;
-
-
+	INSTANCE
 }

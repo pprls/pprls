@@ -1,4 +1,4 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;
@@ -151,7 +151,7 @@ public enum CorrespondentType {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private CorrespondentType(int value, String name, String literal) {
+    CorrespondentType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

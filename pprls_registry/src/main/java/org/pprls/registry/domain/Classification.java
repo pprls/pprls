@@ -1,6 +1,7 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
+
 package org.pprls.registry.domain;
 
 import java.util.Arrays;
@@ -143,7 +144,7 @@ public enum Classification {
 	/**
 	 * Only this class can construct instances. 
 	 */
-	private Classification(int value, String name, String literal) {
+    Classification(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

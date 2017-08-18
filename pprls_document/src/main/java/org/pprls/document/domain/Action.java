@@ -65,11 +65,6 @@ public enum Action {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Action</b></em>' enumerators.
-	 */
-	public static final List<Action> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
-
-	/**
 	 * Returns the '<em><b>Action</b></em>' literal with the specified literal value.
 	 */
 	public static Action get(String literal) {
@@ -126,7 +121,7 @@ public enum Action {
 	/**
 	 * The contractor
 	 */
-	private Action(int value, String name, String literal) {
+	Action(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

@@ -42,7 +42,6 @@ public class RegistryRecordDto implements Serializable {
 	}
 	
 	public String toJSON() throws JsonProcessingException{	
-		String jsonString = mapper.writeValueAsString(this);
-		return jsonString;
+		return  mapper.writeValueAsString(this);
 	}
 }

@@ -96,8 +96,7 @@ public enum RegistryState {
 	 * @return the matching enumerator or <code>null</code>.
 	 */
 	public static RegistryState get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			RegistryState result = VALUES_ARRAY[i];
+		for (RegistryState result : VALUES_ARRAY) {
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -111,8 +110,7 @@ public enum RegistryState {
 	 * @return the matching enumerator or <code>null</code>.
 	 */
 	public static RegistryState getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			RegistryState result = VALUES_ARRAY[i];
+		for (RegistryState result : VALUES_ARRAY) {
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -150,7 +148,7 @@ public enum RegistryState {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private RegistryState(int value, String name, String literal) {
+    RegistryState(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

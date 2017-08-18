@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.h2.tools.Server;
 import org.junit.*;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.pprls.core.EntityDescriptor;
@@ -11,11 +12,13 @@ import org.pprls.core.Nobody;
 import org.pprls.core.dto.RegistryRecordDto;
 import org.pprls.registry.domain.*;
 import org.pprls.registry.domain.service.RegistrationService;
+import org.pprls.registry.domain.service.RegistryRecordService;
 import org.pprls.registry.service.FileService;
 import org.pprls.registry.service.MessageService;
+import org.pprls.registry.service.audit.repositories.AuditingIncomingRepository;
 import org.pprls.registry.service.audit.repositories.AuditingOutgoingRepository;
-import org.pprls.registry.service.repositories.OutgoingRepository;
 import org.pprls.registry.service.repositories.IncomingRepository;
+import org.pprls.registry.service.repositories.OutgoingRepository;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
@@ -28,11 +31,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.SQLException;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoField;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -45,22 +47,21 @@ import static org.mockito.Mockito.when;
 public class IncomingRegisterTests {
 
     @Mock
+    private MessageService messageService;
+    @Mock
     private RegistrationService registrationService;
     @Autowired
-    private FileService fileService;
+    @InjectMocks
+    private RegistryRecordService registryRecordService;
     @Autowired
-    private IncomingRepository registrtyRepository;
+    private AuditingIncomingRepository auditingRepository;
     @Autowired
-    private AuditingOutgoingRepository audtitingRepository;
-    @Autowired
-    private OutgoingRepository registryRepository;
-    @Autowired
-    private MessageService messageService;
+    private IncomingRepository registryRepository;
 
-    private Instant instant = Instant.parse("2017-4-27 9:28");
-    private Year year = Year.get(instant.get(ChronoField.YEAR));
+    private Instant instant = Instant.parse("2017-04-27T09:28:00.00Z");
+    private LocalDateTime ldt = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+    private Year year = Year.get(ldt.get(ChronoField.YEAR));
     private short regnum = 6;
-
 
     @BeforeClass
     /* Start server to be able to access h2 database form the web. */
@@ -86,12 +87,12 @@ public class IncomingRegisterTests {
     @After
     public void tearDown() {
         registryRepository.deleteAll();
-        audtitingRepository.deleteAll();
+        auditingRepository.deleteAll();
     }
 
 
     @Test
-    public void registerIncoming() {
+    public void createIncoming() {
         Correspondent sender = Builder.INSTANCE.createCorrespondent(CorrespondentType.SENDER);
         Incoming incoming = Builder.INSTANCE.createIncoming(sender);
 
@@ -103,136 +104,37 @@ public class IncomingRegisterTests {
         incoming.setType(DocumentType.DOCUMENT);
         incoming.setAttachedFilesDescription("The description of the attached files");
 
-        when(registrationService.getNumberForYear(Year.YEAR_EPOCH))
-                .thenReturn(new RegistryNumber(regnum, instant, year));
+        incoming = registryRecordService.create(incoming);
         RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
-
-        incoming.setRegistryNumber(number);
-        List<String> filenames = new ArrayList<>();
-
-        // from: location on disk to read from
-        // to: location to write to
-        for (String filename : filenames) {
-            incoming.getFilepaths().add(fileService.upload(filename, incoming.mapToFilepath(filename)));
-        }
-
-        registrtyRepository.save(incoming);
-
-        List<Incoming> resultIncomings = registrtyRepository.findByRegistryNumber(number);
+        List<Incoming> resultIncomings = registryRepository.findByRegistryNumber(number);
 
         assertEquals(1, resultIncomings.size());
         assertEquals(regnum, resultIncomings.get(0).getRegistryNumber().getRegistryNumber());
         assertEquals(year, resultIncomings.get(0).getRegistryNumber().getYear());
         assertEquals(instant, resultIncomings.get(0).getRegistryNumber().getDate());
-
-        Set<EntityDescriptor> entities = new HashSet<>();
-        entities.add(new Nobody());
-        RegistryRecordDto inDto = new RegistryRecordDto(incoming.getId(), entities);
-        String jsonString = "";
-        try {
-            jsonString = inDto.toJSON();
-        } catch (JsonProcessingException e) {
-            Assert.fail(e.getLocalizedMessage());
-        }
-        Message message = MessageBuilder.withBody(jsonString.getBytes())
-                .setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(incoming.getId().toString())
-                .setHeader("Event", "CreateIncoming").build();
-        messageService.send(message);
     }
 
-	@Test
-	public void cancelIncoming() {
-		RegistryNumber number = new RegistryNumber(regnum, instant, year);
 
-		List<Incoming> resultIncomins = registrtyRepository.findByRegistryNumber(number);
+    @Test
+    public void cancelIncoming() {
+        Correspondent recipient = Builder.INSTANCE.createCorrespondent(CorrespondentType.RECIPIENT);
+        Incoming incoming = Builder.INSTANCE.createIncoming(recipient);
 
-		assertEquals(1, resultIncomins.size());
-		Incoming incoming = resultIncomins.get(0);
-		EntityDescriptor handler = new EntityDescriptor();
-		incoming.cancel(handler, "Cancel the bloody thing");
-		registrtyRepository.save(incoming);
+        incoming.setSubject("Some subject");
+        incoming.setAda("some Ada");
+        incoming.setClassification(Classification.PUBLIC);
+        incoming.setComments("My Comments");
+        incoming.setTag("2016 ΚΑΤΑΓΓΕΛΙΑ");
+        incoming.setType(DocumentType.DOCUMENT);
+        incoming.setAttachedFilesDescription("The description of the attached files");
 
-		resultIncomins = registrtyRepository.findByRegistryNumber(number);
-		assertEquals(1, resultIncomins.size());
-		incoming = resultIncomins.get(0);
-		assertEquals(RegistryState.CANCELLED, incoming.getCurrentStatus().getState());
+        incoming = registryRecordService.create(incoming);
+        EntityDescriptor handler = Builder.INSTANCE.createEntityDescriptor();
+        incoming = registryRecordService.cancel(incoming, handler);
 
-        Set<EntityDescriptor> entities = new HashSet<>();
-        entities.add(new Nobody());
-        RegistryRecordDto inDto = new RegistryRecordDto(incoming.getId(), entities);
-        String jsonString = "";
-        try {
-            jsonString = inDto.toJSON();
-        } catch (JsonProcessingException e) {
-            Assert.fail(e.getLocalizedMessage());
-        }
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(incoming.getId().toString())
-				.setHeader("Event", "CancelIncomingg").build();
-		messageService.send(message);
-
-	}
-
-	@Test
-	public void revertOutgoing() {
-		RegistryNumber number = new RegistryNumber(regnum, instant, year);
-
-		List<Incoming> resultIncomings = registrtyRepository.findByRegistryNumber(number);
-
-		assertEquals(1, resultIncomings.size());
-		assertEquals(regnum, resultIncomings.get(0).getRegistryNumber().getRegistryNumber());
-		assertEquals(year, resultIncomings.get(0).getRegistryNumber().getYear());
-		assertEquals(instant, resultIncomings.get(0).getRegistryNumber().getDate());
-
-		Incoming incoming = resultIncomings.get(0);
-		//incoming.revert();
-		registrtyRepository.save(incoming);
-
-        Set<EntityDescriptor> entities = new HashSet<>();
-        entities.add(new Nobody());
-        RegistryRecordDto inDto = new RegistryRecordDto(incoming.getId(), entities);
-        String jsonString = "";
-        try {
-            jsonString = inDto.toJSON();
-        } catch (JsonProcessingException e) {
-            Assert.fail(e.getLocalizedMessage());
-        }
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(incoming.getId().toString())
-				.setHeader("Event", "RevertIncoming").build();
-		messageService.send(message);
-
-		resultIncomings = registrtyRepository.findByRegistryNumber(number);
-		incoming = resultIncomings.get(0);
-		assertEquals(RegistryState.ACTIVE, incoming.getCurrentStatus().getState());
-
-	}
-
-	@Test
-	public void changeSubjectOfIncoming() {
-		RegistryNumber number = new RegistryNumber(regnum, instant, year);
-
-		List<Incoming> resultIncomings = registrtyRepository.findByRegistryNumber(number);
-		Incoming incoming = resultIncomings.get(0);
-		incoming.setSubject("New subject");
-
-        Set<EntityDescriptor> entities = new HashSet<>();
-        entities.add(new Nobody());
-        RegistryRecordDto inDto = new RegistryRecordDto(incoming.getId(), entities);
-        String jsonString = "";
-        try {
-            jsonString = inDto.toJSON();
-        } catch (JsonProcessingException e) {
-            Assert.fail(e.getLocalizedMessage());
-        }
-		Message message = MessageBuilder.withBody(jsonString.getBytes())
-				.setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN).setMessageId(incoming.getId().toString())
-				.setHeader("Event", "ChangeIncoming").build();
-		messageService.send(message);
-
-		resultIncomings = registrtyRepository.findByRegistryNumber(number);
-		incoming = resultIncomings.get(0);
-		assertEquals("New subject", incoming.getSubject());
-	}
-
+        RegistryNumber number = registrationService.getNumberForYear(Year.YEAR_EPOCH);
+        List<Incoming> resultIncomings = registryRepository.findByRegistryNumber(number);
+        assertEquals(1, resultIncomings.size());
+        assertEquals(RegistryState.CANCELLED, resultIncomings.get(0).getCurrentStatus().getState());
+    }
 }

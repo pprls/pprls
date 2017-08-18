@@ -1,4 +1,4 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;

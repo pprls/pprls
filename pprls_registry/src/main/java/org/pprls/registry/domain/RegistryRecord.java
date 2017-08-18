@@ -149,7 +149,7 @@ public class RegistryRecord {
 	 * 
 	 */
 	@ElementCollection(fetch = FetchType.EAGER)
-	protected List<Correspondent> correspondents = new ArrayList<Correspondent>();
+	protected List<Correspondent> correspondents = new ArrayList<>();
 
 	/**
 	 * 

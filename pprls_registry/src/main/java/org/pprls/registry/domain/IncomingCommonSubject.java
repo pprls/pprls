@@ -1,4 +1,4 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;
@@ -9,8 +9,8 @@ package org.pprls.registry.domain;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.pprls.registry.registry.domain.IncomingCommonSubject#getSubject <em>Subject</em>}</li>
- *   <li>{@link org.pprls.registry.registry.domain.IncomingCommonSubject#getDirectorateId <em>Directorate Id</em>}</li>
+ *   <li>{@link org.pprls.registry.domain.IncomingCommonSubject#getSubject <em>Subject</em>}</li>
+ *   <li>{@link org.pprls.registry.domain.IncomingCommonSubject#getDirectorateId <em>Directorate Id</em>}</li>
  * </ul>
  *
  */

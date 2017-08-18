@@ -1,9 +1,12 @@
+/*
+ * Αδειοδοτείται υπό τους όρους της EUPL
+ */
 package org.pprls.registry.domain;
+
+import org.pprls.core.EntityDescriptor;
 
 import java.time.LocalDateTime;
 import java.util.Set;
-
-import org.pprls.core.EntityDescriptor;
 
 /**
  * Builder to create domain objects
@@ -44,8 +47,7 @@ public enum Builder {
 	 * @return
 	 */
 	public EntityDescriptor createEntityDescriptor() {
-		EntityDescriptor entityDescriptor = new EntityDescriptor();
-		return entityDescriptor;
+		return new EntityDescriptor();
 	}
 	
 	/**

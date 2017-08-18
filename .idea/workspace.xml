@@ -1,24 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java" description="//}" line="237" />
+    <bookmark url="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java" description="//}" line="139" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7a48f12-0bf3-4f60-a40d-2d3e75ec86ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingRepository.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryHistory.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingHistory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingRegistryListener.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingIncomingListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/OutgoingRegistryHistory.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java" />
+    <list default="true" id="e7a48f12-0bf3-4f60-a40d-2d3e75ec86ba" name="Default" comment="removed a system out">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Outgoing.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Outgoing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_core/src/main/java/org/pprls/core/dto/RegistryRecordDto.java" afterPath="$PROJECT_DIR$/pprls_core/src/main/java/org/pprls/core/dto/RegistryRecordDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/ShiroConfig.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/ShiroConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Action.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Action.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Builder.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Builder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Document.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Document.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/DocumentState.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/DocumentState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/FileType.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/FileType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/ThreadType.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/ThreadType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Year.java" afterPath="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Year.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/pom.xml" afterPath="$PROJECT_DIR$/pprls_registry/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/Application.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/ElasticConfiguration.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/ElasticConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Action.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Action.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Builder.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Builder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Classification.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Classification.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Correspondent.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Correspondent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/CorrespondentType.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/CorrespondentType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/DocumentType.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/DocumentType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/FileType.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/FileType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/GeneralProtocolNumber.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/GeneralProtocolNumber.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingCommonSubject.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingCommonSubject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/PostageInfo.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/PostageInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/PostageMethod.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/PostageMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryNumber.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryNumber.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryState.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryStatus.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryStatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/SenderRegistryNumber.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/SenderRegistryNumber.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Year.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Year.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingOutgoingListener.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingOutgoingListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/LocalDateDeserializer.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/LocalDateDeserializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/LocalDateSerializer.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/LocalDateSerializer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistrationService.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistrationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/DefaultEntityMapper.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/DefaultEntityMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/InstantDeserializer.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/InstantDeserializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/InstantSerializer.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/InstantSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/web/Login.java" afterPath="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/web/Login.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java" afterPath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java" afterPath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/RegisterIncomingWithReservedProtocolNumber.java" afterPath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/RegisterIncomingWithReservedProtocolNumber.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/RegisterOutgoingWithReservedProtocolNumber.java" afterPath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/RegisterOutgoingWithReservedProtocolNumber.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/ReplyToIncomingTest.java" afterPath="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/ReplyToIncomingTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/pprls_document/target/" />
     <ignored path="$PROJECT_DIR$/pprls/target/" />
@@ -37,14 +72,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OutgoingRegisterTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OutgoingRegisterTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="3655">
+              <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,44 +85,54 @@
       <file leaf-file-name="RegistryRecord.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="21" />
+            <state relative-caret-position="2397">
+              <caret line="151" column="65" lean-forward="false" selection-start-line="151" selection-start-column="65" selection-end-line="151" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistryRecordService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IncomingRegisterTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="106" column="47" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Builder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Builder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#1902#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuditingIncomingRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistryRecordService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+            <state relative-caret-position="782">
+              <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistryStatus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryStatus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="24" />
-              <folding>
-                <element signature="e#2237#2238#0" expanded="true" />
-                <element signature="e#2256#2257#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElasticsearchTemplate.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-elasticsearch/2.1.1.RELEASE/spring-data-elasticsearch-2.1.1.RELEASE-sources.jar!/org/springframework/data/elasticsearch/core/ElasticsearchTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="253" column="0" lean-forward="true" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,30 +140,31 @@
       <file leaf-file-name="Outgoing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Outgoing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="41" />
+            <state relative-caret-position="1037">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="77" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuditingOutgoingListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingOutgoingListener.java">
+      <file leaf-file-name="Incoming.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="20" column="105" lean-forward="false" selection-start-line="20" selection-start-column="105" selection-end-line="20" selection-end-column="105" />
               <folding>
+                <element signature="e#0#2532#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IncomingHistory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingHistory.java">
+      <file leaf-file-name="RegistryRecordDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pprls_core/src/main/java/org/pprls/core/dto/RegistryRecordDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -129,26 +173,9 @@
       <file leaf-file-name="AuditingOutgoingRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutgoingHistory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-              <folding>
-                <element signature="e#1078#1079#0" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1277#1278#0" expanded="true" />
-                <element signature="e#1310#1311#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,31 +196,54 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pprls_registry/pom.xml" />
         <option value="$PROJECT_DIR$/pprls_document/pom.xml" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/IncomingRepository.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTest.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTest.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryNumber.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegisterNumberService.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegisterRecordService.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistrationService.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryHistory.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Outgoing.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.7.RELEASE/spring-core-4.3.7.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingRepository.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingIncomingListener.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingHistory.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java" />
-        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingOutgoingListener.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/PostageMethod.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryState.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Year.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/InstantSerializer.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/DefaultEntityMapper.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/pom.xml" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Document.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Action.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Builder.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Classification.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Correspondent.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/CorrespondentType.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/DocumentType.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/FileType.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/GeneralProtocolNumber.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingCommonSubject.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/DocumentState.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/FileType.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/ThreadType.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Year.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Builder.java" />
+        <option value="$PROJECT_DIR$/pprls_core/src/main/java/org/pprls/core/dto/RegistryRecordDto.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Action.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java" />
+        <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java" />
         <option value="$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java" />
       </list>
     </option>
@@ -348,64 +398,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pprls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pprls_registry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.pprls.registry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pprls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pprls_registry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.pprls.registry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="audit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pprls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pprls_document" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -544,6 +536,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pprls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pprls_document" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -569,7 +575,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OutgoingRegisterTests">
+  <component name="RunManager" selected="JUnit.IncomingRegisterTests">
     <configuration default="false" name="OutgoingRegisterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pprls_registry" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -630,13 +636,13 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OutgoingRegisterTests.editOutgoingChangeSubject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="OutgoingRegisterTests.cancelOutgoing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pprls_registry" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.pprls.registry" />
       <option name="MAIN_CLASS_NAME" value="org.pprls.registry.OutgoingRegisterTests" />
-      <option name="METHOD_NAME" value="editOutgoingChangeSubject" />
+      <option name="METHOD_NAME" value="cancelOutgoing" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -650,14 +656,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OutgoingRegisterTests.cancelOutgoing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="IncomingRegisterTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pprls_registry" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.pprls.registry" />
-      <option name="MAIN_CLASS_NAME" value="org.pprls.registry.OutgoingRegisterTests" />
-      <option name="METHOD_NAME" value="cancelOutgoing" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.pprls.registry.IncomingRegisterTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -773,16 +779,16 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.revertOutgoing" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.reissueOutgoing" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.editOutgoingChangeSubject" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.cancelOutgoing" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.cancelOutgoing" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.IncomingRegisterTests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.revertOutgoing" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.cancelOutgoing" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.reissueOutgoing" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.editOutgoingChangeSubject" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.IncomingRegisterTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.revertOutgoing" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.cancelOutgoing" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.OutgoingRegisterTests.reissueOutgoing" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
@@ -809,35 +815,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OutgoingRegisterTests - 2017.06.15 at 15h 31m 53s.xml">
+    <history-entry file="IncomingRegisterTests - 2017.06.20 at 01h 06m 06s.xml">
+      <configuration name="IncomingRegisterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IncomingRegisterTests - 2017.06.20 at 01h 06m 34s.xml">
+      <configuration name="IncomingRegisterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IncomingRegisterTests - 2017.06.20 at 01h 07m 19s.xml">
+      <configuration name="IncomingRegisterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IncomingRegisterTests - 2017.06.20 at 01h 08m 07s.xml">
+      <configuration name="IncomingRegisterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IncomingRegisterTests - 2017.06.20 at 01h 16m 54s.xml">
+      <configuration name="IncomingRegisterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IncomingRegisterTests - 2017.06.20 at 01h 20m 09s.xml">
+      <configuration name="IncomingRegisterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OutgoingRegisterTests - 2017.06.17 at 23h 48m 44s.xml">
       <configuration name="OutgoingRegisterTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 10h 48m 11s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
+    <history-entry file="OutgoingRegisterTests - 2017.06.20 at 01h 06m 16s.xml">
+      <configuration name="OutgoingRegisterTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 10h 48m 29s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
+    <history-entry file="OutgoingRegisterTests - 2017.06.20 at 01h 06m 53s.xml">
+      <configuration name="OutgoingRegisterTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 11h 05m 28s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 12h 35m 13s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 13h 16m 40s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 13h 18m 18s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 13h 18m 47s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 13h 21m 50s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OutgoingRegisterTests_revertOutgoing - 2017.06.15 at 14h 16m 17s.xml">
-      <configuration name="OutgoingRegisterTests.revertOutgoing" configurationId="JUnit" />
+    <history-entry file="OutgoingRegisterTests - 2017.06.20 at 01h 09m 57s.xml">
+      <configuration name="OutgoingRegisterTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -850,72 +856,77 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33557048" sideWeight="0.49506173" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5024691" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5122249" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901233" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5111857" sideWeight="0.49753088" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5111857" sideWeight="0.49753088" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.49633253" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26772615" sideWeight="0.49544418" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27078238" sideWeight="0.49544418" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25794622" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30925927" sideWeight="0.5045558" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38143176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30925927" sideWeight="0.5045558" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38143176" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33557048" sideWeight="0.49506173" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.48777506" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33557048" sideWeight="0.49506173" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33557048" sideWeight="0.49506173" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5024691" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5122249" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901233" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20246086" sideWeight="0.49753088" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5111857" sideWeight="0.49753088" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.49633253" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26772615" sideWeight="0.49544418" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27078238" sideWeight="0.49544418" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.48777506" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25794622" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30925927" sideWeight="0.5045558" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38143176" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30925927" sideWeight="0.5045558" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38143176" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="removed a system out" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed a system out" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java</url>
-          <line>252</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java</url>
-          <line>321</line>
+          <line>318</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -933,7 +944,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java</url>
-          <line>160</line>
+          <line>213</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
@@ -946,293 +957,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="129" column="66" lean-forward="false" selection-start-line="129" selection-start-column="66" selection-end-line="129" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/SenderRegistryNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/IncomingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_core/src/main/java/org/pprls/core/dto/RegistryRecordDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/time/Instant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5083">
-          <caret line="394" column="0" lean-forward="false" selection-start-line="394" selection-start-column="0" selection-end-line="394" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.7.RELEASE/spring-test-4.3.7.RELEASE-sources.jar!/org/springframework/test/context/junit4/statements/RunAfterTestClassCallbacks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.7.RELEASE/spring-test-4.3.7.RELEASE-sources.jar!/org/springframework/test/context/junit4/statements/RunBeforeTestClassCallbacks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunBefores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/uuid/java-uuid-generator/3.1.3/java-uuid-generator-3.1.3-sources.jar!/com/fasterxml/uuid/impl/TimeBasedGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_document/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.1.RELEASE/spring-data-commons-1.13.1.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepositoryImpl.java" />
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Builder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19-sources.jar!/org/mockito/internal/creation/cglib/MethodInterceptorFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="428" column="0" lean-forward="false" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistrationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="52" column="7" lean-forward="false" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="328" column="0" lean-forward="false" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.7.RELEASE/spring-test-4.3.7.RELEASE-sources.jar!/org/springframework/test/context/junit4/SpringJUnit4ClassRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="253" column="0" lean-forward="false" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.7.RELEASE/spring-test-4.3.7.RELEASE-sources.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunAfters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.7.RELEASE/spring-aop-4.3.7.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="661" column="0" lean-forward="false" selection-start-line="661" selection-start-column="0" selection-end-line="661" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="187" column="10" lean-forward="false" selection-start-line="187" selection-start-column="10" selection-end-line="187" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.7.RELEASE/spring-tx-4.3.7.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/ElasticConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/OutgoingRegistryHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.7.RELEASE/spring-core-4.3.7.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingIncomingListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.7.RELEASE/spring-core-4.3.7.RELEASE-sources.jar!/org/springframework/util/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,101 +968,404 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Outgoing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingHistory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="204">
           <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-elasticsearch/2.1.1.RELEASE/spring-data-elasticsearch-2.1.1.RELEASE-sources.jar!/org/springframework/data/elasticsearch/core/ElasticsearchTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="253" column="0" lean-forward="true" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="2601">
+          <caret line="253" column="0" lean-forward="false" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding>
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#0#46469#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7080#7081#0" expanded="false" />
+            <element signature="e#7100#7101#0" expanded="false" />
+            <element signature="e#7155#7156#0" expanded="false" />
+            <element signature="e#7196#7197#0" expanded="false" />
+            <element signature="e#7258#7259#0" expanded="false" />
+            <element signature="e#7302#7303#0" expanded="false" />
+            <element signature="e#10219#10220#0" expanded="false" />
+            <element signature="e#10255#10256#0" expanded="false" />
+            <element signature="e#10330#10331#0" expanded="false" />
+            <element signature="e#10387#10388#0" expanded="false" />
+            <element signature="e#12249#12250#0" expanded="false" />
+            <element signature="e#12302#12303#0" expanded="false" />
+            <element signature="e#12384#12385#0" expanded="false" />
+            <element signature="e#12437#12438#0" expanded="false" />
+            <element signature="e#16818#16819#0" expanded="false" />
+            <element signature="e#16878#16879#0" expanded="false" />
+            <element signature="e#18103#18104#0" expanded="false" />
+            <element signature="e#18135#18136#0" expanded="false" />
+            <element signature="e#18191#18192#0" expanded="false" />
+            <element signature="e#18223#18224#0" expanded="false" />
+            <element signature="e#21450#21451#0" expanded="false" />
+            <element signature="e#21511#21512#0" expanded="false" />
+            <element signature="e#24191#24192#0" expanded="false" />
+            <element signature="e#24262#24263#0" expanded="false" />
+            <element signature="e#24700#24701#0" expanded="false" />
+            <element signature="e#24771#24772#0" expanded="false" />
+            <element signature="e#31697#31698#0" expanded="false" />
+            <element signature="e#31775#31776#0" expanded="false" />
+            <element signature="e#37333#37334#0" expanded="false" />
+            <element signature="e#37403#37404#0" expanded="false" />
+            <element signature="e#40982#40983#0" expanded="false" />
+            <element signature="e#41042#41043#0" expanded="false" />
+            <element signature="e#44999#45000#0" expanded="false" />
+            <element signature="e#45026#45027#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="1190">
           <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="24" />
-          <folding>
-            <element signature="e#2237#2238#0" expanded="true" />
-            <element signature="e#2256#2257#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/AuditingOutgoingListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="204">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+        <state relative-caret-position="167">
+          <caret line="497" column="35" lean-forward="true" selection-start-line="497" selection-start-column="35" selection-end-line="497" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/mvnw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="138" column="4" lean-forward="false" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/PostageMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="68" column="51" lean-forward="false" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="112" column="4" lean-forward="false" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Year.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="444" column="8" lean-forward="false" selection-start-line="444" selection-start-column="8" selection-end-line="444" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/OutgoingHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="64" column="47" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/InstantSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="70" column="21" lean-forward="false" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/.mvn/wrapper/maven-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="74" column="78" lean-forward="true" selection-start-line="74" selection-start-column="78" selection-end-line="74" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/audit/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Classification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Correspondent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/CorrespondentType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/DocumentType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/FileType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/GeneralProtocolNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/IncomingCommonSubject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/DocumentState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="241" column="4" lean-forward="false" selection-start-line="241" selection-start-column="4" selection-end-line="241" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/FileType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="347" column="4" lean-forward="false" selection-start-line="347" selection-start-column="4" selection-end-line="347" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/ThreadType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="191" column="4" lean-forward="false" selection-start-line="191" selection-start-column="4" selection-end-line="191" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Year.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="685" column="4" lean-forward="false" selection-start-line="685" selection-start-column="4" selection-end-line="685" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/resources/hello.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/mappers/DefaultEntityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/DocumentStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/test/java/org/pprls/document/MessageReceiveTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_document/src/main/java/org/pprls/document/domain/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-769">
+          <caret line="69" column="25" lean-forward="false" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/repositories/OutgoingRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingOutgoingRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/service/audit/repositories/AuditingIncomingRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_core/src/main/java/org/pprls/core/dto/RegistryRecordDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/RegistryRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="151" column="65" lean-forward="false" selection-start-line="151" selection-start-column="65" selection-end-line="151" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#1902#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/OutgoingRegisterTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+        <state relative-caret-position="3655">
+          <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Outgoing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="77" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/Incoming.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="105" lean-forward="false" selection-start-line="20" selection-start-column="105" selection-end-line="20" selection-end-column="105" />
           <folding>
+            <element signature="e#0#2532#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/test/java/org/pprls/registry/IncomingRegisterTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="106" column="47" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pprls_registry/src/main/java/org/pprls/registry/domain/service/RegistryRecordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

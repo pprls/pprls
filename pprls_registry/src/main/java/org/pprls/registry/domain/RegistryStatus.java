@@ -3,21 +3,11 @@
  */
 package org.pprls.registry.domain;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Date;
+import org.pprls.core.EntityDescriptor;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-
-import org.pprls.core.EntityDescriptor;
-import org.springframework.data.elasticsearch.annotations.DateFormat;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.Instant;
 
 
 /**

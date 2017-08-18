@@ -1,13 +1,13 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-
 import org.pprls.core.EntityDescriptor;
 import org.pprls.core.Nobody;
+
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 /**
  * A person that sent or receives an document. An '<em><b>Correspondent</b></em>'.
@@ -208,7 +208,7 @@ public class Correspondent {
 	 * Returns the object as string representation.	
 	 */
 	public String toString() {
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (vatId: ");
 		result.append(vatId);
 		result.append(", name: ");

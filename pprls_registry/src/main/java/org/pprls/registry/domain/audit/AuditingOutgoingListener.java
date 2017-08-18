@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.PostPersist;
 import javax.persistence.PostUpdate;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 
 public class AuditingOutgoingListener {
 

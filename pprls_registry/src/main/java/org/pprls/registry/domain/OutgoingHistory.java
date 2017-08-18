@@ -1,14 +1,11 @@
 package org.pprls.registry.domain;
 
-import java.util.UUID;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.impl.TimeBasedGenerator;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.elasticsearch.annotations.Document;
+
+import javax.persistence.Id;
+import java.util.UUID;
 
 /**
  * A wrapper object for the registry record.
@@ -63,4 +60,7 @@ public class OutgoingHistory {
 		this.timeStamp = timeStamp;
 	}
 
+	public UUID getId() { return id; }
+
+	public void setId(UUID id) { this.id = id; }
 }

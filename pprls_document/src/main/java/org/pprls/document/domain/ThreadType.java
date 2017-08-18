@@ -189,7 +189,7 @@ public enum ThreadType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ThreadType(int value, String name, String literal) {
+	ThreadType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

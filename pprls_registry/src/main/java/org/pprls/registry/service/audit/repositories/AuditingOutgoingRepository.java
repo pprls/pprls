@@ -9,7 +9,4 @@ import java.util.UUID;
 
 public interface AuditingOutgoingRepository extends ElasticsearchRepository<OutgoingHistory, UUID> {
 	Page<OutgoingHistory> findByOutgoingId(UUID id, Pageable param);
-	OutgoingHistory findOneByOutgoingId(UUID id);
-	//RegistryRecord findByRegistryRecordIdOrderByTimeStampDesc(UUID id);
-	//List<RegistryRecord> findByOutgoingIdOrderByTimeStampAsc(UUID id);
 }

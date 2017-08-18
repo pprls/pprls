@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * A representation of the literals of the enumeration '<em><b>Year</b></em>',
  * and utility methods for working with them.
- * @see org.pprls.registry.registry.registration.RegistrationPackage#getYear()
  */
 public enum Year {
 	/**
@@ -405,8 +404,7 @@ public enum Year {
 	 * @return the matching enumerator or <code>null</code>.
 	 */
 	public static Year get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Year result = VALUES_ARRAY[i];
+		for (Year result : VALUES_ARRAY) {
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -420,8 +418,7 @@ public enum Year {
 	 * @return the matching enumerator or <code>null</code>.
 	 */
 	public static Year getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Year result = VALUES_ARRAY[i];
+		for (Year result : VALUES_ARRAY) {
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -477,7 +474,7 @@ public enum Year {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private Year(int value, String name, String literal) {
+    Year(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;

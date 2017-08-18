@@ -1,4 +1,4 @@
-/**
+/*
  * Αδειοδοτείται υπό τους όρους της EUPL
  */
 package org.pprls.registry.domain;
@@ -206,7 +206,7 @@ public enum FileType {
 	/**
 	 * Only this class can construct instances.
 	 */
-	private FileType(int value, String name, String literal) {
+    FileType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
